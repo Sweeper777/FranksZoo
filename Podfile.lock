@@ -1,0 +1,53 @@
+PODS:
+  - AnimationSugar (0.0.2)
+  - DynamicColor (4.0.2)
+  - EZLoadingActivity (1.01)
+  - FSPagerView (0.7.2)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.2.0)
+  - SCLAlertView (0.8)
+  - SwiftRandom (1.0.0)
+  - SwiftyButton (0.8.2)
+  - SwiftyUtils (2.0.0)
+
+DEPENDENCIES:
+  - AnimationSugar
+  - DynamicColor
+  - EZLoadingActivity
+  - FSPagerView
+  - RxCocoa
+  - RxSwift
+  - SCLAlertView
+  - SwiftRandom
+  - SwiftyButton
+  - SwiftyUtils
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AnimationSugar
+    - DynamicColor
+    - EZLoadingActivity
+    - FSPagerView
+    - RxCocoa
+    - RxSwift
+    - SCLAlertView
+    - SwiftRandom
+    - SwiftyButton
+    - SwiftyUtils
+
+SPEC CHECKSUMS:
+  AnimationSugar: 5dcf5c375a90df4b64d5bba27919252cfaf8fe79
+  DynamicColor: c7adcfe871781a2b39877a5774e452ba51b79eb3
+  EZLoadingActivity: edd7e387e5197b116ce2cccb3fd747ababc2a510
+  FSPagerView: 7515f63c424da71623d299d4fbbfb3dd884642ff
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
+  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  SwiftRandom: 437275c63500ddf5a565cbd56996fb23f12cfc3d
+  SwiftyButton: 5b0ef314e9cf61cf8a83e456ddd1ea1f53f30598
+  SwiftyUtils: ae914aa96b5672e9282904771e5e5b44d2e307d6
+
+PODFILE CHECKSUM: daf3351a7825500006b680843a61492868a1d6f2
+
+COCOAPODS: 1.5.3

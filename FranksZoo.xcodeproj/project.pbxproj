@@ -12,9 +12,11 @@
 		5A43BD68213A8A1D001B918E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A43BD66213A8A1D001B918E /* Main.storyboard */; };
 		5A43BD6A213A8A20001B918E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A43BD69213A8A20001B918E /* Assets.xcassets */; };
 		5A43BD6D213A8A20001B918E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A43BD6B213A8A20001B918E /* LaunchScreen.storyboard */; };
+		F26AE06ACAD170F7D4FA88C9 /* Pods_FranksZoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6678C596C00963C6B145C5C5 /* Pods_FranksZoo.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4CB7DC224673ED569E271A23 /* Pods-FranksZoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FranksZoo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FranksZoo/Pods-FranksZoo.debug.xcconfig"; sourceTree = "<group>"; };
 		5A43BD5F213A8A1D001B918E /* FranksZoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FranksZoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A43BD62213A8A1D001B918E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A43BD64213A8A1D001B918E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		5A43BD69213A8A20001B918E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A43BD6C213A8A20001B918E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A43BD6E213A8A20001B918E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6678C596C00963C6B145C5C5 /* Pods_FranksZoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FranksZoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A196DE59E7D8A3F79EA74FF /* Pods-FranksZoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FranksZoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FranksZoo/Pods-FranksZoo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F26AE06ACAD170F7D4FA88C9 /* Pods_FranksZoo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02310F36B88AF463D14955B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CB7DC224673ED569E271A23 /* Pods-FranksZoo.debug.xcconfig */,
+				7A196DE59E7D8A3F79EA74FF /* Pods-FranksZoo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		05A78F618D93BDEFED063470 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6678C596C00963C6B145C5C5 /* Pods_FranksZoo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5A43BD56213A8A1D001B918E = {
 			isa = PBXGroup;
 			children = (
 				5A43BD61213A8A1D001B918E /* FranksZoo */,
 				5A43BD60213A8A1D001B918E /* Products */,
+				02310F36B88AF463D14955B1 /* Pods */,
+				05A78F618D93BDEFED063470 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A43BD71213A8A20001B918E /* Build configuration list for PBXNativeTarget "FranksZoo" */;
 			buildPhases = (
+				22215EB15801D18491901F10 /* [CP] Check Pods Manifest.lock */,
 				5A43BD5B213A8A1D001B918E /* Sources */,
 				5A43BD5C213A8A1D001B918E /* Frameworks */,
 				5A43BD5D213A8A1D001B918E /* Resources */,
+				1B4930911586CCA275C690AA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,71 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1B4930911586CCA275C690AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-FranksZoo/Pods-FranksZoo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AnimationSugar/AnimationSugar.framework",
+				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
+				"${BUILT_PRODUCTS_DIR}/EZLoadingActivity/EZLoadingActivity.framework",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftRandom/SwiftRandom.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUtils/SwiftyUtils.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimationSugar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZLoadingActivity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftRandom.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyButton.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUtils.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FranksZoo/Pods-FranksZoo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		22215EB15801D18491901F10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FranksZoo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5A43BD5B213A8A1D001B918E /* Sources */ = {
@@ -278,6 +369,7 @@
 		};
 		5A43BD72213A8A20001B918E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4CB7DC224673ED569E271A23 /* Pods-FranksZoo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +389,7 @@
 		};
 		5A43BD73213A8A20001B918E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A196DE59E7D8A3F79EA74FF /* Pods-FranksZoo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
