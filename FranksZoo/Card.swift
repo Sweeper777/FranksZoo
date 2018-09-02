@@ -36,4 +36,10 @@ fileprivate let predatorDict: [Card: Set<Card>] = [
     .mouse: [.crocodile, .bear, .lion, .seal, .fox, .hedgehog],
     .mosquito: [.hedgehog, .fish, .mouse],
 ]
+
+protocol Cards {
+    var cards: [Card: Int] { get }
+    
+}
+
 }
