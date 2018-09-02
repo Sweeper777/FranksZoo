@@ -14,6 +14,9 @@ enum Card: Int, Comparable {
     case mosquito
     case joker
     
+    var predators: Set<Card> {
+        return predatorDict[self] ?? []
+    }
     
     static func <(lhs: Card, rhs: Card) -> Bool {
         return lhs.rawValue < rhs.rawValue
