@@ -1,5 +1,5 @@
 
-enum Card {
+enum Card: Int, Comparable {
     case whale
     case elephant
     case crocodile
@@ -14,6 +14,12 @@ enum Card {
     case mosquito
     case joker
     
+    
+    static func <(lhs: Card, rhs: Card) -> Bool {
+        return lhs.rawValue < rhs.rawValue
+    }
+}
+
 fileprivate let predatorDict: [Card: Set<Card>] = [
     .elephant: [.mouse],
     .crocodile: [.elephant],
