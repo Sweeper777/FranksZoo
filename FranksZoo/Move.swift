@@ -9,5 +9,10 @@ struct Move : Cards, Equatable {
     init() {
         self.init(cards: [:])
     }
+    
+    static func ==(lhs: Move, rhs: Move) -> Bool {
+        return lhs.cards == rhs.cards
+    }
+    
 }
 
