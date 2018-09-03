@@ -14,5 +14,12 @@ struct Move : Cards, Equatable {
         return lhs.cards == rhs.cards
     }
     
+    var isLegal: Bool {
+        // pass is always legal
+        if self == .pass {
+            return true
+        }
+        var cardCopy = cards
+    }
 }
 
