@@ -52,4 +52,25 @@ extension Cards {
     }
     
 }
+
+class AllCards : Cards {
+    let cards: [Card : Int] = [
+        .whale: 5,
+        .elephant: 5,
+        .crocodile: 5,
+        .bear: 5,
+        .lion: 5,
+        .seal: 5,
+        .fox: 5,
+        .perch: 5,
+        .hedgehog: 5,
+        .fish: 5,
+        .mouse: 5,
+        .mosquito: 4,
+        .joker: 1
+    ]
+    
+    static let shared = AllCards()
+    
+    private init() {}
 }
