@@ -42,4 +42,10 @@ protocol Cards {
     
 }
 
+extension Cards {
+    func numberOf(_ card: Card) -> Int {
+        return cards[card] ?? 0
+    }
+    
+}
 }
