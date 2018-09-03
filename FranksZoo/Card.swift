@@ -47,5 +47,9 @@ extension Cards {
         return cards[card] ?? 0
     }
     
+    func toArray() -> [Card] {
+        return cards.flatMap { Array(repeating: $0.key, count: $0.value) }.sorted()
+    }
+    
 }
 }
