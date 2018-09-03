@@ -20,6 +20,12 @@ struct Move : Cards, Equatable {
             return true
         }
         var cardCopy = cards
+        
+        // only joker is illegal
+        if cardCopy.keys.count == 1 && cardCopy.keys.contains(.joker) {
+            return false
+        }
+        
     }
 }
 
