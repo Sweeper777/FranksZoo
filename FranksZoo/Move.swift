@@ -94,7 +94,15 @@ struct Move : Cards, Equatable {
             }
             return [[cardType: count], [cardType: count - 1, .joker: 1]]
         }
+        
+        guard self != .pass else { return [] }
+        guard let mainCardType = mainCardType else { return [] }
+        let cardCount = cards.values.reduce(0, +)
         var moves: [Move] = []
+        moves.append(contentsOf: allVariants(cardType: mainCardType, count: cardCount + 1))
+        for predatorType in mainCardType.predators {
+            moves.append(contentsOf: allVariants(cardType: predatorType, count: cardCount))
+        }
         return moves
     }
 }
