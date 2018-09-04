@@ -56,6 +56,44 @@ struct Move : Cards, Equatable {
     }
     
     var defeatableMoves: [Move] {
+        func allVariants(cardType: Card, count: Int) -> [Move] {
+            if count == 1 {
+                return [[cardType: 1]]
+            }
+            if cardType == .elephant {
+                switch count {
+                case 2: return [
+                        2.elephants,
+                        1.elephant + 1.joker,
+                        1.elephant + 1.mosquito,
+                    ]
+                case 3: return [
+                        3.elephants,
+                        2.elephants + 1.joker,
+                        1.elephant + 1.joker + 1.mosquito,
+                        2.elephants + 1.mosquito,
+                    ]
+                case 4: return [
+                        4.elephants,
+                        3.elephants + 1.joker,
+                        2.elephants + 1.mosquito + 1.joker,
+                        3.elephants + 1.mosquito,
+                        2.elephants + 2.mosquitoes,
+                        1.elephant + 1.joker + 2.mosquitoes,
+                    ]
+                case 5: return [
+                        5.elephants,
+                        4.elephants + 1.joker,
+                        3.elephants + 1.mosquito + 1.joker,
+                        2.elephants + 1.mosquito,
+                        3.elephants + 2.mosquitoes,
+                        2.elephants + 1.joker + 2.mosquitoes,
+                    ]
+                default: return []
+                }
+            }
+            return [[cardType: count], [cardType: count - 1, .joker: 1]]
+        }
         var moves: [Move] = []
         return moves
     }
