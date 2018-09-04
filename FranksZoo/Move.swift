@@ -105,5 +105,34 @@ struct Move : Cards, Equatable {
         }
         return moves
     }
+    
+    func canDefeat(_ move: Move) -> Bool{
+        guard self.isLegal && move.isLegal else {
+            return false
+        }
+        
+        guard self != .pass else {
+            return true
+        }
+        
+        guard move != .pass else {
+            return false
+        }
+        
+        guard let selfMainCardType = self.mainCardType else {
+            fatalError()
+        }
+        
+        let selfCardCount = cards.values.reduce(0, +)
+        
+        guard let moveMainCardType = move.mainCardType else {
+            fatalError()
+        }
+        
+        let moveCardCount = move.cards.values.reduce(0, +)
+        
+        return (selfMainCardType == moveMainCardType && selfCardCount - moveCardCount == 1) ||
+            (moveMainCardType.predators.contains(selfMainCardType) && selfCardCount == moveCardCount)
+    }
 }
 
