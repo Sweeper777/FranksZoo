@@ -38,6 +38,8 @@ struct Move : Cards, Equatable {
             return elephantCount - mosquitoCount + jokerCount >= 0
         }
         
+        // otherwise, legal if only one type
+        return cardCopy.keys.count == 1
     }
 }
 
