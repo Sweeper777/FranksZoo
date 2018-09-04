@@ -54,5 +54,10 @@ struct Move : Cards, Equatable {
         cardsCopy[.joker] = nil
         return cards.keys.first
     }
+    
+    var defeatableMoves: [Move] {
+        var moves: [Move] = []
+        return moves
+    }
 }
 
