@@ -26,6 +26,18 @@ struct Move : Cards, Equatable {
             return false
         }
         
+        let jokerCount = cardCopy[.joker] ?? 0
+        cardCopy[.joker] = nil
+        if cardCopy.keys.count == 2 &&
+            cardCopy.keys.contains(.elephant) &&
+            cardCopy.keys.contains(.mosquito) {
+            let elephantCount = cardCopy[.elephant]!
+            let mosquitoCount = cardCopy[.mosquito]!
+            
+            // mosquito and elephant mechanic
+            return elephantCount - mosquitoCount + jokerCount >= 0
+        }
+        
     }
 }
 
