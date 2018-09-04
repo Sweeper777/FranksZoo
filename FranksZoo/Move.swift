@@ -41,5 +41,18 @@ struct Move : Cards, Equatable {
         // otherwise, legal if only one type
         return cardCopy.keys.count == 1
     }
+    
+    var mainCardType: Card? {
+        if !isLegal { return nil }
+        
+        
+        if cards.keys.contains(.elephant) &&
+            cards.keys.contains(.mosquito) {
+            return .elephant
+        }
+        var cardsCopy = cards
+        cardsCopy[.joker] = nil
+        return cards.keys.first
+    }
 }
 
