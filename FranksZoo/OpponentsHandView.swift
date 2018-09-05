@@ -46,5 +46,17 @@ class OpponentsHandView : UIView {
         case .down:
             break
         }
+        
+        var rotationAngle: CGFloat
+        switch orientation {
+        case .right:
+            rotationAngle = .pi / 2
+        case .left:
+            rotationAngle = .pi / 2 * 3
+            imageCenters.reverse()
+        case .down:
+            rotationAngle = .pi
+        }
+        
     }
 }
