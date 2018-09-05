@@ -8,4 +8,11 @@ class OpponentsHandView : UIView {
     }
     
     private var imageViews: [UIImageView] = []
+    @IBInspectable
+    var orientation: Orientation = .right {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
 }
