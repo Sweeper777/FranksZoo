@@ -15,4 +15,9 @@ class OpponentsHandView : UIView {
         }
     }
     
+    func repositionViews() {
+        subviews.forEach { $0.removeFromSuperview() }
+        imageViews.removeAll()
+        
+    }
 }
