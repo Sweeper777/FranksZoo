@@ -30,5 +30,11 @@ class ViewController: UIViewController {
         }
     }
     
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        DispatchQueue.main.async {
+            [unowned self] in
+            self.opponentHand1.setNeedsDisplay()
+        }
+    }
 }
 
