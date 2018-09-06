@@ -58,5 +58,11 @@ class OpponentsHandView : UIView {
             rotationAngle = .pi
         }
         
+        zip(imageViews, imageCenters).forEach {
+            $0.0.center = $0.1
+            $0.0.transform = CGAffineTransform(rotationAngle: rotationAngle)
+        }
+        imageViews.forEach(addSubview)
+        
     }
 }
