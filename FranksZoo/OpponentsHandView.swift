@@ -23,6 +23,10 @@ class OpponentsHandView : UIView {
         }
     }
     
+    override func draw(_ rect: CGRect) {
+        repositionViews()
+    }
+    
     func repositionViews() {
         subviews.forEach { $0.removeFromSuperview() }
         imageViews.removeAll()
