@@ -8,6 +8,14 @@ class OpponentsHandView : UIView {
     }
     
     private var imageViews: [UIImageView] = []
+    
+    @IBInspectable
+    var numberOfCards: Int = 0 {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     @IBInspectable
     var orientation: Orientation = .right {
         didSet {
