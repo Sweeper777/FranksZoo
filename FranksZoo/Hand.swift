@@ -5,6 +5,19 @@ struct Hand: Cards {
         self.cards = cards.filter { $0.value > 0 }
     }
     
+    @discardableResult
+    mutating func makeMove(_ move: Move) -> Bool {
+        if !canMakeMove(move) {
+            return false
+        }
+        for (key, value) in move.cards {
+            if cards[key] != nil {
+                cards[key]! -= value
+            }
+        }
+        return true
+    }
+    
     func canMakeMove(_ move: Move) -> Bool {
         for (key, value) in move.cards {
             if cards[key] == nil {
