@@ -103,3 +103,7 @@ extension Int {
         return [.joker: self]
     }
 }
+
+func +(move1: Move, move2: Move) -> Move {
+    return Move(cards: move1.cards.merging(move2.cards, uniquingKeysWith: +))
+}
