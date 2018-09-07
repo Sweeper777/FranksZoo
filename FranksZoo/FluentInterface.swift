@@ -47,4 +47,59 @@ extension Int {
         return [.lion: self]
     }
     
+    var seal: Move {
+        return [.seal: self]
+    }
+    
+    var seals: Move {
+        return [.seal: self]
+    }
+    
+    var fox: Move {
+        return [.fox: self]
+    }
+    
+    var foxes: Move {
+        return [.fox: self]
+    }
+    
+    var perch: Move {
+        return [.perch: self]
+    }
+    
+    var perches: Move {
+        return [.perch: self]
+    }
+    
+    var hedgehog: Move {
+        return [.hedgehog: self]
+    }
+    
+    var hedgehogs: Move {
+        return [.hedgehog: self]
+    }
+    
+    var fish: Move {
+        return [.fish: self]
+    }
+    
+    var mouse: Move {
+        return [.mouse: self]
+    }
+    
+    var mice: Move {
+        return [.mouse: self]
+    }
+    
+    var mosquito: Move {
+        return [.mosquito: self]
+    }
+    
+    var mosquitoes: Move {
+        return [.mosquito: self]
+    }
+    
+    var joker: Move {
+        return [.joker: self]
+    }
 }
