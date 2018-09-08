@@ -56,6 +56,15 @@ class OpponentsHandView : UIView {
                 imageCenters.append(CGPoint(x: x, y: topCardCenter + i.f * offset))
             }
         case .down:
+            let y = height / 2
+            let cardWidth = height / 7 * 5
+            let offset = 10.f
+            let cardsWidth = cardWidth + offset * (numberOfCards.f - 1)
+            let right = width / 2 - cardsWidth / 2
+            let rightCardCenter = right + cardWidth / 2
+            for i in 0..<numberOfCards {
+                imageCenters.append(CGPoint(x: rightCardCenter + i.f * offset, y: y))
+            }
             break
         }
         
