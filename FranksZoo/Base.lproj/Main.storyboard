@@ -48,14 +48,26 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRT-eB-JTQ" customClass="OpponentsHandView" customModule="FranksZoo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="59" height="232"/>
+                                        <rect key="frame" x="10" y="10" width="53" height="220"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="orientation">
-                                                <integer key="value" value="2"/>
+                                                <integer key="value" value="0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="numberOfCards">
                                                 <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Oiq-YJ-dD8" customClass="OpponentsHandView" customModule="FranksZoo" customModuleProvider="target">
+                                        <rect key="frame" x="487" y="12" width="71" height="220"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfCards">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="direction">
+                                                <integer key="value" value="2"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
@@ -69,7 +81,11 @@
                                     <constraint firstAttribute="trailing" secondItem="wyK-vN-I13" secondAttribute="trailing" constant="10" id="Qnb-3r-Pgz"/>
                                     <constraint firstItem="BRT-eB-JTQ" firstAttribute="top" secondItem="VhG-R6-sqo" secondAttribute="top" constant="10" id="SFJ-bv-cgS"/>
                                     <constraint firstItem="BRT-eB-JTQ" firstAttribute="leading" secondItem="VhG-R6-sqo" secondAttribute="leading" constant="10" id="Tix-30-XOh"/>
+                                    <constraint firstItem="Oiq-YJ-dD8" firstAttribute="top" secondItem="VhG-R6-sqo" secondAttribute="top" constant="10" id="YK1-X1-pDH"/>
+                                    <constraint firstItem="Oiq-YJ-dD8" firstAttribute="leading" secondItem="VhG-R6-sqo" secondAttribute="trailing" multiplier="8:9" id="eNH-9U-j6a"/>
                                     <constraint firstItem="wyK-vN-I13" firstAttribute="top" secondItem="BRT-eB-JTQ" secondAttribute="bottom" constant="10" id="epZ-C6-mC4"/>
+                                    <constraint firstAttribute="trailing" secondItem="Oiq-YJ-dD8" secondAttribute="trailing" constant="10" id="l1J-lG-u7n"/>
+                                    <constraint firstItem="wyK-vN-I13" firstAttribute="top" secondItem="Oiq-YJ-dD8" secondAttribute="bottom" constant="10" id="xXq-8N-gtb"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -83,7 +99,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="opponentHand1" destination="BRT-eB-JTQ" id="XTV-3m-lDi"/>
+                        <outlet property="opponentHand1" destination="BRT-eB-JTQ" id="unh-cK-DKT"/>
+                        <outlet property="opponentHand3" destination="Oiq-YJ-dD8" id="fLw-db-R4M"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
