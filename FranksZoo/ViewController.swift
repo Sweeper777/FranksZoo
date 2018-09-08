@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             [unowned self] in
             self.opponentHand1.setNeedsDisplay()
+            self.opponentHand3.setNeedsDisplay()
         }
     }
 }
