@@ -11,7 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var opponentHand1: OpponentsHandView!
+    @IBOutlet var opponentHand2: OpponentsHandView!
     @IBOutlet var opponentHand3: OpponentsHandView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         opponentHand1.orientation = .right
