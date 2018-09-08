@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet var opponentHand3: OpponentsHandView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        opponentHand1.orientation = .right
+        opponentHand3.orientation = .left
     }
 
     override func didReceiveMemoryWarning() {
