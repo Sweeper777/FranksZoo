@@ -124,7 +124,8 @@
                                     <constraint firstAttribute="bottom" secondItem="wyK-vN-I13" secondAttribute="bottom" constant="10" id="8vu-T9-Zn8"/>
                                     <constraint firstItem="386-R7-5sQ" firstAttribute="leading" secondItem="BRT-eB-JTQ" secondAttribute="trailing" constant="10" id="F6D-p5-a0J"/>
                                     <constraint firstItem="386-R7-5sQ" firstAttribute="height" secondItem="Oiq-YJ-dD8" secondAttribute="width" id="I0a-O4-HJD"/>
-                                    <constraint firstItem="wyK-vN-I13" firstAttribute="top" secondItem="VhG-R6-sqo" secondAttribute="bottom" multiplier="3:4" id="Q3J-d7-Pgh"/>
+                                    <constraint firstItem="wyK-vN-I13" firstAttribute="height" relation="lessThanOrEqual" secondItem="386-R7-5sQ" secondAttribute="height" multiplier="1.5" id="PAm-P5-301"/>
+                                    <constraint firstItem="wyK-vN-I13" firstAttribute="top" secondItem="VhG-R6-sqo" secondAttribute="bottom" multiplier="0.7" priority="750" id="Q3J-d7-Pgh"/>
                                     <constraint firstAttribute="trailing" secondItem="wyK-vN-I13" secondAttribute="trailing" constant="10" id="Qnb-3r-Pgz"/>
                                     <constraint firstItem="BRT-eB-JTQ" firstAttribute="top" secondItem="VhG-R6-sqo" secondAttribute="top" constant="10" id="SFJ-bv-cgS"/>
                                     <constraint firstItem="BRT-eB-JTQ" firstAttribute="leading" secondItem="VhG-R6-sqo" secondAttribute="leading" constant="10" id="Tix-30-XOh"/>
