@@ -42,10 +42,44 @@
                                                     <constraint firstAttribute="width" constant="110" id="BpQ-TM-SYI"/>
                                                 </constraints>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GON-jI-jwl">
-                                                <rect key="frame" x="110" y="0.0" width="438" height="70"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </view>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sBB-PL-NiC">
+                                                <rect key="frame" x="120" y="0.0" width="428" height="79.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xnj-3Z-NGG">
+                                                    <size key="itemSize" width="68" height="99"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="E9n-vV-Ojq" customClass="CardCell" customModule="FranksZoo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="-10" width="68" height="99"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="68" height="99"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oyE-Tn-ZkO">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="99"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="oyE-Tn-ZkO" firstAttribute="leading" secondItem="E9n-vV-Ojq" secondAttribute="leading" id="Djb-LT-wcs"/>
+                                                            <constraint firstItem="oyE-Tn-ZkO" firstAttribute="trailing" secondItem="E9n-vV-Ojq" secondAttribute="trailing" id="dXs-3O-ASq"/>
+                                                            <constraint firstItem="oyE-Tn-ZkO" firstAttribute="bottom" secondItem="E9n-vV-Ojq" secondAttribute="bottom" id="oQA-Q7-78N"/>
+                                                            <constraint firstItem="oyE-Tn-ZkO" firstAttribute="top" secondItem="E9n-vV-Ojq" secondAttribute="top" id="twy-05-tHz"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="imageView" destination="oyE-Tn-ZkO" id="uUk-WY-Gn5"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="12w-on-QBO"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="uco-ri-8Be"/>
+                                                </connections>
+                                            </collectionView>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BRT-eB-JTQ" customClass="OpponentsHandView" customModule="FranksZoo" customModuleProvider="target">
