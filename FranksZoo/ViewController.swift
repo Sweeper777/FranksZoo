@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet var opponentHand1: OpponentsHandView!
     @IBOutlet var opponentHand2: OpponentsHandView!
     @IBOutlet var opponentHand3: OpponentsHandView!
+    @IBOutlet var handCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

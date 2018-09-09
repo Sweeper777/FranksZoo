@@ -147,6 +147,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="handCollectionView" destination="sBB-PL-NiC" id="K19-M1-RWY"/>
                         <outlet property="opponentHand1" destination="BRT-eB-JTQ" id="unh-cK-DKT"/>
                         <outlet property="opponentHand2" destination="386-R7-5sQ" id="fby-Yv-TqK"/>
                         <outlet property="opponentHand3" destination="Oiq-YJ-dD8" id="fLw-db-R4M"/>
