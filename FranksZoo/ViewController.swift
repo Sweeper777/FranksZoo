@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         opponentHand1.orientation = .right
         opponentHand2.orientation = .down
         opponentHand3.orientation = .left
+        handCollectionView.allowsMultipleSelection = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +42,7 @@ class ViewController: UIViewController {
             self.opponentHand1.setNeedsDisplay()
             self.opponentHand2.setNeedsDisplay()
             self.opponentHand3.setNeedsDisplay()
+            self.handCollectionView.reloadData()
         }
     }
 }
