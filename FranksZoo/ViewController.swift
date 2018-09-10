@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         opponentHand1.orientation = .right
+        opponentHand2.orientation = .down
         opponentHand3.orientation = .left
     }
 
@@ -38,6 +39,7 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             [unowned self] in
             self.opponentHand1.setNeedsDisplay()
+            self.opponentHand2.setNeedsDisplay()
             self.opponentHand3.setNeedsDisplay()
         }
     }
