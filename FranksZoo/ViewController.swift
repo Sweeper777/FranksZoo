@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet var opponentHand2: OpponentsHandView!
     @IBOutlet var opponentHand3: OpponentsHandView!
     @IBOutlet var handCollectionView: UICollectionView!
+    let game = Game()
+    
+    var cards = [Card]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
