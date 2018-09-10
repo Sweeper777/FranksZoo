@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         opponentHand2.orientation = .down
         opponentHand3.orientation = .left
         handCollectionView.allowsMultipleSelection = true
+        cards = game.currentPlayerHand.toArray()
     }
 
     override func didReceiveMemoryWarning() {
