@@ -59,4 +59,11 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateF
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cards.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CardCell
+        cell.transform = CGAffineTransform(translationX: 0, y: cell.bounds.height * 0.1)
+        cell.imageView.image = UIImage(named: imageDict[cards[indexPath.item]]!)
+        return cell
+    }
 }
