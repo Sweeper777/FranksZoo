@@ -51,3 +51,8 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+}
