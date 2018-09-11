@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet var opponentHand2: OpponentsHandView!
     @IBOutlet var opponentHand3: OpponentsHandView!
     @IBOutlet var handCollectionView: UICollectionView!
+    var initialAnimationPlayed = false
+    
     let game = Game()
     
     var cards = [Card]()
@@ -25,6 +27,14 @@ class ViewController: UIViewController {
         opponentHand3.orientation = .left
         handCollectionView.allowsMultipleSelection = true
         cards = game.currentPlayerHand.toArray()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if !initialAnimationPlayed {
+            startInitialAnimation()
+            initialAnimationPlayed = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
