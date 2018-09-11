@@ -11,6 +11,10 @@ class Game {
         }
     }
     
+    var currentPlayerHand: Hand {
+        get { return playerHands[currentTurn] }
+        set { playerHands[currentTurn] = newValue }
+    }
     
     var lastMove: Move?
     var lastMoveMadeBy: Int?
