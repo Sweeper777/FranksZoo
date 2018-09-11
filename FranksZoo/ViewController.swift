@@ -66,4 +66,10 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateF
         cell.imageView.image = UIImage(named: imageDict[cards[indexPath.item]]!)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = collectionView.height / 1.15
+        let width = height * 5 / 7
+        return CGSize(width: width, height: height)
+    }
 }
