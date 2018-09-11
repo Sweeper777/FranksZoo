@@ -49,6 +49,18 @@ class ViewController: UIViewController {
             self.handCollectionView.reloadData()
         }
     }
+    
+    func startInitialAnimation() {
+        Timer.every(0.1) { [weak self] (timer) in
+            self?.opponentHand1.numberOfCards += 1
+            self?.opponentHand2.numberOfCards += 1
+            self?.opponentHand3.numberOfCards += 1
+            if self?.opponentHand1.numberOfCards == 15 {
+                timer.invalidate()
+                self?.bottomStackView.isHidden = false
+            }
+        }.start()
+    }
 }
 
 extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
