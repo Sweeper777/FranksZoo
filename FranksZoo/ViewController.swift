@@ -28,6 +28,12 @@ class ViewController: UIViewController {
         opponentHand2.orientation = .down
         opponentHand3.orientation = .left
         handCollectionView.allowsMultipleSelection = true
+        
+        opponentHand1.numberOfCards = 0
+        opponentHand2.numberOfCards = 0
+        opponentHand3.numberOfCards = 0
+        bottomStackView.isHidden = true
+        
         cards = game.currentPlayerHand.toArray()
     }
     
