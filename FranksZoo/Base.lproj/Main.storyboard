@@ -67,8 +67,8 @@
                                                         <constraints>
                                                             <constraint firstItem="oyE-Tn-ZkO" firstAttribute="leading" secondItem="E9n-vV-Ojq" secondAttribute="leading" id="Djb-LT-wcs"/>
                                                             <constraint firstItem="oyE-Tn-ZkO" firstAttribute="trailing" secondItem="E9n-vV-Ojq" secondAttribute="trailing" id="dXs-3O-ASq"/>
-                                                            <constraint firstItem="oyE-Tn-ZkO" firstAttribute="bottom" secondItem="E9n-vV-Ojq" secondAttribute="bottom" id="oQA-Q7-78N"/>
-                                                            <constraint firstItem="oyE-Tn-ZkO" firstAttribute="top" secondItem="E9n-vV-Ojq" secondAttribute="top" id="twy-05-tHz"/>
+                                                            <constraint firstItem="oyE-Tn-ZkO" firstAttribute="top" secondItem="E9n-vV-Ojq" secondAttribute="top" id="nLa-mZ-za2"/>
+                                                            <constraint firstAttribute="bottom" secondItem="oyE-Tn-ZkO" secondAttribute="bottom" id="zbs-Ky-67k"/>
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="imageView" destination="oyE-Tn-ZkO" id="uUk-WY-Gn5"/>
@@ -148,6 +148,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="bottomStackView" destination="wyK-vN-I13" id="fDD-97-mr1"/>
                         <outlet property="handCollectionView" destination="sBB-PL-NiC" id="K19-M1-RWY"/>
                         <outlet property="opponentHand1" destination="BRT-eB-JTQ" id="unh-cK-DKT"/>
                         <outlet property="opponentHand2" destination="386-R7-5sQ" id="fby-Yv-TqK"/>

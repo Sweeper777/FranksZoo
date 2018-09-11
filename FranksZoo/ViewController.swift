@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     @IBOutlet var opponentHand2: OpponentsHandView!
     @IBOutlet var opponentHand3: OpponentsHandView!
     @IBOutlet var handCollectionView: UICollectionView!
+    @IBOutlet var bottomStackView: UIStackView!
+    
     var initialAnimationPlayed = false
     
     let game = Game()
