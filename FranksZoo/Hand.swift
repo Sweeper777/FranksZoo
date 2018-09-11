@@ -29,4 +29,8 @@ struct Hand: Cards {
         }
         return true
     }
+    
+    var isEmpty: Bool {
+        return cards.isEmpty
+    }
 }
