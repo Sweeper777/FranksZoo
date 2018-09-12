@@ -19,4 +19,11 @@ class Game {
     var lastMove: Move?
     var lastMoveMadeBy: Int?
     
+    init() {
+        let cardsForEachHand = AllCards.shared.toArray().shuffled().split(intoChunksOf: 60 / playerCount)
+        playerHands = cardsForEachHand.map {
+            let dict = Dictionary(grouping: $0, by: { $0 }).mapValues { $0.count }
+            return Hand(cards: dict)
+        }
+    }
 }
