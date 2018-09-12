@@ -7,16 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44BB7D743532C63483AE4066 /* libPods-FranksZooTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1D2B497C6F95FFB39BAF7E1 /* libPods-FranksZooTests.a */; };
 		5A43BD63213A8A1D001B918E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD62213A8A1D001B918E /* AppDelegate.swift */; };
 		5A43BD65213A8A1D001B918E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD64213A8A1D001B918E /* ViewController.swift */; };
 		5A43BD68213A8A1D001B918E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A43BD66213A8A1D001B918E /* Main.storyboard */; };
 		5A43BD6A213A8A20001B918E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A43BD69213A8A20001B918E /* Assets.xcassets */; };
 		5A43BD6D213A8A20001B918E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A43BD6B213A8A20001B918E /* LaunchScreen.storyboard */; };
+		5A43BD75213A9331001B918E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD74213A9330001B918E /* Card.swift */; };
+		5A43BD77213AA5AE001B918E /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD76213AA5AD001B918E /* Move.swift */; };
+		5A43BD79213AA5DD001B918E /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD78213AA5DD001B918E /* Hand.swift */; };
+		5A43BD7B213AC01E001B918E /* FluentInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD7A213AC01D001B918E /* FluentInterface.swift */; };
+		5A43BD7D213B05CD001B918E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD7C213B05CD001B918E /* Game.swift */; };
+		5A4D5808213BE12300F9C64E /* FranksZooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D5807213BE12300F9C64E /* FranksZooTests.swift */; };
+		5A827FFC2143EDAA00E0BD41 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A827FFB2143EDAA00E0BD41 /* CardCell.swift */; };
+		5AB45F44213D6E4300A45D3F /* OpponentsHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB45F43213D6E4300A45D3F /* OpponentsHandView.swift */; };
 		F26AE06ACAD170F7D4FA88C9 /* Pods_FranksZoo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6678C596C00963C6B145C5C5 /* Pods_FranksZoo.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5A4D580A213BE12300F9C64E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A43BD57213A8A1D001B918E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A43BD5E213A8A1D001B918E;
+			remoteInfo = FranksZoo;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		4CB7DC224673ED569E271A23 /* Pods-FranksZoo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FranksZoo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FranksZoo/Pods-FranksZoo.debug.xcconfig"; sourceTree = "<group>"; };
+		4D830F3DC04D3ADBEC8E0E17 /* Pods-FranksZooTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FranksZooTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FranksZooTests/Pods-FranksZooTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A43BD5F213A8A1D001B918E /* FranksZoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FranksZoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A43BD62213A8A1D001B918E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A43BD64213A8A1D001B918E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,8 +44,20 @@
 		5A43BD69213A8A20001B918E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A43BD6C213A8A20001B918E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A43BD6E213A8A20001B918E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A43BD74213A9330001B918E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		5A43BD76213AA5AD001B918E /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		5A43BD78213AA5DD001B918E /* Hand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		5A43BD7A213AC01D001B918E /* FluentInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluentInterface.swift; sourceTree = "<group>"; };
+		5A43BD7C213B05CD001B918E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		5A4D5805213BE12300F9C64E /* FranksZooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FranksZooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A4D5807213BE12300F9C64E /* FranksZooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranksZooTests.swift; sourceTree = "<group>"; };
+		5A4D5809213BE12300F9C64E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A827FFB2143EDAA00E0BD41 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		5AB45F43213D6E4300A45D3F /* OpponentsHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentsHandView.swift; sourceTree = "<group>"; };
 		6678C596C00963C6B145C5C5 /* Pods_FranksZoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FranksZoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A196DE59E7D8A3F79EA74FF /* Pods-FranksZoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FranksZoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FranksZoo/Pods-FranksZoo.release.xcconfig"; sourceTree = "<group>"; };
+		904D7C247F9754AD9DA8BEAE /* Pods-FranksZooTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FranksZooTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FranksZooTests/Pods-FranksZooTests.release.xcconfig"; sourceTree = "<group>"; };
+		F1D2B497C6F95FFB39BAF7E1 /* libPods-FranksZooTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FranksZooTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +69,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A4D5802213BE12300F9C64E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				44BB7D743532C63483AE4066 /* libPods-FranksZooTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -45,6 +85,8 @@
 			children = (
 				4CB7DC224673ED569E271A23 /* Pods-FranksZoo.debug.xcconfig */,
 				7A196DE59E7D8A3F79EA74FF /* Pods-FranksZoo.release.xcconfig */,
+				4D830F3DC04D3ADBEC8E0E17 /* Pods-FranksZooTests.debug.xcconfig */,
+				904D7C247F9754AD9DA8BEAE /* Pods-FranksZooTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -53,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				6678C596C00963C6B145C5C5 /* Pods_FranksZoo.framework */,
+				F1D2B497C6F95FFB39BAF7E1 /* libPods-FranksZooTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -61,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				5A43BD61213A8A1D001B918E /* FranksZoo */,
+				5A4D5806213BE12300F9C64E /* FranksZooTests */,
 				5A43BD60213A8A1D001B918E /* Products */,
 				02310F36B88AF463D14955B1 /* Pods */,
 				05A78F618D93BDEFED063470 /* Frameworks */,
@@ -71,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				5A43BD5F213A8A1D001B918E /* FranksZoo.app */,
+				5A4D5805213BE12300F9C64E /* FranksZooTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -80,12 +125,28 @@
 			children = (
 				5A43BD62213A8A1D001B918E /* AppDelegate.swift */,
 				5A43BD64213A8A1D001B918E /* ViewController.swift */,
+				5AB45F43213D6E4300A45D3F /* OpponentsHandView.swift */,
+				5A827FFB2143EDAA00E0BD41 /* CardCell.swift */,
 				5A43BD66213A8A1D001B918E /* Main.storyboard */,
+				5A43BD74213A9330001B918E /* Card.swift */,
+				5A43BD76213AA5AD001B918E /* Move.swift */,
+				5A43BD78213AA5DD001B918E /* Hand.swift */,
+				5A43BD7C213B05CD001B918E /* Game.swift */,
+				5A43BD7A213AC01D001B918E /* FluentInterface.swift */,
 				5A43BD69213A8A20001B918E /* Assets.xcassets */,
 				5A43BD6B213A8A20001B918E /* LaunchScreen.storyboard */,
 				5A43BD6E213A8A20001B918E /* Info.plist */,
 			);
 			path = FranksZoo;
+			sourceTree = "<group>";
+		};
+		5A4D5806213BE12300F9C64E /* FranksZooTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A4D5807213BE12300F9C64E /* FranksZooTests.swift */,
+				5A4D5809213BE12300F9C64E /* Info.plist */,
+			);
+			path = FranksZooTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +171,25 @@
 			productReference = 5A43BD5F213A8A1D001B918E /* FranksZoo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5A4D5804213BE12300F9C64E /* FranksZooTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A4D580E213BE12300F9C64E /* Build configuration list for PBXNativeTarget "FranksZooTests" */;
+			buildPhases = (
+				1B17AAB638F599421CCDCA40 /* [CP] Check Pods Manifest.lock */,
+				5A4D5801213BE12300F9C64E /* Sources */,
+				5A4D5802213BE12300F9C64E /* Frameworks */,
+				5A4D5803213BE12300F9C64E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A4D580B213BE12300F9C64E /* PBXTargetDependency */,
+			);
+			name = FranksZooTests;
+			productName = FranksZooTests;
+			productReference = 5A4D5805213BE12300F9C64E /* FranksZooTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -122,6 +202,10 @@
 				TargetAttributes = {
 					5A43BD5E213A8A1D001B918E = {
 						CreatedOnToolsVersion = 9.3.1;
+					};
+					5A4D5804213BE12300F9C64E = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 5A43BD5E213A8A1D001B918E;
 					};
 				};
 			};
@@ -139,6 +223,7 @@
 			projectRoot = "";
 			targets = (
 				5A43BD5E213A8A1D001B918E /* FranksZoo */,
+				5A4D5804213BE12300F9C64E /* FranksZooTests */,
 			);
 		};
 /* End PBXProject section */
@@ -154,15 +239,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5A4D5803213BE12300F9C64E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1B4930911586CCA275C690AA /* [CP] Embed Pods Frameworks */ = {
+		1B17AAB638F599421CCDCA40 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FranksZooTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1B4930911586CCA275C690AA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-FranksZoo/Pods-FranksZoo-frameworks.sh",
@@ -175,11 +283,9 @@
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftRandom/SwiftRandom.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyUtils/SwiftyUtils.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyUtils-framework/SwiftyUtils.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimationSugar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
@@ -202,15 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-FranksZoo-checkManifestLockResult.txt",
 			);
@@ -226,12 +328,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A43BD77213AA5AE001B918E /* Move.swift in Sources */,
+				5A43BD79213AA5DD001B918E /* Hand.swift in Sources */,
+				5A43BD7D213B05CD001B918E /* Game.swift in Sources */,
 				5A43BD65213A8A1D001B918E /* ViewController.swift in Sources */,
+				5A43BD7B213AC01E001B918E /* FluentInterface.swift in Sources */,
+				5A43BD75213A9331001B918E /* Card.swift in Sources */,
+				5AB45F44213D6E4300A45D3F /* OpponentsHandView.swift in Sources */,
 				5A43BD63213A8A1D001B918E /* AppDelegate.swift in Sources */,
+				5A827FFC2143EDAA00E0BD41 /* CardCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A4D5801213BE12300F9C64E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A4D5808213BE12300F9C64E /* FranksZooTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A4D580B213BE12300F9C64E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A43BD5E213A8A1D001B918E /* FranksZoo */;
+			targetProxy = 5A4D580A213BE12300F9C64E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5A43BD66213A8A1D001B918E /* Main.storyboard */ = {
@@ -407,6 +532,48 @@
 			};
 			name = Release;
 		};
+		5A4D580C213BE12300F9C64E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D830F3DC04D3ADBEC8E0E17 /* Pods-FranksZooTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9MW74DJ4Y;
+				INFOPLIST_FILE = FranksZooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.sweeper777.FranksZooTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FranksZoo.app/FranksZoo";
+			};
+			name = Debug;
+		};
+		5A4D580D213BE12300F9C64E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 904D7C247F9754AD9DA8BEAE /* Pods-FranksZooTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9MW74DJ4Y;
+				INFOPLIST_FILE = FranksZooTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.github.sweeper777.FranksZooTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FranksZoo.app/FranksZoo";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -424,6 +591,15 @@
 			buildConfigurations = (
 				5A43BD72213A8A20001B918E /* Debug */,
 				5A43BD73213A8A20001B918E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A4D580E213BE12300F9C64E /* Build configuration list for PBXNativeTarget "FranksZooTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A4D580C213BE12300F9C64E /* Debug */,
+				5A4D580D213BE12300F9C64E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
