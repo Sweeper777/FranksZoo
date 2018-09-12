@@ -26,4 +26,15 @@ class Game {
             return Hand(cards: dict)
         }
     }
+    
+    private func nextPlayer() {
+        repeat {
+            currentTurn += 1
+        } while currentPlayerHand.isEmpty
+        
+        if currentTurn == lastMoveMadeBy {
+            lastMove = nil
+        }
+    }
+    
 }
