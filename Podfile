@@ -16,3 +16,7 @@ target 'FranksZoo' do
   pod 'EZLoadingActivity'
 
 end
+
+target 'FranksZooTests' do
+  pod 'SwiftyUtils'
+end

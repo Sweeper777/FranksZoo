@@ -141,31 +141,6 @@ strip_invalid_archs() {
   STRIP_BINARY_RETVAL=1
 }
 
-
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AnimationSugar/AnimationSugar.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/EZLoadingActivity/EZLoadingActivity.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftRandom/SwiftRandom.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyUtils-framework/SwiftyUtils.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/AnimationSugar/AnimationSugar.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/EZLoadingActivity/EZLoadingActivity.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftRandom/SwiftRandom.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyUtils-framework/SwiftyUtils.framework"
-fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi
