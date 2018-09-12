@@ -37,4 +37,30 @@ class Game {
         }
     }
     
+    func makeMove(_ move: Move) -> Bool {
+        guard move.isLegal else { return false }
+        
+        if move == .pass {
+            nextPlayer()
+            return true
+        }
+        
+        var isDefeating = true
+        if let lastMove = self.lastMove {
+            isDefeating = move.canDefeat(lastMove)
+        }
+        
+        guard isDefeating else { return false }
+        
+        let success = currentPlayerHand.makeMove(move)
+        if success {
+            lastMove = move
+            lastMoveMadeBy = currentTurn
+            nextPlayer()
+            return true
+        } else {
+            return false
+        }
+    }
+    
 }
