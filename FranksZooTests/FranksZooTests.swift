@@ -90,4 +90,15 @@ class FranksZooTests: XCTestCase {
         XCTAssertTrue(hand.canMakeMove(.pass))
         XCTAssertFalse(hand.canMakeMove(4.elephants))
     }
+    
+    func testHandMakeMove() {
+        var hand = Hand(cards: [.elephant: 3, .whale: 2, .fish: 4])
+        hand.makeMove(2.elephants)
+        XCTAssertEqual(hand.cards, [.elephant: 1, .whale: 2, .fish: 4])
+        hand.makeMove(3.whales)
+        XCTAssertEqual(hand.cards, [.elephant: 1, .whale: 2, .fish: 4])
+        hand.makeMove(2.whales)
+        XCTAssertEqual(hand.cards, [.elephant: 1, .fish: 4])
+    }
+    
 }
