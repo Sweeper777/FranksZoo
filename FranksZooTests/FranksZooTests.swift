@@ -38,4 +38,19 @@ class FranksZooTests: XCTestCase {
         XCTAssertFalse((1.elephant + 1.mosquito).canDefeat(2.whales))
     }
     
+    func testMainCardType() {
+        var testMove = 1.elephant + 1.mosquito
+        XCTAssertEqual(testMove.mainCardType, .elephant)
+        testMove = 1.elephant + 1.joker + 2.mosquitoes
+        XCTAssertEqual(testMove.mainCardType, .elephant)
+        testMove = 3.mosquitoes
+        XCTAssertEqual(testMove.mainCardType, .mosquito)
+        testMove = 2.mosquitoes + 1.elephant
+        XCTAssertEqual(testMove.mainCardType, nil)
+        testMove = 1.whale + 1.elephant
+        XCTAssertEqual(testMove.mainCardType, nil)
+        testMove = 1.joker
+        XCTAssertEqual(testMove.mainCardType, nil)
+    }
+    
 }
