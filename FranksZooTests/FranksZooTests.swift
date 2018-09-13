@@ -27,4 +27,15 @@ class FranksZooTests: XCTestCase {
         XCTAssertFalse(testMove.isLegal)
     }
     
+    func testMoveCanDefeat() {
+        XCTAssertTrue((2.elephants).canDefeat(2.crocodiles))
+        XCTAssertTrue((1.elephant + 1.joker + 2.mosquitoes).canDefeat(4.crocodiles))
+        XCTAssertTrue(2.mice.canDefeat(1.mouse))
+        XCTAssertFalse(3.mice.canDefeat(1.mouse))
+        XCTAssertFalse(2.mice.canDefeat(2.mice))
+        XCTAssertFalse(2.crocodiles.canDefeat(2.elephants))
+        XCTAssertFalse((2.mosquitoes + 1.elephant).canDefeat(3.crocodiles))
+        XCTAssertFalse((1.elephant + 1.mosquito).canDefeat(2.whales))
+    }
+    
 }
