@@ -84,5 +84,10 @@ class FranksZooTests: XCTestCase {
         XCTAssertTrue(hand.canMakeMove(.pass))
         XCTAssertFalse(hand.canMakeMove(4.elephants))
         XCTAssertTrue(hand.canMakeMove(3.elephants + 2.whales))
+        hand = Hand(cards: [:])
+        XCTAssertFalse(hand.canMakeMove(3.elephants))
+        XCTAssertFalse(hand.canMakeMove(2.elephants))
+        XCTAssertTrue(hand.canMakeMove(.pass))
+        XCTAssertFalse(hand.canMakeMove(4.elephants))
     }
 }
