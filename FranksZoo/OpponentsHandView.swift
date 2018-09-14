@@ -48,7 +48,7 @@ class OpponentsHandView : UIView {
         case .left, .right:
             let x = width / 2
             let cardHeight = width / 7 * 5
-            let offset = 10.f
+            let offset = 10.f / 38 * cardHeight
             let cardsHeight = cardHeight + offset * (numberOfCards.f - 1)
             let top = height / 2 - cardsHeight / 2
             let topCardCenter = top + cardHeight / 2
@@ -58,7 +58,7 @@ class OpponentsHandView : UIView {
         case .down:
             let y = height / 2
             let cardWidth = height / 7 * 5
-            let offset = 10.f
+            let offset = 10.f / 38 * cardWidth
             let cardsWidth = cardWidth + offset * (numberOfCards.f - 1)
             let right = width / 2 - cardsWidth / 2
             let rightCardCenter = right + cardWidth / 2
@@ -73,7 +73,7 @@ class OpponentsHandView : UIView {
         case .right:
             rotationAngle = .pi / 2
         case .left:
-            rotationAngle = .pi / 2 * 3
+            rotationAngle = -.pi / 2
             imageCenters.reverse()
         case .down:
             rotationAngle = .pi
