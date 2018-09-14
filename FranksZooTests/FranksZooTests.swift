@@ -110,4 +110,24 @@ class FranksZooTests: XCTestCase {
         
     }
     
+    func testGameNextPlayer() {
+        let game = Game()
+        game.playerHands = [
+            Hand(cards: [.crocodile: 3, .fish: 4]),
+            Hand(cards: [.elephant: 3]),
+            Hand(cards: [.mouse: 3, .fish: 4]),
+            Hand(cards: [.mouse: 4, .fish: 4])
+        ]
+        XCTAssertEqual(game.currentTurn, 0)
+        game.makeMove(.pass)
+        XCTAssertEqual(game.currentTurn, 1)
+        game.makeMove(3.elephants)
+        XCTAssertEqual(game.currentTurn, 2)
+        game.makeMove(.pass)
+        XCTAssertEqual(game.currentTurn, 3)
+        game.makeMove(.pass)
+        XCTAssertEqual(game.currentTurn, 0)
+        game.makeMove(.pass)
+        XCTAssertEqual(game.currentTurn, 2)
+    }
 }
