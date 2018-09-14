@@ -139,5 +139,19 @@ class FranksZooTests: XCTestCase {
             Hand(cards: [.mouse: 3, .fish: 4]),
             Hand(cards: [.mouse: 4, .fish: 4])
         ]
+        game.makeMove(3.crocodiles)
+        XCTAssertEqual(game.lastMove, 3.crocodiles)
+        XCTAssertEqual(game.lastMoveMadeBy, 0)
+        XCTAssertFalse(game.makeMove(4.fish))
+        XCTAssertEqual(game.lastMove, 3.crocodiles)
+        XCTAssertEqual(game.lastMoveMadeBy, 0)
+        game.makeMove(3.elephants)
+        XCTAssertEqual(game.lastMove, 3.elephants)
+        XCTAssertEqual(game.lastMoveMadeBy, 1)
+        game.makeMove(.pass)
+        game.makeMove(.pass)
+        game.makeMove(.pass)
+        XCTAssertNil(game.lastMove)
+        XCTAssertTrue(game.makeMove(4.fish))
     }
 }
