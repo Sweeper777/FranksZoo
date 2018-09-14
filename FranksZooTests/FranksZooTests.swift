@@ -101,4 +101,13 @@ class FranksZooTests: XCTestCase {
         XCTAssertEqual(hand.cards, [.elephant: 1, .fish: 4])
     }
     
+    func testGameInit() {
+        let game = Game()
+        XCTAssertEqual(game.playerHands[0].toArray().count, 15)
+        XCTAssertEqual(game.playerHands[1].toArray().count, 15)
+        XCTAssertEqual(game.playerHands[2].toArray().count, 15)
+        XCTAssertEqual(game.playerHands[3].toArray().count, 15)
+        
+    }
+    
 }
