@@ -13,6 +13,9 @@ struct Hand: Cards {
         for (key, value) in move.cards {
             if cards[key] != nil {
                 cards[key]! -= value
+                if cards[key]! == 0 {
+                    cards[key] = nil
+                }
             }
         }
         return true
