@@ -37,6 +37,22 @@ fileprivate let predatorDict: [Card: Set<Card>] = [
     .mosquito: [.hedgehog, .fish, .mouse],
 ]
 
+let imageDict: [Card: String] = [
+    .whale: "whale",
+    .elephant: "elephant",
+    .crocodile: "crocodile",
+    .bear: "bear",
+    .lion: "lion",
+    .seal: "seal",
+    .fox: "fox",
+    .perch: "perch",
+    .hedgehog: "hedgehog",
+    .fish: "fish",
+    .mouse: "mouse",
+    .mosquito: "mosquito",
+    .joker: "joker"
+]
+
 protocol Cards {
     var cards: [Card: Int] { get }
     
