@@ -59,13 +59,13 @@ class ViewController: UIViewController {
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        DispatchQueue.main.async {
-            [unowned self] in
+        coordinator.animateAlongsideTransition(in: nil, animation: nil, completion:  {
+            [unowned self] _ in
             self.opponentHand1.setNeedsDisplay()
             self.opponentHand2.setNeedsDisplay()
             self.opponentHand3.setNeedsDisplay()
             self.handCollectionView.reloadData()
-        }
+        })
     }
     
     func startInitialAnimation() {
