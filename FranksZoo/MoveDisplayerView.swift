@@ -13,4 +13,16 @@ class MoveDisplayerView: UIView {
         }
     }
     
+    override func draw(_ rect: CGRect) {
+        self.subviews.forEach { $0.removeFromSuperview() }
+        
+        guard let move = displayedMove else {
+            return
+        }
+        
+        let cards = move.toArray()
+        
+        guard cards.count > 0 else { return }
+        
+    }
 }
