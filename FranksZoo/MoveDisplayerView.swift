@@ -7,4 +7,10 @@ class MoveDisplayerView: UIView {
         }
     }
     
+    var cardSize: CGSize = .zero {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
 }
