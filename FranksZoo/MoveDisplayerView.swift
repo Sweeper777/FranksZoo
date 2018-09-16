@@ -41,4 +41,13 @@ class MoveDisplayerView: UIView {
             image?.draw(in: CGRect(origin: CGPoint(x: x, y: y), size: cardSize))
         }
     }
+    
+    func animateMove(_ move: Move, completion: @escaping () -> Void) {
+        let cards = move.toArray()
+        
+        guard cards.count > 0 else { return }
+        
+        var imageViews = [UIImageView]()
+        
+    }
 }
