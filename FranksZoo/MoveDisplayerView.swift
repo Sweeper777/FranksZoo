@@ -35,6 +35,10 @@ class MoveDisplayerView: UIView {
                 image?.draw(in: CGRect(origin: CGPoint(x: x, y: y), size: cardSize))
             }
         } else {
+            let image = UIImage(named: imageDict[cards[0]]!)
+            let x = center.x - cardSize.width / 2
+            let y = center.y - cardSize.height / 2
+            image?.draw(in: CGRect(origin: CGPoint(x: x, y: y), size: cardSize))
         }
     }
 }
