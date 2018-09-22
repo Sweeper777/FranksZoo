@@ -16,7 +16,9 @@ class ViewController: UIViewController {
     
     let game = Game()
     
-    var cards = [Card]()
+    var cards: [Card] {
+        return game.currentPlayerHand.toArray()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +32,6 @@ class ViewController: UIViewController {
         opponentHand3.numberOfCards = 0
         bottomStackView.isHidden = true
         
-        cards = game.currentPlayerHand.toArray()
     }
     
     override func viewDidAppear(_ animated: Bool) {
