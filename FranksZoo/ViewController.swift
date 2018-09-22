@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  FranksZoo
-//
-//  Created by Mulang Su on 2018/09/01.
-//  Copyright © 2018年 Mulang Su. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
