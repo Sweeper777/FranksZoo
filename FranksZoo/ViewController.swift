@@ -80,6 +80,19 @@ class ViewController: UIViewController {
             }
         }.start()
     }
+    
+    @IBAction func dealPress() {
+        let selectedCards = (handCollectionView.indexPathsForSelectedItems ?? []).map { cards[$0.item] }
+        if selectedCards.count > 0 {
+            let moveDict = Dictionary(grouping: selectedCards, by: { $0 }).mapValues { $0.count }
+            let move = Move(cards: moveDict)
+            if (game.makeMove(move)) {
+                moveDisplayer.animateMove(move, completion: {
+                    self.handCollectionView.reloadData()
+                })
+            }
+        }
+    }
 }
 
 extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
