@@ -1,4 +1,5 @@
 import UIKit
+import SwiftyButton
 
 class ViewController: UIViewController {
 
@@ -7,6 +8,9 @@ class ViewController: UIViewController {
     @IBOutlet var opponentHand3: OpponentsHandView!
     @IBOutlet var handCollectionView: UICollectionView!
     @IBOutlet var bottomStackView: UIStackView!
+    @IBOutlet var dealButton: PressableButton!
+    @IBOutlet var passButton: PressableButton!
+    @IBOutlet var moveDisplayer: MoveDisplayerView!
     
     var initialAnimationPlayed = false
     
