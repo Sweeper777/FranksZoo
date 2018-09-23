@@ -55,7 +55,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="cell" id="E9n-vV-Ojq" customClass="CardCell" customModule="FranksZoo" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="E9n-vV-Ojq" customClass="CardCell" customModule="FranksZoo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="-24" width="68" height="99"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -133,9 +133,8 @@
                                     <constraint firstItem="RCQ-vN-ZZl" firstAttribute="centerX" secondItem="VhG-R6-sqo" secondAttribute="centerX" id="HtM-4W-jo1"/>
                                     <constraint firstItem="386-R7-5sQ" firstAttribute="height" secondItem="Oiq-YJ-dD8" secondAttribute="width" id="I0a-O4-HJD"/>
                                     <constraint firstItem="RCQ-vN-ZZl" firstAttribute="top" secondItem="386-R7-5sQ" secondAttribute="bottom" constant="8" id="Nzo-d1-MVV"/>
-                                    <constraint firstItem="RCQ-vN-ZZl" firstAttribute="centerY" secondItem="VhG-R6-sqo" secondAttribute="centerY" id="Os0-yO-axg"/>
                                     <constraint firstItem="wyK-vN-I13" firstAttribute="height" relation="lessThanOrEqual" secondItem="386-R7-5sQ" secondAttribute="height" multiplier="1.5" id="PAm-P5-301"/>
-                                    <constraint firstItem="wyK-vN-I13" firstAttribute="top" secondItem="VhG-R6-sqo" secondAttribute="bottom" multiplier="0.7" priority="750" id="Q3J-d7-Pgh"/>
+                                    <constraint firstItem="wyK-vN-I13" firstAttribute="top" secondItem="VhG-R6-sqo" secondAttribute="bottom" multiplier="0.5" priority="750" id="Q3J-d7-Pgh"/>
                                     <constraint firstItem="Oiq-YJ-dD8" firstAttribute="leading" secondItem="RCQ-vN-ZZl" secondAttribute="trailing" constant="10" id="QC5-Fy-UDm"/>
                                     <constraint firstAttribute="trailing" secondItem="wyK-vN-I13" secondAttribute="trailing" constant="10" id="Qnb-3r-Pgz"/>
                                     <constraint firstItem="BRT-eB-JTQ" firstAttribute="top" secondItem="VhG-R6-sqo" secondAttribute="top" constant="10" id="SFJ-bv-cgS"/>
