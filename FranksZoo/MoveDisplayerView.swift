@@ -49,5 +49,18 @@ class MoveDisplayerView: UIView {
         
         var imageViews = [UIImageView]()
         
+        if cards.count > 1 {
+            let totalWidth = cardSize.width * cards.count.f
+            let whitespace = self.width - totalWidth - 20
+            let separator = whitespace / (cards.count.f + 1)
+            for i in 0..<cards.count {
+                let image = UIImage(named: imageDict[cards[i]]!)
+                let x = 10 + (cardSize.width + separator) * i.f
+                let y = bounds.height + 20
+                let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: x, y: y), size: cardSize))
+                imageView.image = image
+                imageViews.append(imageView)
+                self.addSubview(imageView)
+            }
     }
 }
