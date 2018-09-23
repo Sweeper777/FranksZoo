@@ -71,5 +71,15 @@ class MoveDisplayerView: UIView {
             imageViews.append(imageView)
             self.addSubview(imageView)
         }
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            for imageView in imageViews {
+                imageView.y = (self.height - self.cardSize.height) / 2
+            }
+        }, completion: {
+            _ in
+            self.displayedMove = move
+            completion()
+        })
     }
 }
