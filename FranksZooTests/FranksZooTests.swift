@@ -132,7 +132,7 @@ class FranksZooTests: XCTestCase {
     }
     
     func testGameMakeMove() {
-        let game = Game()
+        var game = Game()
         game.playerHands = [
             Hand(cards: [.crocodile: 3, .fish: 4]),
             Hand(cards: [.elephant: 3, .fish: 4]),
@@ -153,5 +153,15 @@ class FranksZooTests: XCTestCase {
         game.makeMove(.pass)
         XCTAssertNil(game.lastMove)
         XCTAssertTrue(game.makeMove(4.fish))
+        
+        game = Game()
+        game.playerHands = [
+            Hand(cards: [.crocodile: 3, .fish: 4, .fox: 2]),
+            Hand(cards: [.elephant: 3, .fish: 4, .lion: 2]),
+            Hand(cards: [.mouse: 3, .fish: 4]),
+            Hand(cards: [.mouse: 4, .fish: 4])
+        ]
+        XCTAssertTrue(game.makeMove(2.foxes))
+        XCTAssertTrue(game.makeMove(2.lions))
     }
 }
