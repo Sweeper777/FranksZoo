@@ -29,7 +29,7 @@ fileprivate let predatorDict: [Card: Set<Card>] = [
     .bear: [.whale, .elephant],
     .lion: [.elephant],
     .seal: [.bear, .whale],
-    .fox: [.elephant, .crocodile, .bear, .elephant],
+    .fox: [.elephant, .crocodile, .bear, .lion],
     .perch: [.whale, .crocodile, .bear, .seal],
     .hedgehog: [.fox],
     .fish: [.whale, .crocodile, .seal, .perch],
