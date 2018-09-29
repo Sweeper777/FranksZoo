@@ -30,11 +30,11 @@ class Game {
     private func nextPlayer() {
         repeat {
             currentTurn += 1
+            
+            if currentTurn == lastMoveMadeBy {
+                lastMove = nil
+            }
         } while currentPlayerHand.isEmpty
-        
-        if currentTurn == lastMoveMadeBy {
-            lastMove = nil
-        }
     }
     
     @discardableResult
