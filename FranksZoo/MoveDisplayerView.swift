@@ -13,6 +13,18 @@ class MoveDisplayerView: UIView {
         }
     }
     
+    func calculateCardXs(cards: [Card]) -> [CGFloat] {
+        
+        var separator = cardSize.width / 4
+        if cards.count.f * (separator + cardSize.width) > self.width {
+            separator = (self.width - cards.count.f * cardSize.width) / (cards.count.f + 1)
+        }
+        let leftmostCardX = (self.width - (cards.count.f * cardSize.width + separator * (cards.count.f - 1))) / 2
+        return (0..<cards.count).map {
+            leftmostCardX + $0.f * (cardSize.width + separator)
+        }
+    }
+    
     override func draw(_ rect: CGRect) {
         self.subviews.forEach { $0.removeFromSuperview() }
         
@@ -24,21 +36,12 @@ class MoveDisplayerView: UIView {
         
         guard cards.count > 0 else { return }
         
-        if cards.count > 1 {
-            let totalWidth = cardSize.width * cards.count.f
-            let whitespace = self.width - totalWidth - 20
-            let separator = whitespace / (cards.count.f + 1)
-            for i in 0..<cards.count {
-                let image = UIImage(named: imageDict[cards[i]]!)
-                let x = 10 + (cardSize.width + separator) * i.f
-                let y = center.y - cardSize.height / 2
-                image?.draw(in: CGRect(origin: CGPoint(x: x, y: y), size: cardSize))
-            }
-        } else {
-            let image = UIImage(named: imageDict[cards[0]]!)
-            let x = center.x - cardSize.width / 2
-            let y = center.y - cardSize.height / 2
-            image?.draw(in: CGRect(origin: CGPoint(x: x, y: y), size: cardSize))
+        let cardY = (self.height - cardSize.height) / 2
+        
+        for (x, card) in zip(calculateCardXs(cards: cards), cards) {
+            let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: x, y: cardY), size: cardSize))
+            imageView.image = UIImage(named: imageDict[card]!)
+            self.addSubview(imageView)
         }
     }
     
@@ -49,22 +52,8 @@ class MoveDisplayerView: UIView {
         
         var imageViews = [UIImageView]()
         
-        if cards.count > 1 {
-            let totalWidth = cardSize.width * cards.count.f
-            let whitespace = self.width - totalWidth - 20
-            let separator = whitespace / (cards.count.f + 1)
-            for i in 0..<cards.count {
-                let image = UIImage(named: imageDict[cards[i]]!)
-                let x = 10 + (cardSize.width + separator) * i.f
-                let y = bounds.height + 20
-                let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: x, y: y), size: cardSize))
-                imageView.image = image
-                imageViews.append(imageView)
-                self.addSubview(imageView)
-            }
-        } else {
-            let image = UIImage(named: imageDict[cards[0]]!)
-            let x = center.x - cardSize.width / 2
+        for (x, card) in zip(calculateCardXs(cards: cards), cards) {
+            let image = UIImage(named: imageDict[card]!)
             let y = bounds.height + 20
             let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: x, y: y), size: cardSize))
             imageView.image = image
