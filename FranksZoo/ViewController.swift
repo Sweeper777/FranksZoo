@@ -33,6 +33,7 @@ class ViewController: UIViewController {
         bottomStackView.isHidden = true
         
         moveDisplayer.backgroundColor = .clear
+        self.moveDisplayer.cardSize = CGSize(width: self.opponentHand2.height * 5 / 7, height: self.opponentHand2.height)
     }
     
     override func viewDidAppear(_ animated: Bool) {
