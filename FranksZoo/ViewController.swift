@@ -106,6 +106,9 @@ class ViewController: UIViewController {
 //        opponentHand2.numberOfCards = game.playerHands[playerIndex].toArray().count
 //        playerIndex = nextPlayer(after: playerIndex)
 //        opponentHand3.numberOfCards = game.playerHands[playerIndex].toArray().count
+    func updateMoveDisplayer() {
+        moveDisplayer.displayedMove = game.lastMove
+    }
     }
 }
 
