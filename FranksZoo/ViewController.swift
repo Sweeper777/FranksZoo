@@ -34,6 +34,11 @@ class ViewController: UIViewController {
         
         moveDisplayer.backgroundColor = .clear
     }
+    func updateButtonFontSizes() {
+        let fontSize = fontSizeThatFits(size: dealButton.frame.size , text: "DEAL", font: UIFont.systemFont(ofSize: 1)) * 0.7
+        dealButton.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        passButton.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
