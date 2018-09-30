@@ -108,7 +108,11 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateF
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CardCell
-        cell.transform = CGAffineTransform(translationX: 0, y: cell.bounds.height * 0.1)
+        if collectionView.indexPathsForSelectedItems?.contains(indexPath) ?? false {
+            cell.isSelected = true
+        } else {
+            cell.isSelected = false
+        }
         cell.imageView.image = UIImage(named: imageDict[cards[indexPath.item]]!)
         return cell
     }
