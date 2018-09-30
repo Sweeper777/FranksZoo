@@ -95,6 +95,14 @@ class ViewController: UIViewController {
             }
         }
     }
+    func updateOpponentsHandView() {
+//        var playerIndex = nextPlayer(after: game.currentTurn)
+//        opponentHand1.numberOfCards = game.playerHands[playerIndex].toArray().count
+//        playerIndex = nextPlayer(after: playerIndex)
+//        opponentHand2.numberOfCards = game.playerHands[playerIndex].toArray().count
+//        playerIndex = nextPlayer(after: playerIndex)
+//        opponentHand3.numberOfCards = game.playerHands[playerIndex].toArray().count
+    }
 }
 
 extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
