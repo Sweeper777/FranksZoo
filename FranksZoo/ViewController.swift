@@ -96,6 +96,10 @@ class ViewController: UIViewController {
         }
     }
     func updateOpponentsHandView() {
+//        func nextPlayer(after index: Int) -> Int {
+//            return index + 1 < game.playerCount ? index + 1 : 0
+//        }
+//
 //        var playerIndex = nextPlayer(after: game.currentTurn)
 //        opponentHand1.numberOfCards = game.playerHands[playerIndex].toArray().count
 //        playerIndex = nextPlayer(after: playerIndex)
