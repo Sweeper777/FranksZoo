@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,15 +28,18 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="79.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ON7-pf-4zF" customClass="PressableButton" customModule="SwiftyButton">
-                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="35"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="34.5"/>
                                                         <state key="normal" title="DEAL"/>
                                                         <connections>
                                                             <action selector="dealPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="h8N-wR-yWo"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n81-iz-sbx" customClass="PressableButton" customModule="SwiftyButton">
-                                                        <rect key="frame" x="0.0" y="45" width="110" height="34.5"/>
+                                                        <rect key="frame" x="0.0" y="44.5" width="110" height="35"/>
                                                         <state key="normal" title="PASS"/>
+                                                        <connections>
+                                                            <action selector="passPress" destination="BYZ-38-t0r" eventType="touchUpInside" id="iox-OU-tVo"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <constraints>
