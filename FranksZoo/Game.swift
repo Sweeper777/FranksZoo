@@ -19,6 +19,8 @@ class Game {
     var lastMove: Move?
     var lastMoveMadeBy: Int?
     
+    var totalPlayedCardCount = 0
+    
     init() {
         let cardsForEachHand = AllCards.shared.toArray().shuffled().split(intoChunksOf: 60 / playerCount)
         playerHands = cardsForEachHand.map {
