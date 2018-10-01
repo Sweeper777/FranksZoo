@@ -6,6 +6,7 @@ struct Move : Cards, Equatable {
     
     init(cards: [Card: Int]) {
         self.cards = cards.filter { $0.value > 0 }
+        cardCount = self.cards.values.reduce(0, +)
     }
     
     init() {
