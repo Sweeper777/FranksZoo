@@ -48,6 +48,8 @@ class ViewController: UIViewController {
         }
         
         self.moveDisplayer.cardSize = CGSize(width: self.opponentHand2.height * 5 / 7 * 1.5, height: self.opponentHand2.height * 1.5)
+        
+        updateButtonFontSizes()
     }
 
     override func didReceiveMemoryWarning() {
@@ -73,6 +75,7 @@ class ViewController: UIViewController {
             self.moveDisplayer.setNeedsDisplay()
             
             self.moveDisplayer.cardSize = CGSize(width: self.opponentHand2.height * 5 / 7, height: self.opponentHand2.height)
+            self.updateButtonFontSizes()
         })
     }
     
@@ -95,7 +98,10 @@ class ViewController: UIViewController {
             let move = Move(cards: moveDict)
             if (game.makeMove(move)) {
                 moveDisplayer.animateMove(move, completion: {
-                    self.handCollectionView.reloadData()
+                    [weak self] in
+                    self?.handCollectionView.reloadData()
+                    self?.updateOpponentsHandView()
+                    self?.updateMoveDisplayer()
                 })
             }
         }
