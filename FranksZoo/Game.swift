@@ -60,6 +60,7 @@ class Game {
             lastMove = move
             lastMoveMadeBy = currentTurn
             nextPlayer()
+            totalPlayedCardCount += move.cardCount
             return true
         } else {
             return false
