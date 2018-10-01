@@ -106,6 +106,15 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func passPress() {
+        game.makeMove(.pass)
+        self.handCollectionView.reloadData()
+        self.updateOpponentsHandView()
+        self.updateMoveDisplayer()
+        aiMakeMove()
+    }
+    
     func updateOpponentsHandView() {
 //        func nextPlayer(after index: Int) -> Int {
 //            return index + 1 < game.playerCount ? index + 1 : 0
