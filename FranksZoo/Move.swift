@@ -65,9 +65,9 @@ struct Move : Cards, Equatable {
         guard let mainCardType = mainCardType else { return [] }
         let cardCount = cards.values.reduce(0, +)
         var moves: [Move] = []
-        moves.append(contentsOf: allVariants(cardType: mainCardType, count: cardCount + 1))
+        moves.append(contentsOf: Move.allVariants(cardType: mainCardType, count: cardCount + 1))
         for predatorType in mainCardType.predators {
-            moves.append(contentsOf: allVariants(cardType: predatorType, count: cardCount))
+            moves.append(contentsOf: Move.allVariants(cardType: predatorType, count: cardCount))
         }
         return moves
     }
