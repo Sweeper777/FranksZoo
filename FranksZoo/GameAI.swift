@@ -17,4 +17,8 @@ class GameAI {
         .mosquito: 76,
         .fish: 84
     ]
+    
+    var myHand: Hand {
+        return game.playerHands[playerIndex]
+    }
 }
