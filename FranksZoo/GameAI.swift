@@ -21,4 +21,10 @@ class GameAI {
     var myHand: Hand {
         return game.playerHands[playerIndex]
     }
+    
+    init(game: Game, playerIndex: Int) {
+        self.game = game
+        self.playerIndex = playerIndex
+    }
+    
 }
