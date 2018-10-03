@@ -81,4 +81,28 @@ class GameAI {
         return false
         
     }
+    
+    private func isStartOfWinningSequenceImpl(_ hand: Hand, allAvailableCards: Hand, depth: Int) -> Bool {
+        if depth == 0 {
+            return false
+        }
+        
+        let possibleOpeningMoves = allPossibleOpeningMoves(for: hand)
+        for move in possibleOpeningMoves {
+            if isWinningMove(move) {
+                return true
+            }
+            
+            if !isUndefeatableMove(move, allAvailableCards: allAvailableCards) {
+                continue
+            }
+            
+            var handCopy = hand
+            handCopy.makeMove(move)
+            if isStartOfWinningSequenceImpl(handCopy, allAvailableCards: allAvailableCards, depth: depth - 1) {
+                return true
+            }
+        }
+        return false
+    }
 }
