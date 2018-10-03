@@ -27,4 +27,13 @@ class GameAI {
         self.playerIndex = playerIndex
     }
     
+    func allPossibleOpeningMoves(for hand: Hand) -> [Move] {
+        var retVal = [Move]()
+        for kvp in hand.cards {
+            for i in 1...kvp.value {
+                retVal.append(contentsOf: Move.allVariants(cardType: kvp.key, count: i))
+            }
+        }
+        return retVal.filter { $0.isLegal }
+    }
 }
