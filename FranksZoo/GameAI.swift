@@ -71,6 +71,12 @@ class GameAI {
         }
         return Hand(cards: opponentHandSum)
     }
+    
+    func isUndefeatableMove(_ move: Move, allAvailableCards: Hand) -> Bool {
+        let defeatableMoves = move.defeatableMoves
+        return defeatableMoves.testAll(test: allAvailableCards.canMakeMove(_:))
+    }
+    
     func isStartOfWinningSequence(_ move: Move) -> Bool {
         let allAvailableCards = opponentHandSum()
         if isUndefeatableMove(move, allAvailableCards: allAvailableCards) {
