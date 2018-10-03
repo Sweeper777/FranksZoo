@@ -56,4 +56,11 @@ class GameAI {
         hand.makeMove(move)
         return hand.isEmpty
     }
+    
+    func isLosingMove(_ move: Move) -> Bool {
+        var hand = myHand
+        hand.makeMove(move)
+        return hand.cards == [.joker: 1]
+    }
+    
 }
