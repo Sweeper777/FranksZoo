@@ -50,4 +50,10 @@ class GameAI {
                 })
         }
     }
+    
+    func isWinningMove(_ move: Move) -> Bool {
+        var hand = myHand
+        hand.makeMove(move)
+        return hand.isEmpty
+    }
 }
