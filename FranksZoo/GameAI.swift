@@ -63,4 +63,12 @@ class GameAI {
         return hand.cards == [.joker: 1]
     }
     
+    func opponentHandSum() -> Hand {
+        let opponents = (0..<game.playerHands.count).filter { $0 != playerIndex }
+                        .map { game.playerHands[$0] }
+        let opponentHandSum = opponents.reduce(into: [:]) { (dict, hand) in
+            dict.merge(hand.cards, uniquingKeysWith: +)
+        }
+        return Hand(cards: opponentHandSum)
+    }
 }
