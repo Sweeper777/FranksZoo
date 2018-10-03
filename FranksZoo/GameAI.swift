@@ -71,4 +71,14 @@ class GameAI {
         }
         return Hand(cards: opponentHandSum)
     }
+    func isStartOfWinningSequence(_ move: Move) -> Bool {
+        let allAvailableCards = opponentHandSum()
+        if isUndefeatableMove(move, allAvailableCards: allAvailableCards) {
+            var handCopy = myHand
+            handCopy.makeMove(move)
+            return isStartOfWinningSequenceImpl(handCopy, allAvailableCards: allAvailableCards, depth: 3)
+        }
+        return false
+        
+    }
 }
