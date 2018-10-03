@@ -36,4 +36,18 @@ class GameAI {
         }
         return retVal.filter { $0.isLegal }
     }
+    
+    func allPossibleMoves(for hand: Hand) -> [Move] {
+        if let lastMove = game.lastMove {
+            return lastMove.defeatableMoves.filter(hand.canMakeMove(_:))
+                .sorted(by: { (x, y) -> Bool in
+                    return x.cardCount > y.cardCount
+                })
+        } else {
+            return allPossibleOpeningMoves(for: hand)
+                .sorted(by: { (x, y) -> Bool in
+                    return x.cardCount > y.cardCount
+                })
+        }
+    }
 }
