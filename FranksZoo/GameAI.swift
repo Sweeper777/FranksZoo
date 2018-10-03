@@ -111,4 +111,10 @@ class GameAI {
         }
         return false
     }
+    
+    func weight(ofMove move: Move) -> Double {
+        let divider = move.numberOf(move.mainCardType!) == myHand.numberOf(move.mainCardType!) ? 1.0 : 4.0
+        return Double(weightDict[move.mainCardType!]!) / divider
+    }
+    
 }
