@@ -19,6 +19,8 @@
 		5A43BD7B213AC01E001B918E /* FluentInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD7A213AC01D001B918E /* FluentInterface.swift */; };
 		5A43BD7D213B05CD001B918E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD7C213B05CD001B918E /* Game.swift */; };
 		5A449354214E39610039F37E /* MoveDisplayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A449353214E39610039F37E /* MoveDisplayerView.swift */; };
+		5A45882A215F7F81005451F5 /* FontSizeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A458829215F7F81005451F5 /* FontSizeHelper.swift */; };
+		5A45882C215F85AD005451F5 /* GameAI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A45882B215F85AD005451F5 /* GameAI.swift */; };
 		5A4D5808213BE12300F9C64E /* FranksZooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4D5807213BE12300F9C64E /* FranksZooTests.swift */; };
 		5A827FFC2143EDAA00E0BD41 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A827FFB2143EDAA00E0BD41 /* CardCell.swift */; };
 		5AB45F44213D6E4300A45D3F /* OpponentsHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB45F43213D6E4300A45D3F /* OpponentsHandView.swift */; };
@@ -51,6 +53,8 @@
 		5A43BD7A213AC01D001B918E /* FluentInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluentInterface.swift; sourceTree = "<group>"; };
 		5A43BD7C213B05CD001B918E /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		5A449353214E39610039F37E /* MoveDisplayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDisplayerView.swift; sourceTree = "<group>"; };
+		5A458829215F7F81005451F5 /* FontSizeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontSizeHelper.swift; sourceTree = "<group>"; };
+		5A45882B215F85AD005451F5 /* GameAI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAI.swift; sourceTree = "<group>"; };
 		5A4D5805213BE12300F9C64E /* FranksZooTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FranksZooTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4D5807213BE12300F9C64E /* FranksZooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranksZooTests.swift; sourceTree = "<group>"; };
 		5A4D5809213BE12300F9C64E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,7 +139,9 @@
 				5A43BD76213AA5AD001B918E /* Move.swift */,
 				5A43BD78213AA5DD001B918E /* Hand.swift */,
 				5A43BD7C213B05CD001B918E /* Game.swift */,
+				5A45882B215F85AD005451F5 /* GameAI.swift */,
 				5A43BD7A213AC01D001B918E /* FluentInterface.swift */,
+				5A458829215F7F81005451F5 /* FontSizeHelper.swift */,
 				5A43BD69213A8A20001B918E /* Assets.xcassets */,
 				5A43BD6B213A8A20001B918E /* LaunchScreen.storyboard */,
 				5A43BD6E213A8A20001B918E /* Info.plist */,
@@ -334,11 +340,13 @@
 				5A43BD77213AA5AE001B918E /* Move.swift in Sources */,
 				5A43BD79213AA5DD001B918E /* Hand.swift in Sources */,
 				5A43BD7D213B05CD001B918E /* Game.swift in Sources */,
+				5A45882C215F85AD005451F5 /* GameAI.swift in Sources */,
 				5A43BD65213A8A1D001B918E /* ViewController.swift in Sources */,
 				5A43BD7B213AC01E001B918E /* FluentInterface.swift in Sources */,
 				5A43BD75213A9331001B918E /* Card.swift in Sources */,
 				5AB45F44213D6E4300A45D3F /* OpponentsHandView.swift in Sources */,
 				5A43BD63213A8A1D001B918E /* AppDelegate.swift in Sources */,
+				5A45882A215F7F81005451F5 /* FontSizeHelper.swift in Sources */,
 				5A827FFC2143EDAA00E0BD41 /* CardCell.swift in Sources */,
 				5A449354214E39610039F37E /* MoveDisplayerView.swift in Sources */,
 			);
