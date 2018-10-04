@@ -78,7 +78,8 @@ class ViewController: UIViewController {
             self.handCollectionView.reloadData()
             self.moveDisplayer.setNeedsDisplay()
             
-            self.moveDisplayer.cardSize = CGSize(width: self.opponentHand2.height * 5 / 7, height: self.opponentHand2.height)
+            self.moveDisplayer.cardSize = CGSize(width: self.opponentHand2.height * 5 / 7 * 1.5, height: self.opponentHand2.height * 1.5)
+            
             self.updateButtonFontSizes()
         })
     }
