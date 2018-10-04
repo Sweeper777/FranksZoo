@@ -125,4 +125,15 @@ class GameAI {
         
         return capped.first?.0 ?? .pass
     }
+    
+    func getNextMove() -> Move {
+        var possibleMoves = allPossibleMoves(for: myHand)
+        if possibleMoves.count == 1 {
+            return possibleMoves.first!
+        }
+        
+        if let winningMove = possibleMoves.first(where: isWinningMove) {
+            return winningMove
+        }
+        possibleMoves.removeAll(where: isLosingMove)
 }
