@@ -117,4 +117,10 @@ class GameAI {
         return Double(weightDict[move.mainCardType!]!) / divider
     }
     
+    func findMoveByWeights(moves: [Move]) -> Move {
+        
+        let capped = moves.map { ($0, weight(ofMove: $0)) }.filter { $0.1 <= upperBound && $0.1 > lowerBound }.sorted { $0.1 > $1.1 }
+        
+        return capped.first?.0 ?? .pass
+    }
 }
