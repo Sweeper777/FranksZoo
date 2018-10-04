@@ -136,4 +136,12 @@ class GameAI {
             return winningMove
         }
         possibleMoves.removeAll(where: isLosingMove)
+        
+        if let startOfWinningSequence = possibleMoves.first(where: isStartOfWinningSequence) {
+            
+            return startOfWinningSequence
+        }
+        
+        return findMoveByWeights(moves: possibleMoves)
+    }
 }
