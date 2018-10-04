@@ -16,6 +16,10 @@ class ViewController: UIViewController {
     
     let game = Game()
     
+    var ai1: GameAI!
+    var ai2: GameAI!
+    var ai3: GameAI!
+    
     var cards: [Card] {
         return game.currentPlayerHand.toArray()
     }
