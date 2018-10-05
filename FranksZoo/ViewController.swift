@@ -149,6 +149,13 @@ class ViewController: UIViewController {
         default:
             fatalError()
         }
+        game.makeMove(move)
+        moveDisplayer.animateMove(move, completion: {
+            [weak self] in
+            DispatchQueue.main.async(execute: self!.aiMakeMove)
+            self?.updateMoveDisplayer()
+            self?.updateOpponentsHandView()
+        })
     }
 }
 
