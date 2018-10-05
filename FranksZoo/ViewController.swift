@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     var ai3: GameAI!
     
     var cards: [Card] {
-        return game.currentPlayerHand.toArray()
+        return game.playerHands[0].toArray()
     }
     
     override func viewDidLoad() {
