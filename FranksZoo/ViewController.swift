@@ -37,7 +37,12 @@ class ViewController: UIViewController {
         bottomStackView.isHidden = true
         
         moveDisplayer.backgroundColor = .clear
+        
+        ai1 = GameAI(game: game, playerIndex: 1)
+        ai2 = GameAI(game: game, playerIndex: 2)
+        ai3 = GameAI(game: game, playerIndex: 3)
     }
+    
     func updateButtonFontSizes() {
         let fontSize = fontSizeThatFits(size: dealButton.frame.size , text: "DEAL", font: UIFont.systemFont(ofSize: 1)) * 0.7
         dealButton.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
@@ -107,6 +112,7 @@ class ViewController: UIViewController {
                     self?.handCollectionView.reloadData()
                     self?.updateOpponentsHandView()
                     self?.updateMoveDisplayer()
+                    DispatchQueue.main.async(execute: self!.aiMakeMove)
                 })
             }
         }
