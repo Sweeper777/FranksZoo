@@ -134,6 +134,21 @@ class ViewController: UIViewController {
     func updateMoveDisplayer() {
         moveDisplayer.displayedMove = game.lastMove
     }
+    
+    func aiMakeMove() {
+        let move: Move
+        switch game.currentTurn {
+        case 0:
+            return
+        case 1:
+            move = ai1.getNextMove()
+        case 2:
+            move = ai2.getNextMove()
+        case 3:
+            move = ai3.getNextMove()
+        default:
+            fatalError()
+        }
     }
 }
 
