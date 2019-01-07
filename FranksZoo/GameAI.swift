@@ -31,7 +31,7 @@ class GameAI {
         var retVal = [Move]()
         for kvp in hand.cards {
             for i in 1...kvp.value {
-                retVal.append(contentsOf: Move.allVariants(cardType: kvp.key, count: i))
+                retVal.append(contentsOf: Move.allVariants(cardType: kvp.key, count: i).filter(hand.canMakeMove(_:)))
             }
         }
         return retVal.filter { $0.isLegal }
@@ -121,9 +121,9 @@ class GameAI {
         let lowerBound = 15 - Double(game.totalPlayedCardCount * game.playerCount) / 10.0
         let upperBound = 30 - Double(game.totalPlayedCardCount * game.playerCount) / 5
         
-        let capped = moves.map { ($0, weight(ofMove: $0)) }.filter { $0.1 <= upperBound && $0.1 > lowerBound }.sorted { $0.1 > $1.1 }
-        
-        return capped.first?.0 ?? .pass
+        let capped = moves.map { ($0, weight(ofMove: $0)) }.filter { $0.1 > lowerBound }.sorted { $0.1 > $1.1 }
+        let preferred = capped.filter { $0.1 > upperBound }.sorted { $0.1 > $1.1 || ($0.1 == $1.1 && $0.0.cardCount > $1.0.cardCount) }
+        return preferred.first?.0 ?? capped.first?.0 ?? .pass
     }
     
     func getNextMove() -> Move {
