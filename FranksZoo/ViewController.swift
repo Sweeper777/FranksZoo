@@ -16,10 +16,6 @@ class ViewController: UIViewController {
     
     let game = Game()
     
-    var ai1: GameAI!
-    var ai2: GameAI!
-    var ai3: GameAI!
-    
     var cards: [Card] {
         return game.playerHands[0].toArray()
     }
@@ -37,10 +33,6 @@ class ViewController: UIViewController {
         bottomStackView.isHidden = true
         
         moveDisplayer.backgroundColor = .clear
-        
-        ai1 = GameAI(game: game, playerIndex: 1)
-        ai2 = GameAI(game: game, playerIndex: 2)
-        ai3 = GameAI(game: game, playerIndex: 3)
     }
     
     func updateButtonFontSizes() {
@@ -152,12 +144,6 @@ class ViewController: UIViewController {
         switch game.currentTurn {
         case 0:
             return
-        case 1:
-            move = ai1.getNextMove()
-        case 2:
-            move = ai2.getNextMove()
-        case 3:
-            move = ai3.getNextMove()
         default:
             fatalError()
         }
