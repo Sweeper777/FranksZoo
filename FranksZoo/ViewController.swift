@@ -144,6 +144,9 @@ class ViewController: UIViewController {
         switch game.currentTurn {
         case 0:
             return
+        case 1, 2, 3:
+            let ai = GameAI(game: game, playerIndex: game.currentTurn)
+            move = ai.getNextMove()
         default:
             fatalError()
         }
