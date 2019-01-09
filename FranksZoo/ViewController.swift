@@ -153,7 +153,7 @@ class ViewController: UIViewController {
         game.makeMove(move)
         moveDisplayer.animateMove(move, completion: {
             [weak self] in
-            DispatchQueue.main.async(execute: self!.aiMakeMove)
+            self?.aiMakeMove()
             self?.updateMoveDisplayer()
             self?.updateOpponentsHandView()
         })
