@@ -68,4 +68,30 @@ class MoveDisplayerView: UIView {
             completion()
         })
     }
+    
+    private func animateMoveHorizontally(move: Move, startX: CGFloat, completion: @escaping () -> Void) {
+        let cards = move.toArray()
+        var imageViews = [UIImageView]()
+        
+        let xCoordinates = calculateCardXs(cards: cards)
+        for (x, card) in zip(xCoordinates, cards) {
+            let image = UIImage(named: imageDict[card]!)
+            let y = (self.height - self.cardSize.height) / 2
+            let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: x - startX, y: y), size: cardSize))
+            imageView.image = image
+            imageViews.append(imageView)
+            self.addSubview(imageView)
+        }
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            for imageView in imageViews {
+                imageView.x += startX
+            }
+        }, completion: {
+            _ in
+            self.displayedMove = move
+            completion()
+        })
+    }
+    
 }
