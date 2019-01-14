@@ -98,4 +98,8 @@ class MoveDisplayerView: UIView {
         animateMoveVertically(move: move, startY: bounds.height + cardSize.height, completion: completion)
     }
     
+    private func animateMoveForPlayer1(move: Move, completion: @escaping () -> Void) {
+        animateMoveHorizontally(move: move, startX: bounds.width, completion: completion)
+    }
+    
 }
