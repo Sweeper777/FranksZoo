@@ -45,16 +45,13 @@ class MoveDisplayerView: UIView {
         }
     }
     
-    func animateMove(_ move: Move, completion: @escaping () -> Void) {
+    private func animateMoveVertically(move: Move, startY: CGFloat, completion: @escaping () -> Void) {
         let cards = move.toArray()
-        
-        guard cards.count > 0 else { return }
-        
         var imageViews = [UIImageView]()
         
         for (x, card) in zip(calculateCardXs(cards: cards), cards) {
             let image = UIImage(named: imageDict[card]!)
-            let y = bounds.height + 20
+            let y = startY
             let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: x, y: y), size: cardSize))
             imageView.image = image
             imageViews.append(imageView)
