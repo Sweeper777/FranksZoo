@@ -110,4 +110,20 @@ class MoveDisplayerView: UIView {
         animateMoveHorizontally(move: move, startX: -bounds.width, completion: completion)
     }
     
+    func animateMove(_ move: Move, forPlayer player: Int, completion: @escaping () -> Void) {
+        guard move != .pass else { completion(); return }
+        
+        switch player {
+        case 0:
+            animateMoveForPlayer0(move: move, completion: completion)
+        case 1:
+            animateMoveForPlayer1(move: move, completion: completion)
+        case 2:
+            animateMoveForPlayer2(move: move, completion: completion)
+        case 3:
+            animateMoveForPlayer3(move: move, completion: completion)
+        default:
+            fatalError("Invalid Player!")
+        }
+    }
 }
