@@ -98,8 +98,9 @@ class ViewController: UIViewController {
         if selectedCards.count > 0 {
             let moveDict = Dictionary(grouping: selectedCards, by: { $0 }).mapValues { $0.count }
             let move = Move(cards: moveDict)
+            let player = game.currentTurn
             if (game.makeMove(move)) {
-                moveDisplayer.animateMove(move, completion: {
+                moveDisplayer.animateMove(move, forPlayer: player, completion: {
                     [weak self] in
                     self?.handCollectionView.reloadData()
                     self?.updateOpponentsHandView()
@@ -150,8 +151,9 @@ class ViewController: UIViewController {
         default:
             fatalError()
         }
+        let player = game.currentTurn
         game.makeMove(move)
-        moveDisplayer.animateMove(move, completion: {
+        moveDisplayer.animateMove(move, forPlayer: player, completion: {
             [weak self] in
             self?.aiMakeMove()
             self?.updateMoveDisplayer()
