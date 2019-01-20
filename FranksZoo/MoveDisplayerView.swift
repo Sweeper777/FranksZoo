@@ -137,6 +137,16 @@ class MoveDisplayerView: UIView {
         label.text = "PASS"
         label.font = label.font.withSize(fontSizeThatFits(size: passLabelRect.size, text: label.text! as NSString, font: label.font) * 0.7)
         label.alpha = 0
+        UIView.animate(withDuration: 0.5, animations: {
+            label.alpha = 1
+        }) { (_) in
+            UIView.animate(withDuration: 0.5, animations: {
+                label.alpha = 0
+            }, completion: { (_) in
+                label.removeFromSuperview()
+                completion()
+            })
+        }
     }
     
     func animateMove(_ move: Move, forPlayer player: Int, completion: @escaping () -> Void) {
