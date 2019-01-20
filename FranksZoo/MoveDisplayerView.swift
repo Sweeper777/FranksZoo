@@ -150,7 +150,10 @@ class MoveDisplayerView: UIView {
     }
     
     func animateMove(_ move: Move, forPlayer player: Int, completion: @escaping () -> Void) {
-        guard move != .pass else { completion(); return }
+        guard move != .pass else {
+            animatePass(forPlayer: player, completion: completion)
+            return
+        }
         
         switch player {
         case 0:
