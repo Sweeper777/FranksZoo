@@ -110,6 +110,30 @@ class MoveDisplayerView: UIView {
         animateMoveHorizontally(move: move, startX: -bounds.width, completion: completion)
     }
     
+    private func animatePass(forPlayer player: Int, completion: @escaping () -> Void) {
+        let passLabelRect: CGRect
+        switch player {
+        case 0:
+            let y = bounds.height - cardSize.width
+            let x = bounds.midX - cardSize.height / 2
+            passLabelRect = CGRect(x: x, y: y, width: cardSize.height, height: cardSize.width)
+        case 1:
+            let x = 0.f
+            let y = bounds.midY - cardSize.width / 2
+            passLabelRect = CGRect(x: x, y: y, width: cardSize.height, height: cardSize.width)
+        case 2:
+            let y = 0.f
+            let x = bounds.midX - cardSize.height / 2
+            passLabelRect = CGRect(x: x, y: y, width: cardSize.height, height: cardSize.width)
+        case 3:
+            let x = bounds.width - cardSize.height
+            let y = bounds.midY - cardSize.width / 2
+            passLabelRect = CGRect(x: x, y: y, width: cardSize.height, height: cardSize.width)
+        default:
+            passLabelRect = .zero
+        }
+    }
+    
     func animateMove(_ move: Move, forPlayer player: Int, completion: @escaping () -> Void) {
         guard move != .pass else { completion(); return }
         
