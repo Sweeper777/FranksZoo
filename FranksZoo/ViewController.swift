@@ -105,7 +105,8 @@ class ViewController: UIViewController {
                     self?.handCollectionView.reloadData()
                     self?.updateOpponentsHandView()
                     self?.updateMoveDisplayer()
-                    DispatchQueue.main.async(execute: self!.aiMakeMove)
+                    let makeMove = self?.aiMakeMove
+                    DispatchQueue.main.async(execute: makeMove ?? {})
                 })
             }
         }
@@ -155,9 +156,11 @@ class ViewController: UIViewController {
         game.makeMove(move)
         moveDisplayer.animateMove(move, forPlayer: player, completion: {
             [weak self] in
-            self?.aiMakeMove()
-            self?.updateMoveDisplayer()
             self?.updateOpponentsHandView()
+            self?.updateMoveDisplayer()
+            let makeMove = self?.aiMakeMove
+            print("Player \(player) made move: \(move)")
+            DispatchQueue.main.async(execute: makeMove ?? {})
         })
     }
 }
