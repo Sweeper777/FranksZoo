@@ -122,8 +122,9 @@ class GameAI {
         let upperBound = 30 - Double(game.totalPlayedCardCount * game.playerCount) / 5
         
         let capped = moves.map { ($0, weight(ofMove: $0)) }.filter { $0.1 > lowerBound }.sorted { $0.1 > $1.1 }
-        let preferred = capped.filter { $0.1 > upperBound }.sorted { $0.1 > $1.1 || ($0.1 == $1.1 && $0.0.cardCount > $1.0.cardCount) }
-        return preferred.first?.0 ?? capped.first?.0 ?? .pass
+        let preferred = capped.filter { $0.1 > upperBound }
+        let candidates = capped.filter { $0.1 <= upperBound }
+        return preferred.first?.0 ?? candidates.randomElement()?.0 ?? .pass
     }
     
     func getNextMove() -> Move {
