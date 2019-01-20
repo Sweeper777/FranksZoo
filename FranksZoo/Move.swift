@@ -141,3 +141,11 @@ struct Move : Cards, Equatable {
     }
 }
 
+extension Move : CustomStringConvertible {
+    var description: String {
+        if self == .pass {
+            return "pass"
+        }
+        return cards.description
+    }
+}
