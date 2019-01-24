@@ -11,6 +11,8 @@ class Game {
         }
     }
     
+    var ended = false
+    
     var currentPlayerHand: Hand {
         get { return playerHands[currentTurn] }
         set { playerHands[currentTurn] = newValue }
