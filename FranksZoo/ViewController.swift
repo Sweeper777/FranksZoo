@@ -114,10 +114,14 @@ class ViewController: UIViewController {
     
     @IBAction func passPress() {
         game.makeMove(.pass)
-        self.handCollectionView.reloadData()
-        self.updateOpponentsHandView()
-        self.updateMoveDisplayer()
-        aiMakeMove()
+        moveDisplayer.animateMove(.pass, forPlayer: 0) {
+            [weak self] in
+            self?.handCollectionView.reloadData()
+            self?.updateOpponentsHandView()
+            self?.updateMoveDisplayer()
+            let makeMove = self?.aiMakeMove
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: makeMove ?? {})
+        }
     }
     
     func updateOpponentsHandView() {
