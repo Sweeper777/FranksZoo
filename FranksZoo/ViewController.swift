@@ -108,7 +108,7 @@ class ViewController: UIViewController {
                     self?.updateOpponentsHandView()
                     self?.updateMoveDisplayer()
                     let makeMove = self?.aiMakeMove
-                    DispatchQueue.main.async(execute: makeMove ?? {})
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: makeMove ?? {})
                 })
             }
         }
@@ -167,7 +167,7 @@ class ViewController: UIViewController {
             self?.updateMoveDisplayer()
             let makeMove = self?.aiMakeMove
             print("Player \(player) made move: \(move)")
-            DispatchQueue.main.async(execute: makeMove ?? {})
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: makeMove ?? {})
         })
     }
 }
