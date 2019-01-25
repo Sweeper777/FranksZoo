@@ -43,6 +43,10 @@ class Game {
     
     @discardableResult
     func makeMove(_ move: Move) -> Bool {
+        if ended {
+            return false
+        }
+        
         guard move.isLegal else { return false }
         
         if move == .pass {
