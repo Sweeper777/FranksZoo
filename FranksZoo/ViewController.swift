@@ -94,6 +94,8 @@ class ViewController: UIViewController {
     }
     
     @IBAction func dealPress() {
+        guard game.currentTurn == 0 else { return }
+        
         let selectedCards = (handCollectionView.indexPathsForSelectedItems ?? []).map { cards[$0.item] }
         if selectedCards.count > 0 {
             let moveDict = Dictionary(grouping: selectedCards, by: { $0 }).mapValues { $0.count }
@@ -113,6 +115,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func passPress() {
+        guard game.currentTurn == 0 else { return }
         game.makeMove(.pass)
         moveDisplayer.animateMove(.pass, forPlayer: 0) {
             [weak self] in
