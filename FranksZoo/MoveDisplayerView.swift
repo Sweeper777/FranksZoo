@@ -114,7 +114,7 @@ class MoveDisplayerView: UIView {
         let passLabelRect: CGRect
         switch player {
         case 0:
-            let y = bounds.height - cardSize.width
+            let y = bounds.height - cardSize.width * 0.7
             let x = bounds.midX - cardSize.height / 2
             passLabelRect = CGRect(x: x, y: y, width: cardSize.height, height: cardSize.width)
         case 1:
@@ -122,7 +122,7 @@ class MoveDisplayerView: UIView {
             let y = bounds.midY - cardSize.width / 2
             passLabelRect = CGRect(x: x, y: y, width: cardSize.height, height: cardSize.width)
         case 2:
-            let y = 0.f
+            let y = -cardSize.width * 0.3
             let x = bounds.midX - cardSize.height / 2
             passLabelRect = CGRect(x: x, y: y, width: cardSize.height, height: cardSize.width)
         case 3:
