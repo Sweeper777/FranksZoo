@@ -67,6 +67,10 @@ class Game {
             lastMoveMadeBy = currentTurn
             nextPlayer()
             totalPlayedCardCount += move.cardCount
+            if (playerHands.filter { !$0.isEmpty }).count <= 1 {
+                ended = true
+                return true
+            }
             return true
         } else {
             return false
