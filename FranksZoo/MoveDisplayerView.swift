@@ -137,6 +137,7 @@ class MoveDisplayerView: UIView {
         label.text = "PASS"
         label.font = label.font.withSize(fontSizeThatFits(size: passLabelRect.size, text: label.text! as NSString, font: label.font) * 0.7)
         label.alpha = 0
+        label.textColor = .white
         UIView.animate(withDuration: 0.5, animations: {
             label.alpha = 1
         }) { (_) in
