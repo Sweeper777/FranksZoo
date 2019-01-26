@@ -149,6 +149,8 @@ class ViewController: UIViewController {
     }
     
     func aiMakeMove() {
+        guard !game.ended else { return }
+        
         let move: Move
         switch game.currentTurn {
         case 0:
