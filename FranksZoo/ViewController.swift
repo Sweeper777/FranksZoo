@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        game.currentTurn = Int.random(in: 0..<4)
         passButton.colors = PressableButton.ColorSet(button: UIColor.red.darker(), shadow: UIColor.red.darker().darker())
         dealButton.colors = PressableButton.ColorSet(button: UIColor.green.darker(), shadow: UIColor.green.darker().darker())
         
