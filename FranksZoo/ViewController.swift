@@ -169,7 +169,6 @@ class ViewController: UIViewController {
             self?.updateOpponentsHandView()
             self?.updateMoveDisplayer()
             let makeMove = self?.aiMakeMove
-            print("Player \(player) made move: \(move)")
             if nextAITurn {
                 DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: makeMove ?? {})
             }
