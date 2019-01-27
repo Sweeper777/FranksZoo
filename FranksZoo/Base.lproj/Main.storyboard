@@ -46,7 +46,7 @@
                                                     <constraint firstAttribute="width" constant="110" id="BpQ-TM-SYI"/>
                                                 </constraints>
                                             </stackView>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sBB-PL-NiC">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sBB-PL-NiC">
                                                 <rect key="frame" x="120" y="0.0" width="428" height="79.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xnj-3Z-NGG">
@@ -151,7 +151,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.35294117650000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.41729350032700518" green="0.45985751972211325" blue="0.67516588184931503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VhG-R6-sqo" secondAttribute="trailing" id="AgF-Zc-e3e"/>
                             <constraint firstItem="VhG-R6-sqo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SQK-Dc-L3P"/>
