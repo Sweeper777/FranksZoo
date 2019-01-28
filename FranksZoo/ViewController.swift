@@ -1,5 +1,6 @@
 import UIKit
 import SwiftyButton
+import SCLAlertView
 
 class ViewController: UIViewController {
 
@@ -222,4 +223,19 @@ extension ViewController : GameDelegate {
         })
     }
     
+    func handlePlayerWin(game: Game, player: Int, place: Int) {
+        let placeNames = [1: "first", 2: "second", 3: "third"]
+        if player == 0 {
+            if place < 3 {
+                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                alert.addButton("Yes", action: {})
+                alert.addButton("No", action: quitGame)
+                alert.showInfo("You came \(placeNames[place]!)", subTitle: "Do you want to continue watching the rest of the game?")
+            } else {
+                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: true))
+                alert.showInfo("You came \(placeNames[place]!)", subTitle: "")
+            }
+        } else if place == 3 {
+        }
+    }
 }
