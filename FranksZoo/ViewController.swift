@@ -37,6 +37,11 @@ class ViewController: UIViewController {
         bottomStackView.isHidden = true
         
         moveDisplayer.backgroundColor = .clear
+        
+        if game.currentTurn != 0 {
+            let delay = Double(60 / game.playerCount) * 0.01 + 2.0
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: self.aiMakeMove)
+        }
     }
     
     func updateButtonFontSizes() {
