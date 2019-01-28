@@ -70,7 +70,10 @@ class Game {
             totalPlayedCardCount += move.cardCount
             if (playerHands.filter { !$0.isEmpty }).count <= 1 {
                 ended = true
+                delegate?.playerDidWin(game: self, player: currentTurn, place: playerCount - 1)
                 return true
+            } else if currentPlayerHand.isEmpty {
+                delegate?.playerDidWin(game: self, player: currentTurn, place: playerHands.filter { $0.isEmpty }.count)
             }
             nextPlayer()
             return true
