@@ -23,6 +23,8 @@ class Game {
     
     var totalPlayedCardCount = 0
     
+    weak var delegate: GameDelegate?
+    
     init() {
         let cardsForEachHand = AllCards.shared.toArray().shuffled().split(intoChunksOf: 60 / playerCount)
         playerHands = cardsForEachHand.map {
