@@ -213,3 +213,13 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateF
         return CGSize(width: width, height: height)
     }
 }
+
+extension ViewController : GameDelegate {
+    func playerDidWin(game: Game, player: Int, place: Int) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
+            [weak self] in
+            self?.handlePlayerWin(game: game, player: player, place: place)
+        })
+    }
+    
+}
