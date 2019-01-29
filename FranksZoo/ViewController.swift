@@ -236,6 +236,15 @@ extension ViewController : GameDelegate {
                 alert.showInfo("You came \(placeNames[place]!)", subTitle: "")
             }
         } else if place == 3 {
+            if game.playerHands[0].isEmpty {
+                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                alert.addButton("Quit", action: quitGame)
+                alert.showInfo("Game ended!", subTitle: "")
+            } else {
+                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                alert.addButton("Quit", action: quitGame)
+                alert.showInfo("You lost!", subTitle: "")
+            }
         }
     }
 }
