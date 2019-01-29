@@ -14,6 +14,7 @@ target 'FranksZoo' do
   pod 'RxCocoa'
   pod 'FSPagerView'
   pod 'EZLoadingActivity'
+  pod 'SnapKit'
 
 end
 

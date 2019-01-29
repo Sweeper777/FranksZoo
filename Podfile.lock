@@ -7,6 +7,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
   - SCLAlertView (0.8)
+  - SnapKit (4.2.0)
   - SwiftRandom (1.0.0)
   - SwiftyButton (0.8.2)
   - SwiftyUtils (2.0.0)
@@ -19,6 +20,7 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - SCLAlertView
+  - SnapKit
   - SwiftRandom
   - SwiftyButton
   - SwiftyUtils
@@ -32,6 +34,7 @@ SPEC REPOS:
     - RxCocoa
     - RxSwift
     - SCLAlertView
+    - SnapKit
     - SwiftRandom
     - SwiftyButton
     - SwiftyUtils
@@ -44,10 +47,11 @@ SPEC CHECKSUMS:
   RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftRandom: 437275c63500ddf5a565cbd56996fb23f12cfc3d
   SwiftyButton: 5b0ef314e9cf61cf8a83e456ddd1ea1f53f30598
   SwiftyUtils: ae914aa96b5672e9282904771e5e5b44d2e307d6
 
-PODFILE CHECKSUM: b8b1c52268558d4914811fa4a95e320919356818
+PODFILE CHECKSUM: e33c298d6da6f224ad161cbfd56e689f18f7ca48
 
 COCOAPODS: 1.5.3
