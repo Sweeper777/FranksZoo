@@ -249,5 +249,6 @@ extension ViewController : GameDelegate {
     }
     
     func quitGame() {
+        performSegue(withIdentifier: "unwindToMainMenu", sender: nil)
     }
 }
