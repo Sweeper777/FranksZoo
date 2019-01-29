@@ -247,4 +247,7 @@ extension ViewController : GameDelegate {
             }
         }
     }
+    
+    func quitGame() {
+    }
 }
