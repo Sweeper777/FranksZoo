@@ -2,7 +2,7 @@ import UIKit
 import SwiftyButton
 import SCLAlertView
 
-class ViewController: UIViewController {
+class GameViewController: UIViewController {
 
     @IBOutlet var opponentHand1: OpponentsHandView!
     @IBOutlet var opponentHand2: OpponentsHandView!
@@ -188,7 +188,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension GameViewController : UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -215,7 +215,7 @@ extension ViewController : UICollectionViewDataSource, UICollectionViewDelegateF
     }
 }
 
-extension ViewController : GameDelegate {
+extension GameViewController : GameDelegate {
     func playerDidWin(game: Game, player: Int, place: Int) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
             [weak self] in
