@@ -144,6 +144,26 @@ class GameViewController: UIViewController {
         }
     }
     
+    @objc func didTapCollectionViewCell(tapper: UIGestureRecognizer) {
+        if tapper.state == .recognized {
+            let touchCount = tapper.numberOfTouches
+            for i in 0..<touchCount {
+                let point = tapper.location(ofTouch: i, in: self.handCollectionView)
+                if let index = handCollectionView.indexPathForItem(at: point) {
+                    if handCollectionView.indexPathsForSelectedItems?.contains(index) ?? false {
+                        handCollectionView.deselectItem(at: index, animated: false)
+                        let cell = handCollectionView.cellForItem(at: index)
+                        cell?.isSelected = false
+                    }else{
+                        handCollectionView.selectItem(at: index, animated: false, scrollPosition: [])
+                        let cell = handCollectionView.cellForItem(at: index)
+                        cell?.isSelected = true
+                    }
+                }
+            }
+        }
+    }
+    
     func updateOpponentsHandView() {
 //        func nextPlayer(after index: Int) -> Int {
 //            return index + 1 < game.playerCount ? index + 1 : 0
