@@ -266,3 +266,13 @@ extension GameViewController : GameDelegate {
         performSegue(withIdentifier: "unwindToMainMenu", sender: nil)
     }
 }
+
+//extension GameViewController : UIGestureRecognizerDelegate {
+//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+//        return true
+//    }
+//
+//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+//         return handCollectionView.gestureRecognizers?.contains(otherGestureRecognizer) ?? false
+//    }
+//}
