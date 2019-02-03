@@ -41,11 +41,6 @@ class GameViewController: UIViewController {
         
         moveDisplayer.backgroundColor = .clear
         
-//        handCollectionView.gestureRecognizers![0].isEnabled = false
-//        let recognizer = TouchGestureRecognizer(target: self, action: #selector(didTapCollectionViewCell(tapper:)))
-//        recognizer.delegate = self
-//        handCollectionView.addGestureRecognizer(recognizer)
-        
         if game.currentTurn != 0 {
             let delay = Double(60 / game.playerCount) * 0.01 + 2.0
             DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: self.aiMakeMove)
@@ -219,6 +214,7 @@ extension GameViewController : UICollectionViewDataSource, UICollectionViewDeleg
             cell.isSelected = false
         }
         cell.imageView.image = UIImage(named: imageDict[cards[indexPath.item]]!)
+        cell.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapCollectionViewCell(tapper:))))
         return cell
     }
     
@@ -266,13 +262,3 @@ extension GameViewController : GameDelegate {
         performSegue(withIdentifier: "unwindToMainMenu", sender: nil)
     }
 }
-
-//extension GameViewController : UIGestureRecognizerDelegate {
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-//        return true
-//    }
-//
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-//         return handCollectionView.gestureRecognizers?.contains(otherGestureRecognizer) ?? false
-//    }
-//}
