@@ -41,6 +41,11 @@ class GameViewController: UIViewController {
         
         moveDisplayer.backgroundColor = .clear
         
+//        handCollectionView.gestureRecognizers![0].isEnabled = false
+//        let recognizer = TouchGestureRecognizer(target: self, action: #selector(didTapCollectionViewCell(tapper:)))
+//        recognizer.delegate = self
+//        handCollectionView.addGestureRecognizer(recognizer)
+        
         if game.currentTurn != 0 {
             let delay = Double(60 / game.playerCount) * 0.01 + 2.0
             DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: self.aiMakeMove)
