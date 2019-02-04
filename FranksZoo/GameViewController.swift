@@ -13,6 +13,8 @@ class GameViewController: UIViewController {
     @IBOutlet var passButton: PressableButton!
     @IBOutlet var moveDisplayer: MoveDisplayerView!
     
+    var quitButton: PressableButton!
+    
     var initialAnimationPlayed = false
     
     let game = Game()
@@ -40,6 +42,11 @@ class GameViewController: UIViewController {
         bottomStackView.isHidden = true
         
         moveDisplayer.backgroundColor = .clear
+        
+        quitButton = PressableButton(frame: .zero)
+        quitButton.setTitle("×", for: .normal)
+        view.addSubview(quitButton)
+        quitButton.addTarget(self, action: #selector(quitButtonPress), for: .touchUpInside)
         
         if game.currentTurn != 0 {
             let delay = Double(60 / game.playerCount) * 0.01 + 2.0
