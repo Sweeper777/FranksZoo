@@ -1,6 +1,15 @@
 import SwiftyUtils
 
 class Game : Codable {
+    enum CodingKeys : CodingKey {
+        case playerHands
+        case currentTurn
+        case ended
+        case lastMove
+        case lastMoveMadeBy
+        case totalPlayedCardCount
+    }
+    
     let playerCount = 4
     var playerHands: [Hand]
     var currentTurn = 0 {
