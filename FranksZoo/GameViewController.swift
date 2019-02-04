@@ -61,9 +61,10 @@ class GameViewController: UIViewController {
     }
     
     func updateButtonFontSizes() {
-        let fontSize = fontSizeThatFits(size: dealButton.frame.size , text: "DEAL", font: UIFont.systemFont(ofSize: 1)) * 0.7
-        dealButton.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
-        passButton.titleLabel?.font = UIFont.systemFont(ofSize: fontSize)
+        [dealButton, passButton].forEach {
+            $0?.titleLabel?.updateFontSizeToFit(size: $0!.bounds.size, multiplier: 0.7)
+        }
+        quitButton.titleLabel?.updateFontSizeToFit(size: quitButton.bounds.size, multiplier: 1)
     }
     
     override func viewDidAppear(_ animated: Bool) {
