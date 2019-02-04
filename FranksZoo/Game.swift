@@ -1,6 +1,6 @@
 import SwiftyUtils
 
-class Game {
+class Game : Codable {
     let playerCount = 4
     var playerHands: [Hand]
     var currentTurn = 0 {

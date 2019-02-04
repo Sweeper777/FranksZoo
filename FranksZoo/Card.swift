@@ -1,5 +1,5 @@
 
-enum Card: Int, Comparable {
+enum Card: Int, Comparable, Codable {
     case whale
     case elephant
     case crocodile

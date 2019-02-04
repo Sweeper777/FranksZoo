@@ -1,4 +1,4 @@
-struct Move : Cards, Equatable {
+struct Move : Cards, Equatable, Codable {
     let cards: [Card : Int]
     static let pass = Move()
     

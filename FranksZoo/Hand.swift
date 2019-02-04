@@ -1,4 +1,4 @@
-struct Hand: Cards {
+struct Hand: Cards, Codable {
     var cards: [Card : Int]
 
     init(cards: [Card: Int]) {
