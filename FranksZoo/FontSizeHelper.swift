@@ -17,8 +17,8 @@ func fontSizeThatFits(size: CGSize, text: NSString, font: UIFont) -> CGFloat {
 }
 
 extension UILabel {
-    func updateFontSizeToFit(size: CGSize) {
-        let fontSize = fontSizeThatFits(size: size, text: (text ?? "a") as NSString, font: font) * 0.9
+    func updateFontSizeToFit(size: CGSize, multiplier: CGFloat = 0.9) {
+        let fontSize = fontSizeThatFits(size: size, text: (text ?? "a") as NSString, font: font) * multiplier
         font = font.withSize(fontSize)
     }
     
