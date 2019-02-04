@@ -46,6 +46,12 @@ class GameViewController: UIViewController {
         quitButton = PressableButton(frame: .zero)
         quitButton.setTitle("×", for: .normal)
         view.addSubview(quitButton)
+        quitButton.snp.makeConstraints { (make) in
+            make.top.equalToSuperview().offset(UIScreen.statusBarHeight + 8)
+            make.right.equalToSuperview().offset(-8)
+            make.width.equalTo(quitButton.snp.height)
+            make.height.equalTo(UIScreen.main.nativeBounds.height / UIScreen.main.nativeScale / 20)
+        }
         quitButton.addTarget(self, action: #selector(quitButtonPress), for: .touchUpInside)
         
         if game.currentTurn != 0 {
