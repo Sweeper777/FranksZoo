@@ -172,6 +172,14 @@ class GameViewController: UIViewController {
         }
     }
     
+    @objc func quitButtonPress() {
+        let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+        alert.addButton("Yes", action: quitGame)
+        alert.addButton("No", action: {})
+        alert.showWarning("Confirm", subTitle: "Do you really want to quit?")
+        
+    }
+    
     func updateOpponentsHandView() {
         opponentHand1.numberOfCards = game.playerHands[1].toArray().count
         opponentHand2.numberOfCards = game.playerHands[2].toArray().count
