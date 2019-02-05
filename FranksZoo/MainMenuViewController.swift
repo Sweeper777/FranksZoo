@@ -7,7 +7,7 @@ class MainMenuViewController: UIViewController {
     
     var playButton: PressableButton!
     var helpButton: PressableButton!
-    var connectButton: PressableButton!
+    var hostButton: PressableButton!
     
     override func viewDidLoad() {
         playButton = PressableButton(frame: .zero)
@@ -33,15 +33,15 @@ class MainMenuViewController: UIViewController {
         }
         helpButton.setTitle("HELP", for: .normal)
         
-        connectButton = PressableButton(frame: .zero)
-        buttonContainer.addSubview(connectButton)
-        connectButton.snp.makeConstraints { (make) in
+        hostButton = PressableButton(frame: .zero)
+        buttonContainer.addSubview(hostButton)
+        hostButton.snp.makeConstraints { (make) in
             make.height.equalTo(playButton.snp.height)
             make.width.equalTo(playButton.snp.width)
             make.centerX.equalTo(playButton.snp.centerX)
             make.top.equalTo(helpButton.snp.bottom).offset(8)
         }
-        connectButton.setTitle("CONNECT", for: .normal)
+        hostButton.setTitle("HOST", for: .normal)
     }
     
     override func overrideTraitCollection(forChildViewController childViewController: UIViewController) -> UITraitCollection? {
@@ -55,14 +55,15 @@ class MainMenuViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         playButton.titleLabel?.updateFontSizeToFit(size: playButton.bounds.size)
         helpButton.titleLabel?.updateFontSizeToFit(size: helpButton.bounds.size)
-        connectButton.titleLabel?.updateFontSizeToFit(size: connectButton.bounds.size)
+        hostButton.titleLabel?.updateFontSizeToFit(size: hostButton.bounds.size)
+        joinButton.titleLabel?.updateFontSizeToFit(size: joinButton.bounds.size)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         playButton.titleLabel?.updateFontSizeToFit(size: playButton.bounds.size)
         helpButton.titleLabel?.updateFontSizeToFit(size: helpButton.bounds.size)
-        connectButton.titleLabel?.updateFontSizeToFit(size: connectButton.bounds.size)
+        hostButton.titleLabel?.updateFontSizeToFit(size: hostButton.bounds.size)
     }
     
     @objc func playButtonPress() {
