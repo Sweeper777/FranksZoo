@@ -75,6 +75,15 @@ class MainMenuViewController: UIViewController {
         playButton.titleLabel?.updateFontSizeToFit(size: playButton.bounds.size)
         helpButton.titleLabel?.updateFontSizeToFit(size: helpButton.bounds.size)
         hostButton.titleLabel?.updateFontSizeToFit(size: hostButton.bounds.size)
+        joinButton.titleLabel?.updateFontSizeToFit(size: joinButton.bounds.size)
+    }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            return .all
+        } else {
+            return .landscape
+        }
     }
     
     @objc func playButtonPress() {
