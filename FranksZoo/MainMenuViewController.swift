@@ -8,6 +8,7 @@ class MainMenuViewController: UIViewController {
     var playButton: PressableButton!
     var helpButton: PressableButton!
     var hostButton: PressableButton!
+    var joinButton: PressableButton!
     
     override func viewDidLoad() {
         playButton = PressableButton(frame: .zero)
@@ -42,6 +43,16 @@ class MainMenuViewController: UIViewController {
             make.top.equalTo(helpButton.snp.bottom).offset(8)
         }
         hostButton.setTitle("HOST", for: .normal)
+        
+        joinButton = PressableButton(frame: .zero)
+        buttonContainer.addSubview(joinButton)
+        joinButton.snp.makeConstraints { (make) in
+            make.height.equalTo(playButton.snp.height)
+            make.width.equalTo(playButton.snp.width)
+            make.centerX.equalTo(playButton.snp.centerX)
+            make.top.equalTo(hostButton.snp.bottom).offset(8)
+        }
+        joinButton.setTitle("JOIN", for: .normal)
     }
     
     override func overrideTraitCollection(forChildViewController childViewController: UIViewController) -> UITraitCollection? {
