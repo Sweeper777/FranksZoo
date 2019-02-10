@@ -174,7 +174,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="96.126760563380287" y="31.875"/>
+            <point key="canvasLocation" x="169" y="-540"/>
+        </scene>
+        <!--Host View Controller-->
+        <scene sceneID="6fe-jU-MZp">
+            <objects>
+                <viewController id="sgK-TF-kTF" customClass="HostViewController" customModule="FranksZoo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oqO-SA-szI">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzU-XD-1ij">
+                                <rect key="frame" x="20" y="20" width="30" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="vin-3b-G2J"/>
+                                    <constraint firstAttribute="height" constant="36" id="yBj-vc-7wU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="0.43278194780219092" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closePress" destination="sgK-TF-kTF" eventType="touchUpInside" id="oOk-ZB-lld"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1VP-bw-oxU">
+                                <rect key="frame" x="20" y="64" width="528" height="236"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFS-GO-lQg">
+                                        <rect key="frame" x="0.0" y="0.0" width="528" height="41"/>
+                                        <string key="text">This device can be found as 'DEVICE NAME'
+Players who have joined the game:</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="70f-ca-3F7">
+                                        <rect key="frame" x="0.0" y="41" width="528" height="195"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.78609267979999997" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ydB-fm-BcJ" firstAttribute="bottom" secondItem="1VP-bw-oxU" secondAttribute="bottom" constant="20" id="579-1y-0ch"/>
+                            <constraint firstItem="1VP-bw-oxU" firstAttribute="leading" secondItem="ydB-fm-BcJ" secondAttribute="leading" constant="20" id="9v9-LQ-3Zi"/>
+                            <constraint firstItem="ydB-fm-BcJ" firstAttribute="trailing" secondItem="1VP-bw-oxU" secondAttribute="trailing" constant="20" id="F6B-gI-U2X"/>
+                            <constraint firstItem="1VP-bw-oxU" firstAttribute="top" secondItem="GzU-XD-1ij" secondAttribute="bottom" constant="8" id="Tg0-vO-CPL"/>
+                            <constraint firstItem="GzU-XD-1ij" firstAttribute="top" secondItem="ydB-fm-BcJ" secondAttribute="top" constant="20" id="hRA-yr-im9"/>
+                            <constraint firstItem="GzU-XD-1ij" firstAttribute="leading" secondItem="ydB-fm-BcJ" secondAttribute="leading" constant="20" id="spA-6Y-7YQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ydB-fm-BcJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mkB-N7-6Fh"/>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="oFS-GO-lQg" id="DCh-JA-CTU"/>
+                        <outlet property="tableView" destination="70f-ca-3F7" id="gVK-zm-k6B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="blu-bQ-dAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-878" y="992"/>
         </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="hZu-M6-xs2">
@@ -212,12 +273,65 @@
                     <connections>
                         <outlet property="buttonContainer" destination="mrq-a6-UjY" id="RGm-aq-UV5"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showGame" id="Lnw-vD-Zgj"/>
+                        <segue destination="sgK-TF-kTF" kind="presentation" identifier="showHost" modalPresentationStyle="formSheet" id="Hrm-3J-kjg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wD5-Cw-oWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kww-RB-AHC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-567" y="32"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="aWH-44-el3">
+            <objects>
+                <viewController id="q9F-zD-hEg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="neg-0M-1xD">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6m-4G-XhC">
+                                <rect key="frame" x="20" y="20" width="30" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Wax-ky-6D5"/>
+                                    <constraint firstAttribute="width" constant="30" id="oH8-xK-GFR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <state key="normal" title="×">
+                                    <color key="titleColor" white="0.43278194780000001" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Af1-tp-fEr">
+                                <rect key="frame" x="20" y="64" width="528" height="236"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on a host to join their game:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6N-UN-c0K">
+                                        <rect key="frame" x="0.0" y="0.0" width="528" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bfS-go-4fA">
+                                        <rect key="frame" x="0.0" y="20.5" width="528" height="215.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.78609267979999997" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y6m-4G-XhC" firstAttribute="leading" secondItem="C1s-Z7-PTT" secondAttribute="leading" constant="20" id="CvN-i4-GMK"/>
+                            <constraint firstItem="C1s-Z7-PTT" firstAttribute="bottom" secondItem="Af1-tp-fEr" secondAttribute="bottom" constant="20" id="Dqx-Ak-wiF"/>
+                            <constraint firstItem="Y6m-4G-XhC" firstAttribute="top" secondItem="C1s-Z7-PTT" secondAttribute="top" constant="20" id="OaD-44-qJI"/>
+                            <constraint firstItem="Af1-tp-fEr" firstAttribute="leading" secondItem="C1s-Z7-PTT" secondAttribute="leading" constant="20" id="dPb-0b-nX0"/>
+                            <constraint firstItem="Af1-tp-fEr" firstAttribute="top" secondItem="Y6m-4G-XhC" secondAttribute="bottom" constant="8" id="dqJ-PE-6gn"/>
+                            <constraint firstItem="C1s-Z7-PTT" firstAttribute="trailing" secondItem="Af1-tp-fEr" secondAttribute="trailing" constant="20" id="iJT-q4-o3k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="C1s-Z7-PTT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xQA-L0-rBD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Se-OT-Ryx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-220" y="992"/>
         </scene>
     </scenes>
 </document>
