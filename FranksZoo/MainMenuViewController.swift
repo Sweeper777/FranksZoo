@@ -14,7 +14,7 @@ class MainMenuViewController: UIViewController {
         playButton = PressableButton(frame: .zero)
         buttonContainer.addSubview(playButton)
         playButton.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(8)
+            make.top.equalToSuperview().offset(16)
             make.centerX.equalToSuperview()
             make.height.equalToSuperview().dividedBy(4.5).offset(-8)
             make.width.lessThanOrEqualTo(playButton.snp.height).multipliedBy(5)
@@ -30,7 +30,7 @@ class MainMenuViewController: UIViewController {
             make.height.equalTo(playButton.snp.height)
             make.width.equalTo(playButton.snp.width)
             make.centerX.equalTo(playButton.snp.centerX)
-            make.top.equalTo(playButton.snp.bottom).offset(8)
+            make.top.equalTo(playButton.snp.bottom).offset(16)
         }
         helpButton.setTitle("HELP", for: .normal)
         
@@ -40,7 +40,7 @@ class MainMenuViewController: UIViewController {
             make.height.equalTo(playButton.snp.height)
             make.width.equalTo(playButton.snp.width)
             make.centerX.equalTo(playButton.snp.centerX)
-            make.top.equalTo(helpButton.snp.bottom).offset(8)
+            make.top.equalTo(helpButton.snp.bottom).offset(16)
         }
         hostButton.setTitle("HOST", for: .normal)
         
@@ -50,7 +50,7 @@ class MainMenuViewController: UIViewController {
             make.height.equalTo(playButton.snp.height)
             make.width.equalTo(playButton.snp.width)
             make.centerX.equalTo(playButton.snp.centerX)
-            make.top.equalTo(hostButton.snp.bottom).offset(8)
+            make.top.equalTo(hostButton.snp.bottom).offset(16)
         }
         joinButton.setTitle("JOIN", for: .normal)
     }
