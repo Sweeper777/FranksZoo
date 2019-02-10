@@ -47,8 +47,8 @@ class GameViewController: UIViewController {
         quitButton.setTitle("×", for: .normal)
         view.addSubview(quitButton)
         quitButton.snp.makeConstraints { (make) in
-            make.top.equalToSuperview().offset(UIScreen.statusBarHeight + 8)
-            make.right.equalToSuperview().offset(-8)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(UIScreen.statusBarHeight + 8)
+            make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-8)
             make.width.equalTo(quitButton.snp.height)
             make.height.equalTo(UIScreen.main.nativeBounds.height / UIScreen.main.nativeScale / 20)
         }
@@ -73,9 +73,7 @@ class GameViewController: UIViewController {
             startInitialAnimation()
             initialAnimationPlayed = true
         }
-        
         self.moveDisplayer.cardSize = CGSize(width: self.opponentHand2.height * 5 / 7 * 1.5, height: self.opponentHand2.height * 1.5)
-        
         updateButtonFontSizes()
     }
 
