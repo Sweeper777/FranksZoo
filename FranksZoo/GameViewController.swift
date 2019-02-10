@@ -76,6 +76,13 @@ class GameViewController: UIViewController {
         self.moveDisplayer.cardSize = CGSize(width: self.opponentHand2.height * 5 / 7 * 1.5, height: self.opponentHand2.height * 1.5)
         updateButtonFontSizes()
     }
+    
+    override func viewDidLayoutSubviews() {
+        
+        quitButton.updateTitleOffsets()
+        dealButton.updateTitleOffsets()
+        passButton.updateTitleOffsets()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -93,15 +100,13 @@ class GameViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animateAlongsideTransition(in: nil, animation: nil, completion:  {
             [unowned self] _ in
+            
+            self.moveDisplayer.cardSize = CGSize(width: self.opponentHand2.height * 5 / 7 * 1.5, height: self.opponentHand2.height * 1.5)
+            self.updateButtonFontSizes()
             self.opponentHand1.setNeedsDisplay()
             self.opponentHand2.setNeedsDisplay()
             self.opponentHand3.setNeedsDisplay()
             self.handCollectionView.reloadData()
-            self.moveDisplayer.setNeedsDisplay()
-            
-            self.moveDisplayer.cardSize = CGSize(width: self.opponentHand2.height * 5 / 7 * 1.5, height: self.opponentHand2.height * 1.5)
-            
-            self.updateButtonFontSizes()
         })
     }
     
