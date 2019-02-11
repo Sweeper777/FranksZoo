@@ -68,14 +68,11 @@ class MainMenuViewController: UIViewController {
         helpButton.titleLabel?.updateFontSizeToFit(size: helpButton.bounds.size)
         hostButton.titleLabel?.updateFontSizeToFit(size: hostButton.bounds.size)
         joinButton.titleLabel?.updateFontSizeToFit(size: joinButton.bounds.size)
-    }
-    
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransition(to: size, with: coordinator)
-        playButton.titleLabel?.updateFontSizeToFit(size: playButton.bounds.size)
-        helpButton.titleLabel?.updateFontSizeToFit(size: helpButton.bounds.size)
-        hostButton.titleLabel?.updateFontSizeToFit(size: hostButton.bounds.size)
-        joinButton.titleLabel?.updateFontSizeToFit(size: joinButton.bounds.size)
+        
+        playButton.updateTitleOffsets()
+        helpButton.updateTitleOffsets()
+        hostButton.updateTitleOffsets()
+        joinButton.updateTitleOffsets()
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
