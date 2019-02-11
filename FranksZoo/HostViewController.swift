@@ -24,5 +24,12 @@ class HostViewController : UIViewController {
         advertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: "frankszoo\(Bundle.main.appBuild)")
         advertiser.delegate = self
         
+        connectedPeers.asObservable().bind(to: tableView.rx.items(cellIdentifier: "cell")) {
+            row, model, cell in
+            cell.textLabel?.text = model.displayName
+            cell.detailTextLabel?.text = "Tap to remove"
+            cell.backgroundColor = .clear
+            }.disposed(by: disposeBag)
+        
     }
 }
