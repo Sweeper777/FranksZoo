@@ -212,6 +212,32 @@ Players who have joined the game:</string>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="70f-ca-3F7">
                                         <rect key="frame" x="0.0" y="41" width="528" height="195"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="ZEN-jS-zks" detailTextLabel="UML-xH-oYy" style="IBUITableViewCellStyleSubtitle" id="VFT-yy-KyC">
+                                                <rect key="frame" x="0.0" y="28" width="528" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VFT-yy-KyC" id="u5G-yX-df7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="528" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZEN-jS-zks">
+                                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UML-xH-oYy">
+                                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -231,6 +257,7 @@ Players who have joined the game:</string>
                     <connections>
                         <outlet property="descriptionLabel" destination="oFS-GO-lQg" id="DCh-JA-CTU"/>
                         <outlet property="tableView" destination="70f-ca-3F7" id="gVK-zm-k6B"/>
+                        <segue destination="kww-RB-AHC" kind="unwind" identifier="unwindToMainMenu" unwindAction="unwindFromHostWithSegue:" id="v66-eg-LQ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blu-bQ-dAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -274,6 +301,7 @@ Players who have joined the game:</string>
                         <outlet property="buttonContainer" destination="mrq-a6-UjY" id="RGm-aq-UV5"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="showGame" id="Lnw-vD-Zgj"/>
                         <segue destination="sgK-TF-kTF" kind="presentation" identifier="showHost" modalPresentationStyle="formSheet" id="Hrm-3J-kjg"/>
+                        <segue destination="q9F-zD-hEg" kind="presentation" identifier="showJoin" modalPresentationStyle="formSheet" id="JVk-9C-YgN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wD5-Cw-oWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -281,10 +309,10 @@ Players who have joined the game:</string>
             </objects>
             <point key="canvasLocation" x="-567" y="32"/>
         </scene>
-        <!--View Controller-->
+        <!--Join View Controller-->
         <scene sceneID="aWH-44-el3">
             <objects>
-                <viewController id="q9F-zD-hEg" sceneMemberID="viewController">
+                <viewController id="q9F-zD-hEg" customClass="JoinViewController" customModule="FranksZoo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="neg-0M-1xD">
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -312,6 +340,32 @@ Players who have joined the game:</string>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bfS-go-4fA">
                                         <rect key="frame" x="0.0" y="20.5" width="528" height="215.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="aje-Q1-qTJ" detailTextLabel="kkX-EW-bz4" style="IBUITableViewCellStyleValue1" id="lZh-90-5Cc">
+                                                <rect key="frame" x="0.0" y="28" width="528" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lZh-90-5Cc" id="RiQ-ex-EvA">
+                                                    <rect key="frame" x="0.0" y="0.0" width="528" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aje-Q1-qTJ">
+                                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kkX-EW-bz4">
+                                                            <rect key="frame" x="469" y="12" width="44" height="20.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                 </subviews>
                             </stackView>
@@ -328,6 +382,10 @@ Players who have joined the game:</string>
                         <viewLayoutGuide key="safeArea" id="C1s-Z7-PTT"/>
                     </view>
                     <navigationItem key="navigationItem" id="xQA-L0-rBD"/>
+                    <connections>
+                        <outlet property="tableView" destination="bfS-go-4fA" id="2Qf-gL-GAB"/>
+                        <segue destination="kww-RB-AHC" kind="unwind" identifier="unwindToMainMenu" unwindAction="unwindFromJoinWithSegue:" id="Hiv-wh-O0R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Se-OT-Ryx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
