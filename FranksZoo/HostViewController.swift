@@ -14,4 +14,10 @@ class HostViewController : UIViewController {
     var connectedPeers: Variable<[MCPeerID]> = Variable([])
     
     let disposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        tableView.backgroundColor = .clear
+        descriptionLabel.text = descriptionLabel.text?.replacingOccurrences(of: "DEVICE NAME", with: UIDevice.current.name)
+        
+    }
 }
