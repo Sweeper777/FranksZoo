@@ -57,4 +57,10 @@ class HostViewController : UIViewController {
             return (1..<4).contains(peers.count) ? 1 : 0
         }.bind(to: startButton.rx.alpha).disposed(by: disposeBag)
     }
+    
+    override func viewDidLayoutSubviews() {
+        startButton.titleLabel?.updateFontSizeToFit(size: startButton.bounds.size, multiplier: 0.7)
+        startButton.updateTitleOffsets()
+    }
+    
 }
