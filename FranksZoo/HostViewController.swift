@@ -73,4 +73,12 @@ class HostViewController : UIViewController {
         advertiser.stopAdvertisingPeer()
     }
     
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            return .all
+        } else {
+            return .landscape
+        }
+    }
+    
 }
