@@ -63,4 +63,14 @@ class HostViewController : UIViewController {
         startButton.updateTitleOffsets()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        advertiser.startAdvertisingPeer()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        advertiser.stopAdvertisingPeer()
+    }
+    
 }
