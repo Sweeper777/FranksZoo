@@ -8,6 +8,8 @@ class HostViewController : UIViewController {
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
+    var startButton: PressableButton!
+    
     let peerID = MCPeerID(displayName: UIDevice.current.name)
     var session: MCSession!
     var advertiser: MCNearbyServiceAdvertiser!
@@ -39,5 +41,16 @@ class HostViewController : UIViewController {
             
         }.disposed(by: disposeBag)
         
+        startButton = PressableButton(frame: .zero)
+        view.addSubview(startButton)
+        startButton.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.width.equalToSuperview().dividedBy(5)
+            make.bottom.equalTo(descriptionLabel.snp.top).offset(-8)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(8)
+        }
+        startButton.colors = PressableButton.ColorSet(button: UIColor.green.darker(), shadow: UIColor.green.darker().darker())
+        startButton.setTitle("START", for: .normal)
+        startButton.addTarget(self, action: #selector(startPress), for: .touchUpInside)
     }
 }
