@@ -31,5 +31,13 @@ class HostViewController : UIViewController {
             cell.backgroundColor = .clear
             }.disposed(by: disposeBag)
         
+        tableView.rx.modelSelected(MCPeerID.self).bind { [weak self] (model) in
+            guard let `self` = self else { return }
+            guard let index = self.connectedPeers.value.firstIndex(of: model) else { return }
+            self.tableView.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
+            try? self.session.send(Data(bytes: [MultipeerCommands.disconnect.rawValue]), toPeers: [self.connectedPeers.value[index]], with: .reliable)
+            
+        }.disposed(by: disposeBag)
+        
     }
 }
