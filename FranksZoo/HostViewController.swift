@@ -52,5 +52,9 @@ class HostViewController : UIViewController {
         startButton.colors = PressableButton.ColorSet(button: UIColor.green.darker(), shadow: UIColor.green.darker().darker())
         startButton.setTitle("START", for: .normal)
         startButton.addTarget(self, action: #selector(startPress), for: .touchUpInside)
+        
+        connectedPeers.asObservable().map { (peers) -> CGFloat in
+            return (1..<4).contains(peers.count) ? 1 : 0
+        }.bind(to: startButton.rx.alpha).disposed(by: disposeBag)
     }
 }
