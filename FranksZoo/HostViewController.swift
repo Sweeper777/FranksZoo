@@ -116,6 +116,11 @@ extension HostViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDeleg
     }
     
     func advertiser(_ advertiser: MCNearbyServiceAdvertiser, didReceiveInvitationFromPeer peerID: MCPeerID, withContext context: Data?, invitationHandler: @escaping (Bool, MCSession?) -> Void) {
+        if session.connectedPeers.count < 4 {
+            invitationHandler(true, session)
+        } else {
+            invitationHandler(false, nil)
+        }
     }
     
     
