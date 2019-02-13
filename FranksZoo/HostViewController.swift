@@ -92,6 +92,11 @@ class HostViewController : UIViewController {
 
 extension HostViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDelegate {
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        if state == .connected {
+            connectedPeers.value.append(peerID)
+        } else if state == .notConnected {
+            _ = connectedPeers.value.remove(object: peerID)
+        }
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
