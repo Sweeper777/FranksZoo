@@ -81,4 +81,11 @@ class HostViewController : UIViewController {
         }
     }
     
+    @IBAction func closePress() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func startPress() {
+        
+    }
 }
