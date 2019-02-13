@@ -24,3 +24,8 @@ struct PeerIDStateTuple : Equatable {
     }
 }
 
+class JoinViewController : UIViewController {
+    @IBOutlet var tableView: UITableView!
+    
+    let disposeBag = DisposeBag()
+}
