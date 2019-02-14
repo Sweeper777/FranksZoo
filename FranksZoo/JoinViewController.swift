@@ -34,4 +34,13 @@ class JoinViewController : UIViewController {
     var connectionStateWithHost = ConnectionState.notConnected
     
     let disposeBag = DisposeBag()
+    
+    override func viewDidLoad() {
+        tableView.backgroundColor = .clear
+        session = MCSession(peer: peerID)
+        session.delegate = self
+        browser = MCNearbyServiceBrowser(peer: peerID, serviceType: "frankszoo\(Bundle.main.appBuild)")
+        browser.delegate = self
+        
+    }
 }
