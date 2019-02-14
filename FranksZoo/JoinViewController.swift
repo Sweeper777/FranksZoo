@@ -42,5 +42,21 @@ class JoinViewController : UIViewController {
         browser = MCNearbyServiceBrowser(peer: peerID, serviceType: "frankszoo\(Bundle.main.appBuild)")
         browser.delegate = self
         
+        foundPeers.asObservable().bind(to: tableView.rx.items(cellIdentifier: "cell")) {
+            row, model, cell in
+            cell.textLabel?.text = model.peerID.displayName
+            switch model.state {
+            case .connected:
+                cell.detailTextLabel?.text = "Connected"
+            case .connecting:
+                cell.detailTextLabel?.text = "Connecting..."
+            case .error:
+                cell.detailTextLabel?.text = "Unable to connect"
+            case .notConnected:
+                cell.detailTextLabel?.text = ""
+            }
+            cell.backgroundColor = .clear
+            }.disposed(by: disposeBag)
+        
     }
 }
