@@ -58,5 +58,24 @@ class JoinViewController : UIViewController {
             cell.backgroundColor = .clear
             }.disposed(by: disposeBag)
         
+        tableView.rx.modelSelected(PeerIDStateTuple.self).bind { [weak self] (model) in
+            guard let `self` = self else { return }
+            guard let index = self.foundPeers.value.firstIndex(of: model) else { return }
+            self.tableView.deselectRow(at: IndexPath(row: index, section: 0), animated: false)
+            if self.foundPeers.value[index].state == .connected {
+                self.connectionStateWithHost = .notConnected
+                self.session.disconnect()
+            } else if self.foundPeers.value[index].state == .connecting {
+                return
+            } else if self.connectionStateWithHost == .notConnected {
+                self.connectionStateWithHost = .connecting
+                self.browser.invitePeer(model.peerID, to: self.session, withContext: nil, timeout: 10)
+            } else if self.connectionStateWithHost == .connecting || self.connectionStateWithHost == .connected {
+                self.connectionStateWithHost = .connecting
+                self.session.disconnect()
+                self.browser.invitePeer(model.peerID, to: self.session, withContext: nil, timeout: 10)
+            }
+        }.disposed(by: disposeBag)
+    }
     }
 }
