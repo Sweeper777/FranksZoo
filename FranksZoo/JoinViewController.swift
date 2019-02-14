@@ -87,5 +87,14 @@ class JoinViewController : UIViewController {
         super.viewDidDisappear(animated)
         browser.stopBrowsingForPeers()
     }
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if traitCollection.horizontalSizeClass == .regular && traitCollection.verticalSizeClass == .regular {
+            return .all
+        } else {
+            return .landscape
+        }
+    }
+    
     }
 }
