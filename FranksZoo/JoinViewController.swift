@@ -27,5 +27,11 @@ struct PeerIDStateTuple : Equatable {
 class JoinViewController : UIViewController {
     @IBOutlet var tableView: UITableView!
     
+    let peerID = MCPeerID(displayName: UIDevice.current.name)
+    var session: MCSession!
+    var browser: MCNearbyServiceBrowser!
+    var foundPeers: Variable<[PeerIDStateTuple]> = Variable([])
+    var connectionStateWithHost = ConnectionState.notConnected
+    
     let disposeBag = DisposeBag()
 }
