@@ -96,5 +96,7 @@ class JoinViewController : UIViewController {
         }
     }
     
+    @IBAction func closePress() {
+        dismiss(animated: true, completion: nil)
     }
 }
