@@ -77,5 +77,15 @@ class JoinViewController : UIViewController {
             }
         }.disposed(by: disposeBag)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        browser.startBrowsingForPeers()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        browser.stopBrowsingForPeers()
+    }
     }
 }
