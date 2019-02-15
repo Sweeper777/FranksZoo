@@ -150,6 +150,8 @@ extension JoinViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
+        let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
+        _ = foundPeers.value.remove(object: peerIDStateTuple)
     }
     
     
