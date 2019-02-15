@@ -122,6 +122,11 @@ extension JoinViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        if data.count == 1 {
+            if MultipeerCommands(rawValue: data.first!) == .disconnect {
+                self.session.disconnect()
+            }
+        }
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
