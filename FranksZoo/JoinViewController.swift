@@ -142,6 +142,11 @@ extension JoinViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
+        let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
+        if foundPeers.value.contains(peerIDStateTuple) {
+            _ = foundPeers.value.remove(object: peerIDStateTuple)
+        }
+        foundPeers.value.append(peerIDStateTuple)
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
