@@ -100,3 +100,31 @@ class JoinViewController : UIViewController {
         dismiss(animated: true, completion: nil)
     }
 }
+
+extension JoinViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate {
+    func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+    }
+    
+    func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+    }
+    
+    func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
+        
+    }
+    
+    func session(_ session: MCSession, didStartReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, with progress: Progress) {
+        
+    }
+    
+    func session(_ session: MCSession, didFinishReceivingResourceWithName resourceName: String, fromPeer peerID: MCPeerID, at localURL: URL?, withError error: Error?) {
+        
+    }
+    
+    func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
+    }
+    
+    func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
+    }
+    
+    
+}
