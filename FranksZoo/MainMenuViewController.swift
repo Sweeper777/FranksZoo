@@ -1,6 +1,7 @@
 import UIKit
 import SnapKit
 import SwiftyButton
+import MultipeerConnectivity
 
 class MainMenuViewController: UIViewController {
     @IBOutlet var buttonContainer: UIView!
@@ -9,6 +10,8 @@ class MainMenuViewController: UIViewController {
     var helpButton: PressableButton!
     var hostButton: PressableButton!
     var joinButton: PressableButton!
+    
+    var multipeerTransitioning = false
     
     override func viewDidLoad() {
         playButton = PressableButton(frame: .zero)
