@@ -46,6 +46,7 @@ class MainMenuViewController: UIViewController {
             make.top.equalTo(helpButton.snp.bottom).offset(16)
         }
         hostButton.setTitle("HOST", for: .normal)
+        hostButton.addTarget(self, action: #selector(hostButtonPress), for: .touchUpInside)
         
         joinButton = PressableButton(frame: .zero)
         buttonContainer.addSubview(joinButton)
@@ -56,6 +57,7 @@ class MainMenuViewController: UIViewController {
             make.top.equalTo(hostButton.snp.bottom).offset(16)
         }
         joinButton.setTitle("JOIN", for: .normal)
+        joinButton.addTarget(self, action: #selector(joinButtonPress), for: .touchUpInside)
     }
     
     override func overrideTraitCollection(forChildViewController childViewController: UIViewController) -> UITraitCollection? {
@@ -88,6 +90,18 @@ class MainMenuViewController: UIViewController {
     
     @objc func playButtonPress() {
         performSegue(withIdentifier: "showGame", sender: self)
+    }
+    
+    @objc func hostButtonPress() {
+        if !multipeerTransitioning {
+            performSegue(withIdentifier: "showHost", sender: self)
+        }
+    }
+    
+    @objc func joinButtonPress() {
+        if !multipeerTransitioning {
+            performSegue(withIdentifier: "showJoin", sender: self)
+        }
     }
     
     @IBAction func unwindFromGame(segue: UIStoryboardSegue) {
