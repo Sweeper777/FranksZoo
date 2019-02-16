@@ -134,4 +134,10 @@ class MainMenuViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? MultipeerGameViewController, let (session, isHost) = (sender as? (MCSession, Bool)) {
+            vc.session = session
+            vc.isHost = isHost
+        }
+    }
 }
