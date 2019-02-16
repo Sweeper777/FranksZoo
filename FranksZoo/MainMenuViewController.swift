@@ -89,7 +89,9 @@ class MainMenuViewController: UIViewController {
     }
     
     @objc func playButtonPress() {
-        performSegue(withIdentifier: "showGame", sender: self)
+        if !multipeerTransitioning {
+            performSegue(withIdentifier: "showGame", sender: self)
+        }
     }
     
     @objc func hostButtonPress() {
