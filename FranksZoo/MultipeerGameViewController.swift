@@ -31,6 +31,15 @@ class MultipeerGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if isHost {
+            game = Game()
+            let peerIDs = session.connectedPeers + [session.myPeerID]
+            let orderNumbers = [0,1,2,3].shuffled()
+            playerOrder = Dictionary(uniqueKeysWithValues: zip(peerIDs, orderNumbers))
+        } else {
+            try! session.send(Data(bytes: [MultipeerCommands.ready.rawValue]), toPeers: session.connectedPeers, with: .reliable)
+        }
+        
         passButton.colors = PressableButton.ColorSet(button: UIColor.red.darker(), shadow: UIColor.red.darker().darker())
         dealButton.colors = PressableButton.ColorSet(button: UIColor.green.darker(), shadow: UIColor.green.darker().darker())
         
