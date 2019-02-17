@@ -15,6 +15,7 @@
 		5A34A859220EE98400E63575 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34A858220EE98400E63575 /* JoinViewController.swift */; };
 		5A34E9F12201BB2E001CB149 /* TouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34E9F02201BB2E001CB149 /* TouchGestureRecognizer.swift */; };
 		5A36F4BE220E1E7100B7FCB0 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F4BD220E1E7100B7FCB0 /* HostViewController.swift */; };
+		5A39C4552218020C00D54B2C /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A39C4542218020C00D54B2C /* GameInfo.swift */; };
 		5A43BD63213A8A1D001B918E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD62213A8A1D001B918E /* AppDelegate.swift */; };
 		5A43BD65213A8A1D001B918E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD64213A8A1D001B918E /* GameViewController.swift */; };
 		5A43BD68213A8A1D001B918E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A43BD66213A8A1D001B918E /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		5A34A858220EE98400E63575 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		5A34E9F02201BB2E001CB149 /* TouchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureRecognizer.swift; sourceTree = "<group>"; };
 		5A36F4BD220E1E7100B7FCB0 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
+		5A39C4542218020C00D54B2C /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		5A43BD5F213A8A1D001B918E /* FranksZoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FranksZoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A43BD62213A8A1D001B918E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A43BD64213A8A1D001B918E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				5A43BD7C213B05CD001B918E /* Game.swift */,
 				5A341AF921FDB6C800CAE2D7 /* GameDelegate.swift */,
 				5A45882B215F85AD005451F5 /* GameAI.swift */,
+				5A39C4542218020C00D54B2C /* GameInfo.swift */,
 				5A43BD7A213AC01D001B918E /* FluentInterface.swift */,
 				5A458829215F7F81005451F5 /* Helpers.swift */,
 				5A33404D221025EA009FF7D6 /* MultipeerCommands.swift */,
@@ -371,6 +374,7 @@
 				5A341AFC21FDC18600CAE2D7 /* MainMenuViewController.swift in Sources */,
 				5A43BD7B213AC01E001B918E /* FluentInterface.swift in Sources */,
 				5A43BD75213A9331001B918E /* Card.swift in Sources */,
+				5A39C4552218020C00D54B2C /* GameInfo.swift in Sources */,
 				5AB45F44213D6E4300A45D3F /* OpponentsHandView.swift in Sources */,
 				5A43BD63213A8A1D001B918E /* AppDelegate.swift in Sources */,
 				5A45882A215F7F81005451F5 /* Helpers.swift in Sources */,
