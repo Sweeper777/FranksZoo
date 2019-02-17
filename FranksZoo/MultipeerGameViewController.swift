@@ -4,6 +4,11 @@ import SCLAlertView
 import MultipeerConnectivity
 
 class MultipeerGameViewController: UIViewController {
+    
+    var isHost = false
+    var session: MCSession!
+    var playerOrder: [MCPeerID : Int]!
+    
     @IBOutlet var opponentHand1: OpponentsHandView!
     @IBOutlet var opponentHand2: OpponentsHandView!
     @IBOutlet var opponentHand3: OpponentsHandView!
