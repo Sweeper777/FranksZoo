@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
     
     var initialAnimationPlayed = false
     
-    let game = Game()
+    var game: Game!
     
     var cards: [Card] {
         return game.playerHands[0].toArray()
@@ -25,6 +25,9 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        game = Game()
+        
         game.currentTurn = Int.random(in: 0..<4)
         game.delegate = self
         
