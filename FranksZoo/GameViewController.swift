@@ -289,4 +289,13 @@ extension GameViewController : GameDelegate {
     func quitGame() {
         performSegue(withIdentifier: "unwindToMainMenu", sender: nil)
     }
+    
+    func playerTurnDidChange(to turn: Int, game: Game) {
+        if turn == 0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                [unowned self] in
+                self.moveDisplayer.animateItsYourTurn()
+            }
+        }
+    }
 }
