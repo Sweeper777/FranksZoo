@@ -301,6 +301,17 @@ extension MultipeerGameViewController : MCSessionDelegate {
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
+        let decoder = JSONDecoder()
+        if data.count == 1 {
+            if data[0] == MultipeerCommands.ready.rawValue && isHost{
+                let gameInfo = GameInfo(game: game, playerOrder: playerOrder)
+                let data = try! JSONEncoder().encode(gameInfo)
+                try! session.send(data, toPeers: [peerID], with: .reliable)
+            }
+        } else if let gameInfo = try? decoder.decode(GameInfo.self, from: data) {
+            game = gameInfo.game
+            playerOrder = gameInfo.playerOrder
+        }
     }
     
     func session(_ session: MCSession, didReceive stream: InputStream, withName streamName: String, fromPeer peerID: MCPeerID) {
