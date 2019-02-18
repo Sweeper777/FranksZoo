@@ -169,4 +169,26 @@ class MoveDisplayerView: UIView {
             fatalError("Invalid Player!")
         }
     }
+    
+    func animateItsYourTurn() {
+        let height = UIScreen.height / 2
+        let width = UIScreen.width / 2
+        let startY = -self.y - height
+        let midY = self.bounds.midY - height / 2
+        let endY = self.bounds.height + self.cardSize.height
+        let x = bounds.midX - width / 2
+        let imageView = UIImageView(frame: CGRect(x: x, y: startY, width: width, height: height))
+        imageView.contentMode = .scaleAspectFit
+        imageView.image = UIImage(named: "itsyourturn")
+        self.addSubview(imageView)
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
+            imageView.y = midY
+        }) { (_) in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+                UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseIn], animations: {
+                    imageView.y = endY
+                }, completion: {_ in})
+            })
+        }
+    }
 }
