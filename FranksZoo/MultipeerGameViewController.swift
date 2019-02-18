@@ -293,6 +293,12 @@ extension MultipeerGameViewController : GameDelegate {
     func quitGame() {
         performSegue(withIdentifier: "unwindToMainMenu", sender: nil)
     }
+    
+    func playerTurnDidChange(to turn: Int, game: Game) {
+        if turn == 0 {
+            moveDisplayer.animateItsYourTurn()
+        }
+    }
 }
 
 extension MultipeerGameViewController : MCSessionDelegate {
