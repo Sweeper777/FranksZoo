@@ -50,6 +50,7 @@ class Game : Codable {
                 lastMove = nil
             }
         } while currentPlayerHand.isEmpty
+        delegate?.playerTurnDidChange(to: currentTurn, game: self)
     }
     
     @discardableResult
