@@ -216,7 +216,6 @@ class MultipeerGameViewController: UIViewController {
         }
         let player = game.currentTurn
         game.makeMove(move)
-        let nextAITurn = game.currentTurn != 0
         moveDisplayer.animateMove(move, forPlayer: player, completion: {
             [weak self] in
             self?.updateOpponentsHandView()
