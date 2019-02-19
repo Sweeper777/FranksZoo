@@ -3,7 +3,7 @@ import SwiftyButton
 import SCLAlertView
 
 class GameViewController: UIViewController {
-
+    
     @IBOutlet var opponentHand1: OpponentsHandView!
     @IBOutlet var opponentHand2: OpponentsHandView!
     @IBOutlet var opponentHand3: OpponentsHandView!
@@ -121,6 +121,12 @@ class GameViewController: UIViewController {
             if self?.opponentHand1.numberOfCards == 15 {
                 timer.invalidate()
                 self?.bottomStackView.isHidden = false
+                if self?.game.currentTurn == 0 {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        [weak self] in
+                        self?.moveDisplayer.animateItsYourTurn()
+                    }
+                }
             }
         }.start()
     }
