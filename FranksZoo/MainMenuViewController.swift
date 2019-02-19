@@ -25,6 +25,7 @@ class MainMenuViewController: UIViewController {
             make.right.equalToSuperview().offset(-8).priority(.high)
         }
         playButton.setTitle("PLAY", for: .normal)
+        playButton.titleLabel?.font = UIFont(name: "GillSans-UltraBold", size: 10)
         playButton.addTarget(self, action: #selector(playButtonPress), for: .touchUpInside)
         
         helpButton = PressableButton(frame: .zero)
@@ -36,6 +37,7 @@ class MainMenuViewController: UIViewController {
             make.top.equalTo(playButton.snp.bottom).offset(16)
         }
         helpButton.setTitle("HELP", for: .normal)
+        helpButton.titleLabel?.font = UIFont(name: "GillSans-UltraBold", size: 10)
         
         hostButton = PressableButton(frame: .zero)
         buttonContainer.addSubview(hostButton)
@@ -46,6 +48,7 @@ class MainMenuViewController: UIViewController {
             make.top.equalTo(helpButton.snp.bottom).offset(16)
         }
         hostButton.setTitle("HOST", for: .normal)
+        hostButton.titleLabel?.font = UIFont(name: "GillSans-UltraBold", size: 10)
         hostButton.addTarget(self, action: #selector(hostButtonPress), for: .touchUpInside)
         
         joinButton = PressableButton(frame: .zero)
@@ -57,6 +60,7 @@ class MainMenuViewController: UIViewController {
             make.top.equalTo(hostButton.snp.bottom).offset(16)
         }
         joinButton.setTitle("JOIN", for: .normal)
+        joinButton.titleLabel?.font = UIFont(name: "GillSans-UltraBold", size: 10)
         joinButton.addTarget(self, action: #selector(joinButtonPress), for: .touchUpInside)
     }
     
