@@ -14,6 +14,7 @@
 		5A341AFC21FDC18600CAE2D7 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A341AFB21FDC18600CAE2D7 /* MainMenuViewController.swift */; };
 		5A34A859220EE98400E63575 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34A858220EE98400E63575 /* JoinViewController.swift */; };
 		5A34E9F12201BB2E001CB149 /* TouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34E9F02201BB2E001CB149 /* TouchGestureRecognizer.swift */; };
+		5A36494A221B35B50099F746 /* GillSans.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 5A364949221B35B40099F746 /* GillSans.ttc */; };
 		5A36F4BE220E1E7100B7FCB0 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F4BD220E1E7100B7FCB0 /* HostViewController.swift */; };
 		5A39C4552218020C00D54B2C /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A39C4542218020C00D54B2C /* GameInfo.swift */; };
 		5A43BD63213A8A1D001B918E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD62213A8A1D001B918E /* AppDelegate.swift */; };
@@ -54,6 +55,7 @@
 		5A341AFB21FDC18600CAE2D7 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		5A34A858220EE98400E63575 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		5A34E9F02201BB2E001CB149 /* TouchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureRecognizer.swift; sourceTree = "<group>"; };
+		5A364949221B35B40099F746 /* GillSans.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GillSans.ttc; sourceTree = "<group>"; };
 		5A36F4BD220E1E7100B7FCB0 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		5A39C4542218020C00D54B2C /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		5A43BD5F213A8A1D001B918E /* FranksZoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FranksZoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,6 +147,7 @@
 		5A43BD61213A8A1D001B918E /* FranksZoo */ = {
 			isa = PBXGroup;
 			children = (
+				5A364949221B35B40099F746 /* GillSans.ttc */,
 				5A43BD62213A8A1D001B918E /* AppDelegate.swift */,
 				5A43BD64213A8A1D001B918E /* GameViewController.swift */,
 				5A33404F22103C90009FF7D6 /* MultipeerGameViewController.swift */,
@@ -268,6 +271,7 @@
 			files = (
 				5A43BD6D213A8A20001B918E /* LaunchScreen.storyboard in Resources */,
 				5A43BD6A213A8A20001B918E /* Assets.xcassets in Resources */,
+				5A36494A221B35B50099F746 /* GillSans.ttc in Resources */,
 				5A43BD68213A8A1D001B918E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

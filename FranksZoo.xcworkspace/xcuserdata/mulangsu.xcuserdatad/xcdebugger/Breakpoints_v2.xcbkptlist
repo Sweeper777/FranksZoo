@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FranksZoo/GameViewController.swift"
-            timestampString = "571505265.2497441"
+            timestampString = "572209367.8034329"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
-            landmarkName = "didTapCollectionViewCell(tapper:)"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "passPress()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
