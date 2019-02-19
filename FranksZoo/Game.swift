@@ -42,6 +42,15 @@ class Game : Codable {
         }
     }
     
+    init(copyOf game: Game) {
+        playerHands = game.playerHands
+        currentTurn = game.currentTurn
+        ended = game.ended
+        lastMove = game.lastMove
+        lastMoveMadeBy = game.lastMoveMadeBy
+        totalPlayedCardCount = game.totalPlayedCardCount
+    }
+    
     private func nextPlayer() {
         repeat {
             currentTurn += 1
