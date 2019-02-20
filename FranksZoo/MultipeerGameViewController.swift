@@ -25,6 +25,9 @@ class MultipeerGameViewController: UIViewController {
     var game: Game!
     
     var cards: [Card] {
+        if game == nil {
+            return []
+        }
         return game.playerHands[0].toArray()
     }
     
