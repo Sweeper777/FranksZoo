@@ -30,6 +30,12 @@ class MultipeerGameViewController: UIViewController {
         }
         return game.playerHands[0].toArray()
     }
+
+    var isAiRunner: Bool {
+        let myTurn = playerOrder[session.myPeerID]!
+        return playerOrder.values.min() == myTurn
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
