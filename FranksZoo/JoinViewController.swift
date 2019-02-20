@@ -125,6 +125,11 @@ extension JoinViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
         if data.count == 1 {
             if MultipeerCommands(rawValue: data.first!) == .disconnect {
                 self.session.disconnect()
+            } else if MultipeerCommands(rawValue: data.first!) == .startGame {
+                DispatchQueue.main.async {
+                    [weak self] in
+                    self?.performSegue(withIdentifier: "unwindToMainMenu", sender: nil)
+                }
             }
         }
     }
