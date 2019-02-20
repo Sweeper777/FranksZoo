@@ -86,7 +86,8 @@ class HostViewController : UIViewController {
     }
     
     @objc func startPress() {
-        
+        performSegue(withIdentifier: "unwindToMainMenu", sender: nil)
+        try! session.send(Data(bytes: [MultipeerCommands.startGame.rawValue]), toPeers: session.connectedPeers, with: .reliable)
     }
 }
 
