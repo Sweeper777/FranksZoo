@@ -127,7 +127,7 @@ class MainMenuViewController: UIViewController {
     }
     
     @IBAction func unwindFromJoin(segue: UIStoryboardSegue) {
-        if let vc = segue.source as? HostViewController {
+        if let vc = segue.source as? JoinViewController {
             multipeerTransitioning = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 [weak self] in
