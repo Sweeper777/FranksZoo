@@ -101,4 +101,20 @@ class Game : Codable {
         }
     }
     
+    func canMakeMove(_ move: Move) -> Bool {
+        if ended {
+            return false
+        }
+        
+        guard move.isLegal else { return false }
+        
+        var isDefeating = true
+        if let lastMove = self.lastMove {
+            isDefeating = move.canDefeat(lastMove)
+        }
+        
+        guard isDefeating else { return false }
+        
+        return currentPlayerHand.canMakeMove(move)
+    }
 }
