@@ -183,15 +183,11 @@ class MultipeerGameViewController: UIViewController {
     
     @IBAction func passPress() {
         guard game.currentTurn == 0 && !game.ended else { return }
-        game.makeMove(.pass)
-        moveDisplayer.animateMove(.pass, forPlayer: 0) {
-            [weak self] in
-            self?.handCollectionView.reloadData()
-            self?.updateOpponentsHandView()
-            self?.updateMoveDisplayer()
-//            let makeMove = self?.aiMakeMove
-//            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: makeMove ?? {})
-        }
+        let moveInfo = MoveInfo(move: .pass, madeByAi: false)
+        let encoder = JSONEncoder()
+        let data = try! encoder.encode(moveInfo)
+        try! session.send(data, toPeers: session.connectedPeers, with: .reliable)
+        handleMakeMove(moveInfo)
     }
     
     @objc func didTapCollectionViewCell(tapper: UIGestureRecognizer) {
