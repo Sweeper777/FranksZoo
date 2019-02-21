@@ -333,7 +333,10 @@ extension MultipeerGameViewController : MCSessionDelegate {
         let decoder = JSONDecoder()
         if data.count == 1 {
             if data[0] == MultipeerCommands.ready.rawValue && isHost{
-                let gameInfo = GameInfo(game: game, playerOrder: playerOrder)
+                let gameCopy = Game(copyOf: game)
+                gameCopy.playerHands = gameCopy.playerHands.shifted(by: playerOrder[session.myPeerID]!)
+                gameCopy.currentTurn = 0
+                let gameInfo = GameInfo(game: gameCopy, playerOrder: playerOrder)
                 let data = try! JSONEncoder().encode(gameInfo)
                 try! session.send(data, toPeers: [peerID], with: .reliable)
             }
