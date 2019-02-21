@@ -55,6 +55,11 @@ class MultipeerGameViewController: UIViewController {
             let peerIDs = session.connectedPeers + [session.myPeerID]
             let orderNumbers = [0,1,2,3].shuffled()
             playerOrder = Dictionary(uniqueKeysWithValues: zip(peerIDs, orderNumbers))
+            let myTurn = playerOrder[session.myPeerID]!
+            if myTurn != 0 {
+                game.currentTurn = 4 - myTurn
+                game.playerHands = game.playerHands.shifted(by: -myTurn)
+            }
         } else {
             try! session.send(Data(bytes: [MultipeerCommands.ready.rawValue]), toPeers: session.connectedPeers, with: .reliable)
         }
