@@ -160,16 +160,23 @@ class MultipeerGameViewController: UIViewController {
         if selectedCards.count > 0 {
             let moveDict = Dictionary(grouping: selectedCards, by: { $0 }).mapValues { $0.count }
             let move = Move(cards: moveDict)
-            let player = game.currentTurn
-            if (game.makeMove(move)) {
-                moveDisplayer.animateMove(move, forPlayer: player, completion: {
-                    [weak self] in
-                    self?.handCollectionView.reloadData()
-                    self?.updateOpponentsHandView()
-                    self?.updateMoveDisplayer()
+//            let player = game.currentTurn
+//            if (game.makeMove(move)) {
+//                moveDisplayer.animateMove(move, forPlayer: player, completion: {
+//                    [weak self] in
+//                    self?.handCollectionView.reloadData()
+//                    self?.updateOpponentsHandView()
+//                    self?.updateMoveDisplayer()
 //                    let makeMove = self?.aiMakeMove
 //                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: makeMove ?? {})
-                })
+//                })
+//            }
+            if game.canMakeMove(move) {
+                let moveInfo = MoveInfo(move: move, madeByAi: false)
+                let encoder = JSONEncoder()
+                let data = try! encoder.encode(moveInfo)
+                try! session.send(data, toPeers: session.connectedPeers, with: .reliable)
+                handleMakeMove(moveInfo)
             }
         }
     }
