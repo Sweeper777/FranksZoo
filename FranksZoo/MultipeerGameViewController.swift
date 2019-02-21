@@ -241,17 +241,14 @@ class MultipeerGameViewController: UIViewController {
         default:
             fatalError()
         }
-        let player = game.currentTurn
-        game.makeMove(move)
-        moveDisplayer.animateMove(move, forPlayer: player, completion: {
-            [weak self] in
-            self?.updateOpponentsHandView()
-            self?.updateMoveDisplayer()
-//            let makeMove = self?.aiMakeMove
-//            if nextAITurn {
-//                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: makeMove ?? {})
-//            }
-        })
+//        let player = game.currentTurn
+//        game.makeMove(move)
+//        moveDisplayer.animateMove(move, forPlayer: player, completion: {
+//            [weak self] in
+//            self?.updateOpponentsHandView()
+//            self?.updateMoveDisplayer()
+//        })
+        return move
     }
 }
 
