@@ -229,13 +229,13 @@ class MultipeerGameViewController: UIViewController {
         moveDisplayer.displayedMove = game.lastMove
     }
     
-    func aiMakeMove() {
-        guard !game.ended else { return }
+    func getAiMove() -> Move? {
+        guard !game.ended else { return nil }
         
         let move: Move
         switch game.currentTurn {
         case 0:
-            return
+            return nil
         case 1, 2, 3:
             let ai = GameAI(game: game, playerIndex: game.currentTurn)
             move = ai.getNextMove()
