@@ -149,9 +149,14 @@ class MultipeerGameViewController: UIViewController {
             self?.opponentHand3.numberOfCards += 1
             if self?.opponentHand1.numberOfCards == 15 {
                 timer.invalidate()
-                self?.bottomStackView.isHidden = false
+                self?.initialAnimationDidEnd()
             }
             }.start()
+    }
+    
+    func initialAnimationDidEnd() {
+        bottomStackView.isHidden = false
+        runAiIfAble()
     }
     
     func runAiIfAble() {
