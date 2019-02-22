@@ -49,11 +49,12 @@ class MultipeerGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        session.delegate = self
         if isHost {
             game = Game()
             let peerIDs = session.connectedPeers + [session.myPeerID]
             let orderNumbers = [0,1,2,3].shuffled()
+            game.delegate = self
             playerOrder = Dictionary(uniqueKeysWithValues: zip(peerIDs, orderNumbers))
             let myTurn = playerOrder[session.myPeerID]!
             if myTurn != 0 {
