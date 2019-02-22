@@ -365,6 +365,14 @@ extension MultipeerGameViewController : MCSessionDelegate {
         } else if let gameInfo = try? decoder.decode(GameInfo.self, from: data) {
             game = gameInfo.game
             playerOrder = gameInfo.playerOrder
+            let myTurn = playerOrder[session.myPeerID]!
+            if myTurn != 0 {
+                game.currentTurn = 4 - myTurn
+                game.playerHands = game.playerHands.shifted(by: -myTurn)
+                game.delegate = self
+            }
+            DispatchQueue.main.async(execute: handCollectionView.reloadData)
+        } else if let moveInfo = try? decoder.decode(MoveInfo.self, from: data) {
         }
     }
     
