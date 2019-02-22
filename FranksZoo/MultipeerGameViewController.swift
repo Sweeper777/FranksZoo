@@ -154,6 +154,20 @@ class MultipeerGameViewController: UIViewController {
             }.start()
     }
     
+    func runAiIfAble() {
+        if isAiRunner && isAiTurn {
+            if let move = getAiMove() {
+                let moveInfo = MoveInfo(move: move, madeByAi: true)
+                let encoder = JSONEncoder()
+                let data = try! encoder.encode(moveInfo)
+                if !session.connectedPeers.isEmpty {
+                    try! session.send(data, toPeers: session.connectedPeers, with: .reliable)
+                }
+                handleMakeMove(moveInfo)
+            }
+        }
+    }
+    
     @IBAction func dealPress() {
         guard game.currentTurn == 0 && !game.ended else { return }
         
