@@ -373,6 +373,7 @@ extension MultipeerGameViewController : MCSessionDelegate {
             }
             DispatchQueue.main.async(execute: handCollectionView.reloadData)
         } else if let moveInfo = try? decoder.decode(MoveInfo.self, from: data) {
+            handleMakeMove(moveInfo)
         }
     }
     
