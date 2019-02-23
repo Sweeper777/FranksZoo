@@ -195,7 +195,9 @@ class MultipeerGameViewController: UIViewController {
                 let moveInfo = MoveInfo(move: move, madeByAi: false)
                 let encoder = JSONEncoder()
                 let data = try! encoder.encode(moveInfo)
-                try! session.send(data, toPeers: session.connectedPeers, with: .reliable)
+                if !session.connectedPeers.isEmpty {
+                    try! session.send(data, toPeers: session.connectedPeers, with: .reliable)
+                }
                 handleMakeMove(moveInfo)
             }
         }
@@ -206,7 +208,9 @@ class MultipeerGameViewController: UIViewController {
         let moveInfo = MoveInfo(move: .pass, madeByAi: false)
         let encoder = JSONEncoder()
         let data = try! encoder.encode(moveInfo)
-        try! session.send(data, toPeers: session.connectedPeers, with: .reliable)
+        if !session.connectedPeers.isEmpty {
+            try! session.send(data, toPeers: session.connectedPeers, with: .reliable)
+        }
         handleMakeMove(moveInfo)
     }
     
