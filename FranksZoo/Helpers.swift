@@ -47,3 +47,9 @@ extension Array {
         return self.enumerated().sorted(by: { shift($0.offset) < shift($1.offset) }).map { $0.element }
     }
 }
+
+infix operator %%: MultiplicationPrecedence
+
+func %%<T: BinaryInteger>(lhs: T, rhs: T) -> T {
+    return (lhs % rhs + rhs) % rhs
+}
