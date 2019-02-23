@@ -158,6 +158,10 @@ class MultipeerGameViewController: UIViewController {
     func initialAnimationDidEnd() {
         bottomStackView.isHidden = false
         runAiIfAble()
+        
+        if game.currentTurn == 0 {
+            moveDisplayer.animateItsYourTurn()
+        }
     }
     
     func runAiIfAble() {
