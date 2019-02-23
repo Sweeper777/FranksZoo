@@ -42,7 +42,7 @@ class MultipeerGameViewController: UIViewController {
         }
         
         let myTurn = playerOrder[session.myPeerID]!
-        let aiTurnNumbers = Set([0,1,2,3]).subtracting(playerOrder.values).map { abs(($0 - myTurn) % 4) }
+        let aiTurnNumbers = Set([0,1,2,3]).subtracting(playerOrder.values).map { ($0 - myTurn) %% 4 }
         return aiTurnNumbers.contains(game.currentTurn)
     }
     
