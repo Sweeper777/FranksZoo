@@ -339,7 +339,10 @@ extension MultipeerGameViewController : GameDelegate {
     
     func playerTurnDidChange(to turn: Int, game: Game) {
         if turn == 0 {
-            moveDisplayer.animateItsYourTurn()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                [unowned self] in
+                self.moveDisplayer.animateItsYourTurn()
+            }
         }
     }
 }
