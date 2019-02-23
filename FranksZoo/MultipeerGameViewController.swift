@@ -46,6 +46,7 @@ class MultipeerGameViewController: UIViewController {
         return aiTurnNumbers.contains(game.currentTurn)
     }
     
+    var nextAiMove: Move?
     
     override func viewDidLoad() {
         super.viewDidLoad()
