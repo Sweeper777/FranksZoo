@@ -354,7 +354,18 @@ extension MultipeerGameViewController : GameDelegate {
 
 extension MultipeerGameViewController : MCSessionDelegate {
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
+        guard !game.ended else { return }
         
+        if state == .notConnected {
+            if (!isAiTurn && game.currentTurn != 0) || (isAiTurn && nextAiMove == nil) {
+                playerOrder[peerID] = nil
+                runAiIfAble()
+            } else {
+                playerOrder[peerID] = nil
+            }
+        }
+    }
+    
     fileprivate func handleMakeMove(_ moveInfo: MoveInfo) {
         let delay: TimeInterval = moveInfo.madeByAi ? 2 : 0
         if moveInfo.madeByAi {
