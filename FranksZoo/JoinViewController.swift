@@ -37,7 +37,7 @@ class JoinViewController : UIViewController {
     
     override func viewDidLoad() {
         tableView.backgroundColor = .clear
-        session = MCSession(peer: peerID)
+        session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .optional)
         session.delegate = self
         browser = MCNearbyServiceBrowser(peer: peerID, serviceType: "frankszoo\(Bundle.main.appBuild)")
         browser.delegate = self

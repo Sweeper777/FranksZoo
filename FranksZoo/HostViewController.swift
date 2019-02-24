@@ -21,7 +21,7 @@ class HostViewController : UIViewController {
         tableView.backgroundColor = .clear
         descriptionLabel.text = descriptionLabel.text?.replacingOccurrences(of: "DEVICE NAME", with: UIDevice.current.name)
         
-        session = MCSession(peer: peerID)
+        session = MCSession(peer: peerID, securityIdentity: nil, encryptionPreference: .optional)
         session.delegate = self
         advertiser = MCNearbyServiceAdvertiser(peer: peerID, discoveryInfo: nil, serviceType: "frankszoo\(Bundle.main.appBuild)")
         advertiser.delegate = self
