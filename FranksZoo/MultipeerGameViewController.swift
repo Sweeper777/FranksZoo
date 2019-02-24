@@ -343,7 +343,7 @@ extension MultipeerGameViewController : GameDelegate {
     }
     
     func quitGame() {
-        performSegue(withIdentifier: "unwindToMainMenu", sender: nil)
+        dismiss(animated: true, completion: nil)
     }
     
     func playerTurnDidChange(to turn: Int, game: Game) {
