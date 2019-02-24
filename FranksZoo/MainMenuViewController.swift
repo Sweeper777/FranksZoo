@@ -129,7 +129,7 @@ class MainMenuViewController: UIViewController {
     @IBAction func unwindFromJoin(segue: UIStoryboardSegue) {
         if let vc = segue.source as? JoinViewController {
             multipeerTransitioning = true
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) {
                 [weak self] in
                 guard let `self` = self else { return }
                 self.performSegue(withIdentifier: "showMultipeerGame", sender: (vc.session, false))
