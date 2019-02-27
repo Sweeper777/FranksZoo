@@ -86,7 +86,7 @@ class HeuristicAI : GameAI {
     
     func isUndefeatableMove(_ move: Move, allAvailableCards: Hand) -> Bool {
         let defeatableMoves = move.defeatableMoves
-        return defeatableMoves.testAll(test: allAvailableCards.canMakeMove(_:))
+        return !defeatableMoves.contains(where: allAvailableCards.canMakeMove(_:))
     }
     
     func isStartOfWinningSequence(_ move: Move) -> Bool {
