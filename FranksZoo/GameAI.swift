@@ -1,4 +1,10 @@
-class GameAI {
+protocol GameAI {
+    func getNextMove() -> Move
+    var game: Game { get }
+    var playerIndex: Int { get }
+}
+
+class HeuristicAI : GameAI {
     let game: Game
     let playerIndex: Int
     
