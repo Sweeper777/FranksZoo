@@ -175,6 +175,8 @@ extension MultipeerGameViewController : MCSessionDelegate {
                 let gameInfo = GameInfo(game: gameCopy, playerOrder: playerOrder)
                 let data = try! JSONEncoder().encode(gameInfo)
                 try! session.send(data, toPeers: [peerID], with: .reliable)
+            } else if data[0] == MultipeerCommands.disconnect.rawValue {
+                handleDisconnectOfPeer(peerID)
             }
         } else if let gameInfo = try? decoder.decode(GameInfo.self, from: data) {
             game = gameInfo.game
