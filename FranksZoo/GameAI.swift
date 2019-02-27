@@ -59,8 +59,14 @@ class HeuristicAI : GameAI {
         self.playerIndex = playerIndex
     }
     
+    func isWinningMove(_ move: Move) -> Bool {
+        return isWinningMove(move, forHand: myHand)
     }
     
+    func isWinningMove(_ move: Move, forHand hand: Hand) -> Bool {
+        var handCopy = hand
+        handCopy.makeMove(move)
+        return handCopy.isEmpty
     }
     
     func isLosingMove(_ move: Move) -> Bool {
