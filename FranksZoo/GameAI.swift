@@ -101,13 +101,13 @@ class HeuristicAI : GameAI {
     }
     
     private func isStartOfWinningSequenceImpl(_ hand: Hand, allAvailableCards: Hand, depth: Int) -> Bool {
-        if depth == 0 {
-            return false
-        }
+        //        if depth == 0 {
+        //            return false
+        //        }
         
-        let possibleOpeningMoves = allPossibleOpeningMoves(for: hand)
+        let possibleOpeningMoves = allPossibleOpeningMoves(for: hand).sorted(by: { $0.cardCount > $1.cardCount })
         for move in possibleOpeningMoves {
-            if isWinningMove(move) {
+            if isWinningMove(move, forHand: hand) {
                 return true
             }
             
