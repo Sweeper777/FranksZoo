@@ -124,64 +124,21 @@ class MultipeerGameViewController: GameViewControllerBase {
     }
 }
 
-extension MultipeerGameViewController : GameDelegate {
-    func playerDidWin(game: Game, player: Int, place: Int) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.2, execute: {
-            [weak self] in
-            self?.handlePlayerWin(game: game, player: player, place: place)
-        })
-    }
-    
-    func handlePlayerWin(game: Game, player: Int, place: Int) {
-        let placeNames = [1: "first", 2: "second", 3: "third"]
-        if player == 0 {
-            if place < 3 {
-                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-                alert.addButton("Yes", action: {})
-                alert.addButton("No", action: quitGame)
-                alert.showInfo("You came \(placeNames[place]!)", subTitle: "Do you want to continue watching the rest of the game?")
-            } else {
-                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: true))
-                alert.showInfo("You came \(placeNames[place]!)", subTitle: "")
-            }
-        } else if place == 3 {
-            if game.playerHands[0].isEmpty {
-                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-                alert.addButton("Quit", action: quitGame)
-                alert.showInfo("Game ended!", subTitle: "")
-            } else {
-                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
-                alert.addButton("Quit", action: quitGame)
-                alert.showInfo("You lost!", subTitle: "")
-            }
-        }
-    }
-    
-    func quitGame() {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func playerTurnDidChange(to turn: Int, game: Game) {
-        if turn == 0 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                [unowned self] in
-                self.moveDisplayer.animateItsYourTurn()
-            }
-        }
-    }
-}
-
 extension MultipeerGameViewController : MCSessionDelegate {
+    fileprivate func handleDisconnectOfPeer(_ peerID: MCPeerID) {
+        if (!isAiTurn && game.currentTurn != 0) || (isAiTurn && nextAiMove == nil) {
+            playerOrder[peerID] = nil
+            runAiIfAble()
+        } else {
+            playerOrder[peerID] = nil
+        }
+    }
+    
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
         guard !game.ended else { return }
         
         if state == .notConnected {
-            if (!isAiTurn && game.currentTurn != 0) || (isAiTurn && nextAiMove == nil) {
-                playerOrder[peerID] = nil
-                runAiIfAble()
-            } else {
-                playerOrder[peerID] = nil
-            }
+            handleDisconnectOfPeer(peerID)
         }
     }
     
