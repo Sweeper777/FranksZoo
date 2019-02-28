@@ -32,7 +32,7 @@ class MultipeerGameViewController: GameViewControllerBase {
             game = Game()
             game.delegate = self
             let peerIDs = [session.myPeerID] + session.connectedPeers
-            let orderNumbers = [0,1,2,3]/*.shuffled()*/
+            let orderNumbers = [0,1,2,3].shuffled()
             playerOrder = Dictionary(uniqueKeysWithValues: zip(peerIDs, orderNumbers))
             let myTurn = playerOrder[session.myPeerID]!
             if myTurn != 0 {
@@ -108,7 +108,7 @@ class MultipeerGameViewController: GameViewControllerBase {
         case 0:
             return nil
         case 1, 2, 3:
-            let ai = GameAI(game: game, playerIndex: game.currentTurn)
+            let ai = HeuristicAI(game: game, playerIndex: game.currentTurn)
             move = ai.getNextMove()
         default:
             fatalError()

@@ -70,7 +70,7 @@ class GameViewController: GameViewControllerBase {
         case 0:
             return
         case 1, 2, 3:
-            let ai = GameAI(game: game, playerIndex: game.currentTurn)
+            let ai = HeuristicAI(game: game, playerIndex: game.currentTurn)
             move = ai.getNextMove()
         default:
             fatalError()
