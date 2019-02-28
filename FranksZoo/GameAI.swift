@@ -131,7 +131,7 @@ class HeuristicAI : GameAI {
     
     func findMoveByWeights(moves: [Move]) -> Move {
         let lowerBound = 15 - Double(game.totalPlayedCardCount * game.playerCount) / 10.0
-        let upperBound = 30 - Double(game.totalPlayedCardCount * game.playerCount) / 5
+        let upperBound = max(lowerBound, 30 - Double(game.totalPlayedCardCount * game.playerCount) / 5)
         
         let capped = moves.map { ($0, weight(ofMove: $0)) }.filter { $0.1 > lowerBound }.sorted { $0.1 > $1.1 }
         let preferred = capped.filter { $0.1 > upperBound }
