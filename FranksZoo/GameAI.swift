@@ -158,3 +158,18 @@ class HeuristicAI : GameAI {
         return findMoveByWeights(moves: possibleMoves)
     }
 }
+
+class RandomAI : GameAI {
+    let game: Game
+    let playerIndex: Int
+    
+    func getNextMove() -> Move {
+        let moves = allPossibleMoves(for: myHand)
+        return moves.randomElement() ?? .pass
+    }
+    
+    init(game: Game, playerIndex: Int) {
+        self.game = game
+        self.playerIndex = playerIndex
+    }
+}
