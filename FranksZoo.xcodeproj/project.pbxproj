@@ -12,9 +12,11 @@
 		5A33405022103C90009FF7D6 /* MultipeerGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A33404F22103C90009FF7D6 /* MultipeerGameViewController.swift */; };
 		5A341AFA21FDB6C800CAE2D7 /* GameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A341AF921FDB6C800CAE2D7 /* GameDelegate.swift */; };
 		5A341AFC21FDC18600CAE2D7 /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A341AFB21FDC18600CAE2D7 /* MainMenuViewController.swift */; };
+		5A3445D5221D60EA005AC132 /* MoveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3445D4221D60EA005AC132 /* MoveInfo.swift */; };
 		5A34A859220EE98400E63575 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34A858220EE98400E63575 /* JoinViewController.swift */; };
 		5A34E9F12201BB2E001CB149 /* TouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34E9F02201BB2E001CB149 /* TouchGestureRecognizer.swift */; };
 		5A36494A221B35B50099F746 /* GillSans.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 5A364949221B35B40099F746 /* GillSans.ttc */; };
+		5A36AD552222A030005FC649 /* GameViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36AD542222A030005FC649 /* GameViewControllerBase.swift */; };
 		5A36F4BE220E1E7100B7FCB0 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F4BD220E1E7100B7FCB0 /* HostViewController.swift */; };
 		5A39C4552218020C00D54B2C /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A39C4542218020C00D54B2C /* GameInfo.swift */; };
 		5A43BD63213A8A1D001B918E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD62213A8A1D001B918E /* AppDelegate.swift */; };
@@ -53,9 +55,22 @@
 		5A33404F22103C90009FF7D6 /* MultipeerGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipeerGameViewController.swift; sourceTree = "<group>"; };
 		5A341AF921FDB6C800CAE2D7 /* GameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDelegate.swift; sourceTree = "<group>"; };
 		5A341AFB21FDC18600CAE2D7 /* MainMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
+		5A3445D4221D60EA005AC132 /* MoveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveInfo.swift; sourceTree = "<group>"; };
+		5A3445D6221DDB45005AC132 /* AnimationSugar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AnimationSugar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3445D8221DDB45005AC132 /* DynamicColor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DynamicColor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3445DA221DDB45005AC132 /* EZLoadingActivity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EZLoadingActivity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3445DC221DDB45005AC132 /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3445DE221DDB45005AC132 /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3445E0221DDB45005AC132 /* RxSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3445E2221DDB45005AC132 /* SCLAlertView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SCLAlertView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3445E4221DDB45005AC132 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3445E6221DDB45005AC132 /* SwiftRandom.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftRandom.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3445E8221DDB45005AC132 /* SwiftyButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A3445EA221DDB45005AC132 /* SwiftyUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A34A858220EE98400E63575 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		5A34E9F02201BB2E001CB149 /* TouchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureRecognizer.swift; sourceTree = "<group>"; };
 		5A364949221B35B40099F746 /* GillSans.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GillSans.ttc; sourceTree = "<group>"; };
+		5A36AD542222A030005FC649 /* GameViewControllerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewControllerBase.swift; sourceTree = "<group>"; };
 		5A36F4BD220E1E7100B7FCB0 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		5A39C4542218020C00D54B2C /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		5A43BD5F213A8A1D001B918E /* FranksZoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FranksZoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +133,17 @@
 		05A78F618D93BDEFED063470 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5A3445D6221DDB45005AC132 /* AnimationSugar.framework */,
+				5A3445D8221DDB45005AC132 /* DynamicColor.framework */,
+				5A3445DA221DDB45005AC132 /* EZLoadingActivity.framework */,
+				5A3445DC221DDB45005AC132 /* FSPagerView.framework */,
+				5A3445DE221DDB45005AC132 /* RxCocoa.framework */,
+				5A3445E0221DDB45005AC132 /* RxSwift.framework */,
+				5A3445E2221DDB45005AC132 /* SCLAlertView.framework */,
+				5A3445E4221DDB45005AC132 /* SnapKit.framework */,
+				5A3445E6221DDB45005AC132 /* SwiftRandom.framework */,
+				5A3445E8221DDB45005AC132 /* SwiftyButton.framework */,
+				5A3445EA221DDB45005AC132 /* SwiftyUtils.framework */,
 				6678C596C00963C6B145C5C5 /* Pods_FranksZoo.framework */,
 				F1D2B497C6F95FFB39BAF7E1 /* libPods-FranksZooTests.a */,
 			);
@@ -149,6 +175,7 @@
 			children = (
 				5A364949221B35B40099F746 /* GillSans.ttc */,
 				5A43BD62213A8A1D001B918E /* AppDelegate.swift */,
+				5A36AD542222A030005FC649 /* GameViewControllerBase.swift */,
 				5A43BD64213A8A1D001B918E /* GameViewController.swift */,
 				5A33404F22103C90009FF7D6 /* MultipeerGameViewController.swift */,
 				5A341AFB21FDC18600CAE2D7 /* MainMenuViewController.swift */,
@@ -166,6 +193,7 @@
 				5A341AF921FDB6C800CAE2D7 /* GameDelegate.swift */,
 				5A45882B215F85AD005451F5 /* GameAI.swift */,
 				5A39C4542218020C00D54B2C /* GameInfo.swift */,
+				5A3445D4221D60EA005AC132 /* MoveInfo.swift */,
 				5A43BD7A213AC01D001B918E /* FluentInterface.swift */,
 				5A458829215F7F81005451F5 /* Helpers.swift */,
 				5A33404D221025EA009FF7D6 /* MultipeerCommands.swift */,
@@ -371,12 +399,14 @@
 				5A34A859220EE98400E63575 /* JoinViewController.swift in Sources */,
 				5A43BD77213AA5AE001B918E /* Move.swift in Sources */,
 				5A43BD79213AA5DD001B918E /* Hand.swift in Sources */,
+				5A3445D5221D60EA005AC132 /* MoveInfo.swift in Sources */,
 				5A43BD7D213B05CD001B918E /* Game.swift in Sources */,
 				5A45882C215F85AD005451F5 /* GameAI.swift in Sources */,
 				5A34E9F12201BB2E001CB149 /* TouchGestureRecognizer.swift in Sources */,
 				5A43BD65213A8A1D001B918E /* GameViewController.swift in Sources */,
 				5A341AFC21FDC18600CAE2D7 /* MainMenuViewController.swift in Sources */,
 				5A43BD7B213AC01E001B918E /* FluentInterface.swift in Sources */,
+				5A36AD552222A030005FC649 /* GameViewControllerBase.swift in Sources */,
 				5A43BD75213A9331001B918E /* Card.swift in Sources */,
 				5A39C4552218020C00D54B2C /* GameInfo.swift in Sources */,
 				5AB45F44213D6E4300A45D3F /* OpponentsHandView.swift in Sources */,
