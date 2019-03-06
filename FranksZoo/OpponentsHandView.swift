@@ -23,6 +23,13 @@ class OpponentsHandView : UIView {
         }
     }
     
+    @IBInspectable
+    var labelText: String = "" {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
+    
     override func draw(_ rect: CGRect) {
         repositionViews()
     }
