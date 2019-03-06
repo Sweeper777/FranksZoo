@@ -81,6 +81,7 @@ class OpponentsHandView : UIView {
             imageCenters.reverse()
         case .down:
             rotationAngle = .pi
+            imageCenters.reverse()
         }
         
         zip(imageViews, imageCenters).forEach {
