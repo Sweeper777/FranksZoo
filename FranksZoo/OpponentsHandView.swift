@@ -27,10 +27,7 @@ class OpponentsHandView : UIView {
         repositionViews()
     }
     
-    func repositionViews() {
-        subviews.forEach { $0.removeFromSuperview() }
-        imageViews.removeAll()
-        
+    fileprivate func addImageViews() {
         for _ in 0..<numberOfCards {
             let imageView = UIImageView()
             imageView.image = #imageLiteral(resourceName: "flipside")
@@ -84,6 +81,11 @@ class OpponentsHandView : UIView {
             $0.0.transform = CGAffineTransform(rotationAngle: rotationAngle)
         }
         imageViews.forEach(addSubview)
+    func repositionViews() {
+        subviews.forEach { $0.removeFromSuperview() }
+        imageViews.removeAll()
         
+        addImageViews()
+        addLabel()
     }
 }
