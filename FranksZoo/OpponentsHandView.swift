@@ -89,6 +89,44 @@ class OpponentsHandView : UIView {
             $0.0.transform = CGAffineTransform(rotationAngle: rotationAngle)
         }
         imageViews.forEach(addSubview)
+    }
+    
+    fileprivate func addLabel() {
+        let height: CGFloat
+        let width: CGFloat
+        let centerX: CGFloat
+        let centerY: CGFloat
+        let rotationAngle: CGFloat
+        switch orientation {
+        case .right:
+            height = self.width / 5
+            width = self.height
+            centerX = height + self.bounds.maxX
+            centerY = self.bounds.midY
+            rotationAngle = .pi / 2
+        case .left:
+            height = self.width / 5
+            width = self.height
+            centerX = -height
+            centerY = self.bounds.midY
+            rotationAngle = -.pi / 2
+        case .down:
+            height = self.height / 5
+            width = self.width
+            centerX = self.width / 2
+            centerY = height + self.height
+            rotationAngle = 0
+        }
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: height))
+        label.text = labelText
+        label.updateFontSizeToFit(size: label.bounds.size, multiplier: 0.75)
+        label.center = CGPoint(x: centerX, y: centerY)
+        label.textAlignment = .center
+        label.textColor = .white
+        label.transform = CGAffineTransform(rotationAngle: rotationAngle)
+        self.addSubview(label)
+    }
+    
     func repositionViews() {
         subviews.forEach { $0.removeFromSuperview() }
         imageViews.removeAll()
