@@ -1,5 +1,6 @@
 PODS:
   - AnimationSugar (0.0.2)
+  - DVITutorialView (0.2.2)
   - DynamicColor (4.0.2)
   - EZLoadingActivity (1.01)
   - FSPagerView (0.7.2)
@@ -14,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - AnimationSugar
+  - DVITutorialView
   - DynamicColor
   - EZLoadingActivity
   - FSPagerView
@@ -28,6 +30,7 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AnimationSugar
+    - DVITutorialView
     - DynamicColor
     - EZLoadingActivity
     - FSPagerView
@@ -41,6 +44,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AnimationSugar: 5dcf5c375a90df4b64d5bba27919252cfaf8fe79
+  DVITutorialView: 7b933723d5ec27ecb4aed6f67f3706e362e9385c
   DynamicColor: c7adcfe871781a2b39877a5774e452ba51b79eb3
   EZLoadingActivity: edd7e387e5197b116ce2cccb3fd747ababc2a510
   FSPagerView: 7515f63c424da71623d299d4fbbfb3dd884642ff
@@ -52,6 +56,6 @@ SPEC CHECKSUMS:
   SwiftyButton: 5b0ef314e9cf61cf8a83e456ddd1ea1f53f30598
   SwiftyUtils: ae914aa96b5672e9282904771e5e5b44d2e307d6
 
-PODFILE CHECKSUM: e33c298d6da6f224ad161cbfd56e689f18f7ca48
+PODFILE CHECKSUM: ea263f250eefd7fa2d64e277db4c23febd541ab3
 
 COCOAPODS: 1.5.3

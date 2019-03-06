@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E58CB918BF47833BADDDFFD818A6AF70"
-               BlueprintName = "SnapKit"
+               BlueprintIdentifier = "CA732A5FAB3BD7B52A23386E2454766E"
+               BlueprintName = "DVITutorialView"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "SnapKit.framework">
+               BuildableName = "DVITutorialView.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
