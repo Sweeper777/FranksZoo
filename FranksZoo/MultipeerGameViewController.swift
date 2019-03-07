@@ -56,6 +56,19 @@ class MultipeerGameViewController: GameViewControllerBase {
         }
     }
     
+    func updatePlayerLabels() {
+        
+        let myTurn = playerOrder[session.myPeerID]!
+        var playerOrderCopy = playerOrder!
+        playerOrderCopy[session.myPeerID] = nil
+        let playerTurnNumbers = playerOrderCopy.mapValues { ($0 - myTurn) %% 4 }
+        let opponentHandViews = [opponentHand1, opponentHand2, opponentHand3]
+        opponentHandViews.forEach { $0?.labelText = "" }
+        for kvp in playerTurnNumbers {
+            opponentHandViews[kvp.value - 1]?.labelText = kvp.key.displayName
+        }
+    }
+    
     func runAiIfAble() {
         if isAiRunner && isAiTurn {
             if let move = getAiMove() {
