@@ -39,6 +39,7 @@ class MultipeerGameViewController: GameViewControllerBase {
                 game.currentTurn = 4 - myTurn
                 game.playerHands = game.playerHands.shifted(by: -myTurn)
             }
+            updatePlayerLabels()
         } else {
             try! session.send(Data(bytes: [MultipeerCommands.ready.rawValue]), toPeers: session.connectedPeers, with: .reliable)
             print("Ready signal sent")
@@ -145,6 +146,7 @@ extension MultipeerGameViewController : MCSessionDelegate {
         } else {
             playerOrder[peerID] = nil
         }
+        updatePlayerLabels()
     }
     
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
@@ -200,7 +202,11 @@ extension MultipeerGameViewController : MCSessionDelegate {
                 game.playerHands = game.playerHands.shifted(by: -myTurn)
                 game.delegate = self
             }
-            DispatchQueue.main.async(execute: handCollectionView.reloadData)
+            DispatchQueue.main.async {
+                [weak self] in
+                self?.handCollectionView.reloadData()
+                self?.updatePlayerLabels()
+            }
         } else if let moveInfo = try? decoder.decode(MoveInfo.self, from: data) {
             handleMakeMove(moveInfo)
         }
