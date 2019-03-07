@@ -184,7 +184,7 @@ class MoveDisplayerView: UIView {
         UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseOut], animations: {
             imageView.y = midY
         }) { (_) in
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseIn], animations: {
                     imageView.y = endY
                 }, completion: {_ in})
