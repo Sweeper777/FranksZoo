@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="169" y="-540"/>
+            <point key="canvasLocation" x="146" y="-1521"/>
         </scene>
         <!--Host View Controller-->
         <scene sceneID="6fe-jU-MZp">
@@ -262,7 +262,7 @@ Players who have joined the game:</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blu-bQ-dAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-878" y="992"/>
+            <point key="canvasLocation" x="-1224" y="2070"/>
         </scene>
         <!--Main Menu View Controller-->
         <scene sceneID="hZu-M6-xs2">
@@ -303,12 +303,13 @@ Players who have joined the game:</string>
                         <segue destination="sgK-TF-kTF" kind="presentation" identifier="showHost" modalPresentationStyle="formSheet" id="Hrm-3J-kjg"/>
                         <segue destination="q9F-zD-hEg" kind="presentation" identifier="showJoin" modalPresentationStyle="formSheet" id="JVk-9C-YgN"/>
                         <segue destination="nLQ-XB-3Po" kind="show" identifier="showMultipeerGame" id="Ya2-Uw-heU"/>
+                        <segue destination="C2P-ZR-3me" kind="show" identifier="showHelp" id="C3C-rq-9wH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wD5-Cw-oWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kww-RB-AHC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-567" y="32"/>
+            <point key="canvasLocation" x="-866" y="159"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="aWH-44-el3">
@@ -393,7 +394,7 @@ Players who have joined the game:</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Se-OT-Ryx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-220" y="992"/>
+            <point key="canvasLocation" x="-536" y="2068"/>
         </scene>
         <!--Multipeer Game View Controller-->
         <scene sceneID="i9n-Vd-Efh">
@@ -558,7 +559,172 @@ Players who have joined the game:</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GTH-Mx-ZUO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="168" y="199"/>
+            <point key="canvasLocation" x="146" y="-722"/>
+        </scene>
+        <!--Help Game View Controller-->
+        <scene sceneID="sX1-bw-w8I">
+            <objects>
+                <viewController id="C2P-ZR-3me" customClass="HelpGameViewController" customModule="FranksZoo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tUC-cn-e9b">
+                        <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EjV-vw-Pg8" userLabel="Parent Container">
+                                <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xEJ-Eg-rrh">
+                                        <rect key="frame" x="10" y="230.5" width="548" height="79.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Iwf-2u-gUf">
+                                                <rect key="frame" x="0.0" y="0.0" width="110" height="79.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cZ-Rs-9fv" customClass="PressableButton" customModule="SwiftyButton">
+                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="34.5"/>
+                                                        <state key="normal" title="DEAL"/>
+                                                        <connections>
+                                                            <action selector="dealPress" destination="C2P-ZR-3me" eventType="touchUpInside" id="bpf-vx-Vwf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOL-le-Meo" customClass="PressableButton" customModule="SwiftyButton">
+                                                        <rect key="frame" x="0.0" y="44.5" width="110" height="35"/>
+                                                        <state key="normal" title="PASS"/>
+                                                        <connections>
+                                                            <action selector="passPress" destination="C2P-ZR-3me" eventType="touchUpInside" id="Oet-qC-g0Y"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="110" id="weq-hI-EXJ"/>
+                                                </constraints>
+                                            </stackView>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LBh-42-jws">
+                                                <rect key="frame" x="120" y="0.0" width="428" height="79.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="SSd-nl-lTK">
+                                                    <size key="itemSize" width="68" height="99"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="cell" id="t33-Yf-wnZ" customClass="CardCell" customModule="FranksZoo" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="-10" width="68" height="99"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="68" height="99"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zeo-d0-YOL">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="133" height="99"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </view>
+                                                        <constraints>
+                                                            <constraint firstItem="zeo-d0-YOL" firstAttribute="leading" secondItem="t33-Yf-wnZ" secondAttribute="leading" id="QwQ-bu-OcD"/>
+                                                            <constraint firstAttribute="bottom" secondItem="zeo-d0-YOL" secondAttribute="bottom" id="qt7-Mm-G33"/>
+                                                            <constraint firstItem="zeo-d0-YOL" firstAttribute="trailing" secondItem="t33-Yf-wnZ" secondAttribute="trailing" id="tQB-CB-90e"/>
+                                                            <constraint firstItem="zeo-d0-YOL" firstAttribute="top" secondItem="t33-Yf-wnZ" secondAttribute="top" id="xvi-me-2df"/>
+                                                        </constraints>
+                                                        <connections>
+                                                            <outlet property="imageView" destination="zeo-d0-YOL" id="OBJ-oO-qnP"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="C2P-ZR-3me" id="fZI-id-hrT"/>
+                                                    <outlet property="delegate" destination="C2P-ZR-3me" id="fmE-je-b7w"/>
+                                                </connections>
+                                            </collectionView>
+                                        </subviews>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDJ-6s-Tuu" customClass="OpponentsHandView" customModule="FranksZoo" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="10" width="53" height="210.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="orientation">
+                                                <integer key="value" value="0"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfCards">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gPK-CA-y7U" customClass="OpponentsHandView" customModule="FranksZoo" customModuleProvider="target">
+                                        <rect key="frame" x="505" y="10" width="53" height="210.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfCards">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="direction">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JC2-Hu-0j9" customClass="OpponentsHandView" customModule="FranksZoo" customModuleProvider="target">
+                                        <rect key="frame" x="73" y="10" width="422" height="53"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="numberOfCards">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwM-5K-o4U" customClass="MoveDisplayerView" customModule="FranksZoo" customModuleProvider="target">
+                                        <rect key="frame" x="73" y="71" width="422" height="150"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="JC2-Hu-0j9" firstAttribute="height" secondItem="gPK-CA-y7U" secondAttribute="width" id="ANT-Vg-3Vx"/>
+                                    <constraint firstItem="xEJ-Eg-rrh" firstAttribute="height" relation="lessThanOrEqual" secondItem="JC2-Hu-0j9" secondAttribute="height" multiplier="1.5" id="CsZ-3M-Gun"/>
+                                    <constraint firstItem="xDJ-6s-Tuu" firstAttribute="leading" secondItem="EjV-vw-Pg8" secondAttribute="leading" constant="10" id="J2w-xJ-QbE"/>
+                                    <constraint firstItem="gPK-CA-y7U" firstAttribute="leading" secondItem="pwM-5K-o4U" secondAttribute="trailing" constant="10" id="Kev-jb-DXk"/>
+                                    <constraint firstItem="xDJ-6s-Tuu" firstAttribute="top" secondItem="EjV-vw-Pg8" secondAttribute="top" constant="10" id="MEJ-td-iuu"/>
+                                    <constraint firstItem="pwM-5K-o4U" firstAttribute="leading" secondItem="xDJ-6s-Tuu" secondAttribute="trailing" constant="10" id="Ohx-2A-zfA"/>
+                                    <constraint firstItem="JC2-Hu-0j9" firstAttribute="top" secondItem="EjV-vw-Pg8" secondAttribute="top" constant="10" id="SO1-DJ-RqE"/>
+                                    <constraint firstItem="xEJ-Eg-rrh" firstAttribute="top" secondItem="gPK-CA-y7U" secondAttribute="bottom" constant="10" id="SYE-DH-nUy"/>
+                                    <constraint firstItem="xEJ-Eg-rrh" firstAttribute="top" secondItem="pwM-5K-o4U" secondAttribute="bottom" constant="9.5" id="UDq-H0-HJL"/>
+                                    <constraint firstItem="JC2-Hu-0j9" firstAttribute="leading" secondItem="xDJ-6s-Tuu" secondAttribute="trailing" constant="10" id="WLd-JO-eiM"/>
+                                    <constraint firstItem="xEJ-Eg-rrh" firstAttribute="top" secondItem="xDJ-6s-Tuu" secondAttribute="bottom" constant="10" id="X5d-ev-8E0"/>
+                                    <constraint firstAttribute="bottom" secondItem="xEJ-Eg-rrh" secondAttribute="bottom" constant="10" id="Z7a-jk-RwT"/>
+                                    <constraint firstItem="xEJ-Eg-rrh" firstAttribute="leading" secondItem="EjV-vw-Pg8" secondAttribute="leading" constant="10" id="ZSt-6Z-iCL"/>
+                                    <constraint firstItem="gPK-CA-y7U" firstAttribute="leading" secondItem="JC2-Hu-0j9" secondAttribute="trailing" constant="10" id="b1U-0X-B3O"/>
+                                    <constraint firstItem="pwM-5K-o4U" firstAttribute="top" secondItem="JC2-Hu-0j9" secondAttribute="bottom" constant="8" id="hrB-fv-rY8"/>
+                                    <constraint firstItem="gPK-CA-y7U" firstAttribute="top" secondItem="EjV-vw-Pg8" secondAttribute="top" constant="10" id="l2b-bl-auY"/>
+                                    <constraint firstAttribute="trailing" secondItem="xEJ-Eg-rrh" secondAttribute="trailing" constant="10" id="n1o-dp-YWT"/>
+                                    <constraint firstItem="xDJ-6s-Tuu" firstAttribute="trailing" secondItem="EjV-vw-Pg8" secondAttribute="trailing" multiplier="1:9" id="odz-cc-wqS"/>
+                                    <constraint firstAttribute="trailing" secondItem="gPK-CA-y7U" secondAttribute="trailing" constant="10" id="ouI-hv-1rD"/>
+                                    <constraint firstItem="xEJ-Eg-rrh" firstAttribute="top" secondItem="EjV-vw-Pg8" secondAttribute="bottom" multiplier="0.5" priority="750" id="sCl-iJ-JT1"/>
+                                    <constraint firstItem="gPK-CA-y7U" firstAttribute="leading" secondItem="EjV-vw-Pg8" secondAttribute="trailing" multiplier="8:9" id="sh4-hh-7f8"/>
+                                    <constraint firstItem="pwM-5K-o4U" firstAttribute="centerX" secondItem="EjV-vw-Pg8" secondAttribute="centerX" id="wCd-T3-k2L"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.41729350030000001" green="0.45985751969999999" blue="0.67516588180000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EjV-vw-Pg8" firstAttribute="leading" secondItem="dLa-8F-Hau" secondAttribute="leading" id="SvY-T2-zoe"/>
+                            <constraint firstItem="EjV-vw-Pg8" firstAttribute="top" secondItem="dLa-8F-Hau" secondAttribute="top" id="XNE-VO-STc"/>
+                            <constraint firstItem="dLa-8F-Hau" firstAttribute="trailing" secondItem="EjV-vw-Pg8" secondAttribute="trailing" id="lKl-GI-O5L"/>
+                            <constraint firstItem="dLa-8F-Hau" firstAttribute="bottom" secondItem="EjV-vw-Pg8" secondAttribute="bottom" id="yPt-qX-vbn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dLa-8F-Hau"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomStackView" destination="xEJ-Eg-rrh" id="9ey-av-wTh"/>
+                        <outlet property="dealButton" destination="9cZ-Rs-9fv" id="12I-ig-FvY"/>
+                        <outlet property="handCollectionView" destination="LBh-42-jws" id="8Mt-jd-nnN"/>
+                        <outlet property="moveDisplayer" destination="pwM-5K-o4U" id="h3H-W1-GON"/>
+                        <outlet property="opponentHand1" destination="xDJ-6s-Tuu" id="YTu-fw-LSb"/>
+                        <outlet property="opponentHand2" destination="JC2-Hu-0j9" id="aM3-IY-5SE"/>
+                        <outlet property="opponentHand3" destination="gPK-CA-y7U" id="2vm-WG-uOO"/>
+                        <outlet property="passButton" destination="jOL-le-Meo" id="EqL-g8-hKS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZEy-IE-x90" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="146" y="92"/>
         </scene>
     </scenes>
 </document>
