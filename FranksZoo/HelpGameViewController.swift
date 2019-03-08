@@ -56,4 +56,14 @@ class HelpGameViewController : GameViewControllerBase {
         }
     }
     
+    func helpGame() -> Game {
+        let game = Game()
+        game.playerHands = [
+            Hand(cards: [.fish: 2, .elephant: 1, .mosquito: 1, .fox: 1, .whale: 3, .crocodile: 3, .hedgehog: 2, .mouse: 2]),
+            Hand(cards: [.perch: 2, .mouse: 2, .fish: 1, .elephant: 4, .whale: 2, .hedgehog: 1, .lion: 3]),
+            Hand(cards: [.hedgehog: 2, .fox: 3, .mosquito: 3, .lion: 2, .bear: 3, .seal: 2]),
+            Hand(cards: [.crocodile: 2, .fox: 1, .fish: 2, .joker: 1, .seal: 3, .perch: 3, .bear: 2, .mouse: 1])
+        ]
+        return game
+    }
 }
