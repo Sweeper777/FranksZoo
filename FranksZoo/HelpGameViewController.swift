@@ -66,4 +66,24 @@ class HelpGameViewController : GameViewControllerBase {
         ]
         return game
     }
+    func helpPart1() {
+        let tutorialView = DVITutorialView()
+        tutorialView.add(to: self.view)
+        tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
+        tutorialView.tutorialStrings = [
+            "Welcome to Frank's Zoo! This tutorial will tell you how to play this game!\nSwipe left to continue",
+            "It is now your turn to deal. You can tap on the cards below to select them",
+            "Then tap on the DEAL button to deal them!",
+            "You can only deal one kind of animal each time. Let's try dealing 2 fish!"
+        ]
+        tutorialView.tutorialViews = [
+            UIView(),
+            self.handCollectionView,
+            self.dealButton,
+            self.handCollectionView
+        ]
+        currentlyAllowedMove = 2.fish
+        tutorialView.start()
+    }
+    
 }
