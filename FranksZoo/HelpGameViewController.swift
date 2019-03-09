@@ -126,4 +126,19 @@ In other words, the next player can only deal one of the following:
             })
         }
     }
+    
+    func helpPart3() {
+        let tutorialView = DVITutorialView()
+        tutorialView.add(to: self.view)
+        tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
+        tutorialView.tutorialStrings = [
+            "The second player dealt 2 perches!",
+            "Now it's the third player's turn."
+        ]
+        tutorialView.tutorialViews = [
+            self.moveDisplayer,
+            self.opponentHand2
+        ]
+        tutorialView.start()
+    }
 }
