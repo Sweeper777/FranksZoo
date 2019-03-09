@@ -86,4 +86,44 @@ class HelpGameViewController : GameViewControllerBase {
         tutorialView.start()
     }
     
+    func helpPart2() {
+        let tutorialView = DVITutorialView()
+        tutorialView.add(to: self.view)
+        tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
+        tutorialView.tutorialStrings = [
+            "Well done!",
+            "The top part of each card shows the predators of that animal.",
+            "For example, fish have four predators: seals, perches, whales, and crocodiles.",
+            "To defeat someone else's cards, you either deal the same number of predators, or one more of the same animal",
+            """
+In other words, the next player can only deal one of the following:
+3 fish
+2 whales
+2 seals
+2 perches
+2 crocodiles
+""",
+            "Let's see what cards the next player will deal!"
+        ]
+        let fishCardView = self.moveDisplayer.subviews.filter { $0 is UIImageView }.first!
+        tutorialView.tutorialViews = [
+            self.moveDisplayer,
+            fishCardView,
+            fishCardView,
+            UIView(),
+            UIView(),
+            self.opponentHand1,
+        ]
+        currentlyAllowedMove = nil
+        tutorialView.start {
+            [weak self] in
+            self?.game.makeMove(2.perches)
+            self?.moveDisplayer.animateMove(2.perches, forPlayer: 1, completion: {
+                [weak self] in
+                self?.updateOpponentsHandView()
+                self?.updateMoveDisplayer()
+                self?.nextHelpPart()
+            })
+        }
+    }
 }
