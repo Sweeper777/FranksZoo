@@ -141,4 +141,22 @@ In other words, the next player can only deal one of the following:
         currentlyAllowedMove = 1.elephant + 1.mosquito
         tutorialView.start()
     }
+    
+    func helpPart6() {
+        animateMoves([2.mice, 2.hedgehogs, .pass]) {
+            [weak self] in
+            guard let `self` = self else { return }
+            let tutorialView = DVITutorialView()
+            tutorialView.add(to: self.view)
+            tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
+            tutorialView.tutorialStrings = [
+                "You have no cards that can defeat this move.\nYou can only pass."
+            ]
+            tutorialView.tutorialViews = [
+                self.passButton
+            ]
+            self.currentlyAllowedMove = .pass
+            tutorialView.start()
+        }
+    }
 }
