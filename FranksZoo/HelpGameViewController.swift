@@ -68,10 +68,20 @@ class HelpGameViewController : GameViewControllerBase {
     }
     }
     
+    func animateMoves(_ moves: [Move], completion: @escaping () -> ()) {
+        if moves.isEmpty {
+            completion()
+            return
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             [weak self] in
+            let currentPlayer = self?.game.currentTurn
+            self?.game.makeMove(moves.first!)
+            self?.moveDisplayer.animateMove(moves.first!, forPlayer: currentPlayer ?? 0, completion: {
                 [weak self] in
                 self?.updateOpponentsHandView()
                 self?.updateMoveDisplayer()
+                self?.animateMoves(Array(moves.dropFirst()), completion: completion)
             })
         }
     }
