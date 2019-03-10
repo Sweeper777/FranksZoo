@@ -159,4 +159,27 @@ In other words, the next player can only deal one of the following:
             tutorialView.start()
         }
     }
+    
+    func helpPart7() {
+        animateMoves([.pass]) {
+            [weak self] in
+            guard let `self` = self else { return }
+            let tutorialView = DVITutorialView()
+            tutorialView.add(to: self.view)
+            tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
+            tutorialView.tutorialStrings = [
+                "Every other player has passed since the player opposite you has dealt 2 hedgehogs. The player opposite you can now deal whatever he likes."
+            ]
+            tutorialView.tutorialViews = [
+                self.opponentHand2
+            ]
+            tutorialView.start {
+                [weak self] in
+                self?.animateMoves([3.mosquitoes, 2.fish + 1.joker], completion: {
+                    [weak self] in
+                    self?.nextHelpPart()
+                })
+            }
+        }
+    }
 }
