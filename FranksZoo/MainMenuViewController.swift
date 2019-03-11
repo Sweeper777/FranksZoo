@@ -7,7 +7,7 @@ class MainMenuViewController: UIViewController {
     @IBOutlet var buttonContainer: UIView!
     
     var playButton: PressableButton!
-    var helpButton: PressableButton!
+    var tutorialButton: PressableButton!
     var hostButton: PressableButton!
     var joinButton: PressableButton!
     
@@ -28,16 +28,16 @@ class MainMenuViewController: UIViewController {
         playButton.titleLabel?.font = UIFont(name: "GillSans-UltraBold", size: 10)
         playButton.addTarget(self, action: #selector(playButtonPress), for: .touchUpInside)
         
-        helpButton = PressableButton(frame: .zero)
-        buttonContainer.addSubview(helpButton)
-        helpButton.snp.makeConstraints { (make) in
+        tutorialButton = PressableButton(frame: .zero)
+        buttonContainer.addSubview(tutorialButton)
+        tutorialButton.snp.makeConstraints { (make) in
             make.height.equalTo(playButton.snp.height)
             make.width.equalTo(playButton.snp.width)
             make.centerX.equalTo(playButton.snp.centerX)
             make.top.equalTo(playButton.snp.bottom).offset(16)
         }
-        helpButton.setTitle("HELP", for: .normal)
-        helpButton.titleLabel?.font = UIFont(name: "GillSans-UltraBold", size: 10)
+        tutorialButton.setTitle("TUTORIAL", for: .normal)
+        tutorialButton.titleLabel?.font = UIFont(name: "GillSans-UltraBold", size: 10)
         
         hostButton = PressableButton(frame: .zero)
         buttonContainer.addSubview(hostButton)
@@ -45,7 +45,7 @@ class MainMenuViewController: UIViewController {
             make.height.equalTo(playButton.snp.height)
             make.width.equalTo(playButton.snp.width)
             make.centerX.equalTo(playButton.snp.centerX)
-            make.top.equalTo(helpButton.snp.bottom).offset(16)
+            make.top.equalTo(tutorialButton.snp.bottom).offset(16)
         }
         hostButton.setTitle("HOST", for: .normal)
         hostButton.titleLabel?.font = UIFont(name: "GillSans-UltraBold", size: 10)
@@ -74,12 +74,12 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         playButton.titleLabel?.updateFontSizeToFit(size: playButton.bounds.size)
-        helpButton.titleLabel?.updateFontSizeToFit(size: helpButton.bounds.size)
+        tutorialButton.titleLabel?.updateFontSizeToFit(size: tutorialButton.bounds.size)
         hostButton.titleLabel?.updateFontSizeToFit(size: hostButton.bounds.size)
         joinButton.titleLabel?.updateFontSizeToFit(size: joinButton.bounds.size)
         
         playButton.updateTitleOffsets()
-        helpButton.updateTitleOffsets()
+        tutorialButton.updateTitleOffsets()
         hostButton.updateTitleOffsets()
         joinButton.updateTitleOffsets()
     }
