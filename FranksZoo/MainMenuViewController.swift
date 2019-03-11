@@ -110,6 +110,12 @@ class MainMenuViewController: UIViewController {
         }
     }
     
+    @objc func tutorialButtonPress() {
+        if !multipeerTransitioning {
+            performSegue(withIdentifier: "showHelp", sender: self)
+        }
+    }
+    
     @IBAction func unwindFromGame(segue: UIStoryboardSegue) {
         
     }
