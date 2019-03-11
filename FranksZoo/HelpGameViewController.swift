@@ -66,6 +66,12 @@ class HelpGameViewController : GameViewControllerBase {
         ]
         return game
     }
+    
+    func nextHelpPart() {
+        let helpParts = [helpPart1, helpPart2, helpPart3, helpPart4,
+                         helpPart5, helpPart6, helpPart7, helpPart8]
+        helpParts[currentHelpPart]()
+        currentHelpPart += 1
     }
     
     func animateMoves(_ moves: [Move], completion: @escaping () -> ()) {
