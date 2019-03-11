@@ -53,6 +53,10 @@ class HelpGameViewController : GameViewControllerBase {
             self?.handCollectionView.reloadData()
             self?.updateOpponentsHandView()
             self?.updateMoveDisplayer()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                [weak self] in
+                self?.nextHelpPart()
+            })
         }
     }
     
