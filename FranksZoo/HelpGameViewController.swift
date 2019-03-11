@@ -28,6 +28,12 @@ class HelpGameViewController : GameViewControllerBase {
             let moveDict = Dictionary(grouping: selectedCards, by: { $0 }).mapValues { $0.count }
             let move = Move(cards: moveDict)
             
+            if move != currentlyAllowedMove && game.canMakeMove(move) {
+                let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+                alert.addButton("OK", action: {})
+                alert.showWarning("", subTitle: "That is a valid move, but for now, please follow the tutorial.")
+                return
+            }
             
             let player = game.currentTurn
             if (game.makeMove(move)) {
