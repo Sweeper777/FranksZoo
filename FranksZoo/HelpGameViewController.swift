@@ -53,6 +53,12 @@ class HelpGameViewController : GameViewControllerBase {
     
     @IBAction override func passPress() {
         guard game.currentTurn == 0 && !game.ended else { return }
+        if .pass != currentlyAllowedMove {
+            let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
+            alert.addButton("OK", action: {})
+            alert.showWarning("", subTitle: "That is a valid move, but for now, please follow the tutorial.")
+            return
+        }
         game.makeMove(.pass)
         moveDisplayer.animateMove(.pass, forPlayer: 0) {
             [weak self] in
