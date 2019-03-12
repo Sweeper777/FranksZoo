@@ -132,12 +132,11 @@ class MoveDisplayerView: UIView {
         default:
             passLabelRect = .zero
         }
-        let label = UILabel(frame: passLabelRect)
+        let label = UIImageView(frame: passLabelRect)
         self.addSubview(label)
-        label.text = "PASS"
-        label.font = label.font.withSize(fontSizeThatFits(size: passLabelRect.size, text: label.text! as NSString, font: label.font) * 0.7)
+        label.contentMode = .scaleAspectFit
+        label.image = UIImage(named: "pass")
         label.alpha = 0
-        label.textColor = .white
         UIView.animate(withDuration: 0.5, animations: {
             label.alpha = 1
         }) { (_) in
