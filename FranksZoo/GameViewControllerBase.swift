@@ -205,10 +205,10 @@ extension GameViewControllerBase : GameDelegate {
                 let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: false))
                 alert.addButton("Yes", action: {})
                 alert.addButton("No", action: quitGame)
-                alert.showInfo("You came \(placeNames[place]!)", subTitle: "Do you want to continue watching the rest of the game?")
+                alert.showInfo("You came \(placeNames[place]!)!", subTitle: "Do you want to continue watching the rest of the game?")
             } else {
                 let alert = SCLAlertView(appearance: SCLAlertView.SCLAppearance(showCloseButton: true))
-                alert.showInfo("You came \(placeNames[place]!)", subTitle: "")
+                alert.showInfo("You came \(placeNames[place]!)!", subTitle: "")
             }
         } else if place == 3 {
             if game.playerHands[0].isEmpty {
