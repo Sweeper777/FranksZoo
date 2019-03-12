@@ -38,6 +38,7 @@ class MainMenuViewController: UIViewController {
         }
         tutorialButton.setTitle("TUTORIAL", for: .normal)
         tutorialButton.titleLabel?.font = UIFont(name: "GillSans-UltraBold", size: 10)
+        tutorialButton.addTarget(self, action: #selector(tutorialButtonPress), for: .touchUpInside)
         
         hostButton = PressableButton(frame: .zero)
         buttonContainer.addSubview(hostButton)
