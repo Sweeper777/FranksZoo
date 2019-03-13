@@ -12,8 +12,6 @@ target 'FranksZoo' do
   pod 'SwiftyButton'
   pod 'RxSwift'
   pod 'RxCocoa'
-  pod 'FSPagerView'
-  pod 'EZLoadingActivity'
   pod 'SnapKit'
   pod 'DVITutorialView'
 
