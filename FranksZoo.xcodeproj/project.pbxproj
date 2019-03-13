@@ -16,6 +16,7 @@
 		5A34A859220EE98400E63575 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34A858220EE98400E63575 /* JoinViewController.swift */; };
 		5A34C93D2233AF3F00DC6934 /* HelpParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34C93C2233AF3F00DC6934 /* HelpParts.swift */; };
 		5A34E9F12201BB2E001CB149 /* TouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34E9F02201BB2E001CB149 /* TouchGestureRecognizer.swift */; };
+		5A36494A221B35B50099F746 /* GillSans.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 5A364949221B35B40099F746 /* GillSans.ttc */; };
 		5A363069222BEF7A00E6363B /* HelpGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A363068222BEF7A00E6363B /* HelpGameViewController.swift */; };
 		5A36AD552222A030005FC649 /* GameViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36AD542222A030005FC649 /* GameViewControllerBase.swift */; };
 		5A36F4BE220E1E7100B7FCB0 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F4BD220E1E7100B7FCB0 /* HostViewController.swift */; };
@@ -71,6 +72,7 @@
 		5A34A858220EE98400E63575 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		5A34C93C2233AF3F00DC6934 /* HelpParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpParts.swift; sourceTree = "<group>"; };
 		5A34E9F02201BB2E001CB149 /* TouchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureRecognizer.swift; sourceTree = "<group>"; };
+		5A364949221B35B40099F746 /* GillSans.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GillSans.ttc; sourceTree = "<group>"; };
 		5A363068222BEF7A00E6363B /* HelpGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpGameViewController.swift; sourceTree = "<group>"; };
 		5A36AD542222A030005FC649 /* GameViewControllerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewControllerBase.swift; sourceTree = "<group>"; };
 		5A36F4BD220E1E7100B7FCB0 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		5A43BD61213A8A1D001B918E /* FranksZoo */ = {
 			isa = PBXGroup;
 			children = (
+				5A364949221B35B40099F746 /* GillSans.ttc */,
 				5A43BD62213A8A1D001B918E /* AppDelegate.swift */,
 				5A36AD542222A030005FC649 /* GameViewControllerBase.swift */,
 				5A43BD64213A8A1D001B918E /* GameViewController.swift */,
@@ -302,6 +305,7 @@
 			files = (
 				5A43BD6D213A8A20001B918E /* LaunchScreen.storyboard in Resources */,
 				5A43BD6A213A8A20001B918E /* Assets.xcassets in Resources */,
+				5A36494A221B35B50099F746 /* GillSans.ttc in Resources */,
 				5A43BD68213A8A1D001B918E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +348,8 @@
 				"${BUILT_PRODUCTS_DIR}/AnimationSugar/AnimationSugar.framework",
 				"${BUILT_PRODUCTS_DIR}/DVITutorialView/DVITutorialView.framework",
 				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
+				"${BUILT_PRODUCTS_DIR}/EZLoadingActivity/EZLoadingActivity.framework",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
@@ -357,6 +363,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimationSugar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DVITutorialView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZLoadingActivity.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
