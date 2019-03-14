@@ -86,8 +86,22 @@ class HelpGameViewController : GameViewControllerBase {
     func nextTutorialPart() {
         let helpParts = [helpPart1, helpPart2, helpPart3, helpPart4,
                          helpPart5, helpPart6, helpPart7, helpPart8]
-        helpParts[currentHelpPart]()
-        currentHelpPart += 1
+        helpParts[currentTutorialPart]()
+        currentTutorialPart += 1
+    }
+    
+    func runTutorialPart(_ tutorialPart: TutorialPart) {
+        animateMoves(tutorialPart.preTutorialMoves) {
+            [weak self] in
+            guard let `self` = self else { return }
+            let tutorialView = DVITutorialView()
+            tutorialView.add(to: self.view)
+            tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
+            tutorialView.tutorialStrings = tutorialPart.texts
+            tutorialView.tutorialViews = tutorialPart.views(self)
+            self.currentlyAllowedMove = tutorialPart.postTutorialAllowedMove
+            tutorialView.start(completion: tutorialPart.postTutorialAction ?? {})
+        }
     }
     
     func animateMoves(_ moves: [Move], completion: @escaping () -> ()) {
