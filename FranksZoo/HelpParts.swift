@@ -55,32 +55,26 @@ In other words, the next player can only deal one of the following:
         currentlyAllowedMove = nil
         tutorialView.start {
             [weak self] in
-            self?.game.makeMove(2.perches)
-            self?.moveDisplayer.animateMove(2.perches, forPlayer: 1, completion: {
-                [weak self] in
-                self?.updateOpponentsHandView()
-                self?.updateMoveDisplayer()
-                self?.nextHelpPart()
-            })
+            self?.nextTutorialPart()
         }
     }
     
     func helpPart3() {
-        let tutorialView = DVITutorialView()
-        tutorialView.add(to: self.view)
-        tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
-        tutorialView.tutorialStrings = [
-            "The second player dealt 2 perches!",
-            "Now it's the third player's turn."
-        ]
-        tutorialView.tutorialViews = [
-            self.moveDisplayer,
-            self.opponentHand2
-        ]
-        tutorialView.start {
+        animateMoves([2.perches]) {
             [weak self] in
-            self?.game.makeMove(.pass)
-            self?.moveDisplayer.animateMove(.pass, forPlayer: 2, completion: {
+            guard let `self` = self else { return }
+            let tutorialView = DVITutorialView()
+            tutorialView.add(to: self.view)
+            tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
+            tutorialView.tutorialStrings = [
+                "The second player dealt 2 perches!",
+                "Now it's the third player's turn."
+            ]
+            tutorialView.tutorialViews = [
+                self.moveDisplayer,
+                self.opponentHand2
+            ]
+            tutorialView.start {
                 [weak self] in
                 self?.updateOpponentsHandView()
                 self?.updateMoveDisplayer()
