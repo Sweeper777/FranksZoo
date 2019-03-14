@@ -4,10 +4,10 @@ import SCLAlertView
 
 class HelpGameViewController : GameViewControllerBase {
     var currentlyAllowedMove: Move?
-    var currentHelpPart = 0
+    var currentTutorialPart = 0
     
     override func viewDidLoad() {
-        game = helpGame()
+        game = tutorialGame()
         
         game.delegate = self
         
@@ -17,7 +17,7 @@ class HelpGameViewController : GameViewControllerBase {
     override func initialAnimationDidEnd() {
         super.initialAnimationDidEnd()
         
-        nextHelpPart()
+        nextTutorialPart()
     }
     
     @IBAction override func dealPress() {
@@ -44,7 +44,7 @@ class HelpGameViewController : GameViewControllerBase {
                     self?.updateMoveDisplayer()
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                         [weak self] in
-                        self?.nextHelpPart()
+                        self?.nextTutorialPart()
                     })
                 })
             }
@@ -67,12 +67,12 @@ class HelpGameViewController : GameViewControllerBase {
             self?.updateMoveDisplayer()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
                 [weak self] in
-                self?.nextHelpPart()
+                self?.nextTutorialPart()
             })
         }
     }
     
-    func helpGame() -> Game {
+    func tutorialGame() -> Game {
         let game = Game()
         game.playerHands = [
             Hand(cards: [.fish: 2, .elephant: 1, .mosquito: 1, .fox: 1, .whale: 4, .crocodile: 2, .hedgehog: 2, .mouse: 2]),
@@ -83,7 +83,7 @@ class HelpGameViewController : GameViewControllerBase {
         return game
     }
     
-    func nextHelpPart() {
+    func nextTutorialPart() {
         let helpParts = [helpPart1, helpPart2, helpPart3, helpPart4,
                          helpPart5, helpPart6, helpPart7, helpPart8]
         helpParts[currentHelpPart]()
