@@ -76,33 +76,32 @@ In other words, the next player can only deal one of the following:
             ]
             tutorialView.start {
                 [weak self] in
-                self?.updateOpponentsHandView()
-                self?.updateMoveDisplayer()
-                self?.nextHelpPart()
-            })
+                self?.nextTutorialPart()
+            }
         }
     }
     
     func helpPart4() {
-        let tutorialView = DVITutorialView()
-        tutorialView.add(to: self.view)
-        tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
-        tutorialView.tutorialStrings = [
-            "The third player passed!",
-            "He probably has no cards that can defeat 2 perches.",
-            "But it is also possible that he does have cards that can defeat 2 perches, but he just doesn't want to deal them yet.",
-            "You can always choose to pass even if you have cards that you can deal."
-        ]
-        tutorialView.tutorialViews = [
-            opponentHand2,
-            UIView(),
-            UIView(),
-            passButton
-        ]
-        tutorialView.start {
+        animateMoves([.pass]) {
             [weak self] in
-            self?.game.makeMove(2.crocodiles)
-            self?.moveDisplayer.animateMove(2.crocodiles, forPlayer: 3, completion: {
+            guard let `self` = self else { return }
+            
+            let tutorialView = DVITutorialView()
+            tutorialView.add(to: self.view)
+            tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
+            tutorialView.tutorialStrings = [
+                "The third player passed!",
+                "He probably has no cards that can defeat 2 perches.",
+                "But it is also possible that he does have cards that can defeat 2 perches, but he just doesn't want to deal them yet.",
+                "You can always choose to pass even if you have cards that you can deal."
+            ]
+            tutorialView.tutorialViews = [
+                self.opponentHand2,
+                UIView(),
+                UIView(),
+                self.passButton
+            ]
+            tutorialView.start {
                 [weak self] in
                 self?.updateOpponentsHandView()
                 self?.updateMoveDisplayer()
