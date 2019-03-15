@@ -16,11 +16,12 @@
 		5A34A859220EE98400E63575 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34A858220EE98400E63575 /* JoinViewController.swift */; };
 		5A34C93D2233AF3F00DC6934 /* HelpParts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34C93C2233AF3F00DC6934 /* HelpParts.swift */; };
 		5A34E9F12201BB2E001CB149 /* TouchGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A34E9F02201BB2E001CB149 /* TouchGestureRecognizer.swift */; };
-		5A36494A221B35B50099F746 /* GillSans.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 5A364949221B35B40099F746 /* GillSans.ttc */; };
 		5A363069222BEF7A00E6363B /* HelpGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A363068222BEF7A00E6363B /* HelpGameViewController.swift */; };
+		5A36494A221B35B50099F746 /* GillSans.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 5A364949221B35B40099F746 /* GillSans.ttc */; };
 		5A36AD552222A030005FC649 /* GameViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36AD542222A030005FC649 /* GameViewControllerBase.swift */; };
 		5A36F4BE220E1E7100B7FCB0 /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A36F4BD220E1E7100B7FCB0 /* HostViewController.swift */; };
 		5A39C4552218020C00D54B2C /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A39C4542218020C00D54B2C /* GameInfo.swift */; };
+		5A3E8C3022398B0A00ECBFFF /* TutorialPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3E8C2F22398B0A00ECBFFF /* TutorialPart.swift */; };
 		5A43BD63213A8A1D001B918E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD62213A8A1D001B918E /* AppDelegate.swift */; };
 		5A43BD65213A8A1D001B918E /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A43BD64213A8A1D001B918E /* GameViewController.swift */; };
 		5A43BD68213A8A1D001B918E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A43BD66213A8A1D001B918E /* Main.storyboard */; };
@@ -72,11 +73,12 @@
 		5A34A858220EE98400E63575 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
 		5A34C93C2233AF3F00DC6934 /* HelpParts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpParts.swift; sourceTree = "<group>"; };
 		5A34E9F02201BB2E001CB149 /* TouchGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchGestureRecognizer.swift; sourceTree = "<group>"; };
-		5A364949221B35B40099F746 /* GillSans.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GillSans.ttc; sourceTree = "<group>"; };
 		5A363068222BEF7A00E6363B /* HelpGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpGameViewController.swift; sourceTree = "<group>"; };
+		5A364949221B35B40099F746 /* GillSans.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = GillSans.ttc; sourceTree = "<group>"; };
 		5A36AD542222A030005FC649 /* GameViewControllerBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewControllerBase.swift; sourceTree = "<group>"; };
 		5A36F4BD220E1E7100B7FCB0 /* HostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
 		5A39C4542218020C00D54B2C /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
+		5A3E8C2F22398B0A00ECBFFF /* TutorialPart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialPart.swift; sourceTree = "<group>"; };
 		5A43BD5F213A8A1D001B918E /* FranksZoo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FranksZoo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A43BD62213A8A1D001B918E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A43BD64213A8A1D001B918E /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				5A43BD64213A8A1D001B918E /* GameViewController.swift */,
 				5A33404F22103C90009FF7D6 /* MultipeerGameViewController.swift */,
 				5A363068222BEF7A00E6363B /* HelpGameViewController.swift */,
+				5A3E8C2F22398B0A00ECBFFF /* TutorialPart.swift */,
 				5A34C93C2233AF3F00DC6934 /* HelpParts.swift */,
 				5A341AFB21FDC18600CAE2D7 /* MainMenuViewController.swift */,
 				5A36F4BD220E1E7100B7FCB0 /* HostViewController.swift */,
@@ -411,6 +414,7 @@
 				5A3445D5221D60EA005AC132 /* MoveInfo.swift in Sources */,
 				5A43BD7D213B05CD001B918E /* Game.swift in Sources */,
 				5A45882C215F85AD005451F5 /* GameAI.swift in Sources */,
+				5A3E8C3022398B0A00ECBFFF /* TutorialPart.swift in Sources */,
 				5A34E9F12201BB2E001CB149 /* TouchGestureRecognizer.swift in Sources */,
 				5A43BD65213A8A1D001B918E /* GameViewController.swift in Sources */,
 				5A341AFC21FDC18600CAE2D7 /* MainMenuViewController.swift in Sources */,
