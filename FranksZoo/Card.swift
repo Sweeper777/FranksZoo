@@ -1,4 +1,5 @@
 
+/// An enum representing a type of card. e.g. whale, elephant, joker
 enum Card: Int, Comparable, Codable {
     case whale
     case elephant
@@ -14,6 +15,7 @@ enum Card: Int, Comparable, Codable {
     case mosquito
     case joker
     
+    /// Returns the predators of the receiver's card type
     var predators: Set<Card> {
         return predatorDict[self] ?? []
     }
@@ -37,6 +39,8 @@ fileprivate let predatorDict: [Card: Set<Card>] = [
     .mosquito: [.hedgehog, .fish, .mouse],
 ]
 
+/// A dictionary storing the card types as keys and the name of the image
+/// of the card as values.
 let imageDict: [Card: String] = [
     .whale: "whale",
     .elephant: "elephant",
@@ -53,22 +57,28 @@ let imageDict: [Card: String] = [
     .joker: "joker"
 ]
 
+/// A protocol that represents a collection of cards
 protocol Cards {
+    
+    /// The cards in the collection of cards, and how many of each card type there is
     var cards: [Card: Int] { get }
     
 }
 
 extension Cards {
+    /// Returns the number of a particular card type in the collection of cards
     func numberOf(_ card: Card) -> Int {
         return cards[card] ?? 0
     }
     
+    /// Converts the collection of cards to an array.
     func toArray() -> [Card] {
         return cards.flatMap { Array(repeating: $0.key, count: $0.value) }.sorted()
     }
     
 }
 
+/// A class that represents all the cards in a game.
 class AllCards : Cards {
     let cards: [Card : Int] = [
         .whale: 5,
