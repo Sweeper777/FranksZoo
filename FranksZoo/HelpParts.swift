@@ -19,16 +19,13 @@ let tutorialParts = [
             ]
     }, postTutorialAllowedMove: 2.fish),
     
-    func helpPart2() {
-        let tutorialView = DVITutorialView()
-        tutorialView.add(to: self.view)
-        tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
-        tutorialView.tutorialStrings = [
-            "Well done!",
-            "The top part of each card shows the predators of that animal.",
-            "For example, fish have four predators: seals, perches, whales, and crocodiles.",
-            "To defeat someone else's cards, you either deal the same number of predators, or one more of the same animal.",
-            """
+    // part 2
+    TutorialPart(texts:  [
+        "Well done!",
+        "The top part of each card shows the predators of that animal.",
+        "For example, fish have four predators: seals, perches, whales, and crocodiles.",
+        "To defeat someone else's cards, you either deal the same number of predators, or one more of the same animal.",
+        """
 In other words, the next player can only deal one of the following:
 3 fish
 2 whales
@@ -36,23 +33,18 @@ In other words, the next player can only deal one of the following:
 2 perches
 2 crocodiles
 """,
-            "Let's see what cards the next player will deal!"
-        ]
-        let fishCardView = self.moveDisplayer.subviews.filter { $0 is UIImageView }.first!
-        tutorialView.tutorialViews = [
-            self.moveDisplayer,
-            fishCardView,
-            fishCardView,
-            UIView(),
-            UIView(),
-            self.opponentHand1,
-        ]
-        currentlyAllowedMove = nil
-        tutorialView.start {
-            [weak self] in
-            self?.nextTutorialPart()
-        }
-    }
+        "Let's see what cards the next player will deal!"
+        ], views: {
+            let fishCardView = $0.moveDisplayer.subviews.filter { $0 is UIImageView }.first!
+            return [
+                $0.moveDisplayer,
+                fishCardView,
+                fishCardView,
+                UIView(),
+                UIView(),
+                $0.opponentHand1,
+                ]
+    }, postTutorialAction: { $0.nextTutorialPart() }),
     
     func helpPart3() {
         animateMoves([2.perches]) {
