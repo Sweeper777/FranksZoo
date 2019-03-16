@@ -1,28 +1,23 @@
 import UIKit
 import DVITutorialView
 
-extension HelpGameViewController {
-    func helpPart1() {
-        let tutorialView = DVITutorialView()
-        tutorialView.add(to: self.view)
-        tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
-        tutorialView.tutorialStrings = [
-            "Welcome to Frank's Zoo! This tutorial will tell you how to play this game!\nSwipe left to continue",
-            "It is now your turn to deal. You can tap on the cards below to select them.",
-            "Then tap on the DEAL button to deal them!",
-            "You can only deal one kind of animal each time, and you win when you have used up all your cards.",
-            "Let's try dealing 2 fish!"
-        ]
-        tutorialView.tutorialViews = [
+let tutorialParts = [
+    // part 1
+    TutorialPart(texts: [
+        "Welcome to Frank's Zoo! This tutorial will tell you how to play this game!\nSwipe left to continue",
+        "It is now your turn to deal. You can tap on the cards below to select them.",
+        "Then tap on the DEAL button to deal them!",
+        "You can only deal one kind of animal each time, and you win when you have used up all your cards.",
+        "Let's try dealing 2 fish!"
+        ], views: {
+            [
             UIView(),
-            self.handCollectionView,
-            self.dealButton,
+            $0.handCollectionView,
+            $0.dealButton,
             UIView(),
-            self.handCollectionView
-        ]
-        currentlyAllowedMove = 2.fish
-        tutorialView.start()
-    }
+            $0.handCollectionView
+            ]
+    }, postTutorialAllowedMove: 2.fish),
     
     func helpPart2() {
         let tutorialView = DVITutorialView()
@@ -205,3 +200,4 @@ In other words, the next player can only deal one of the following:
         }
     }
 }
+]
