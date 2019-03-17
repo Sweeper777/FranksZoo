@@ -91,23 +91,14 @@ In other words, the next player can only deal one of the following:
             ]
     }, preTutorialMoves: [2.crocodiles], postTutorialAllowedMove: 1.elephant + 1.mosquito),
     
-    func helpPart6() {
-        animateMoves([2.mice, 2.hedgehogs, .pass]) {
-            [weak self] in
-            guard let `self` = self else { return }
-            let tutorialView = DVITutorialView()
-            tutorialView.add(to: self.view)
-            tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
-            tutorialView.tutorialStrings = [
-                "You have no cards that can defeat this move.\nYou can only pass."
+    // part 6
+    TutorialPart(texts:  [
+        "You have no cards that can defeat this move.\nYou can only pass."
+        ], views: {
+            [
+                $0.passButton
             ]
-            tutorialView.tutorialViews = [
-                self.passButton
-            ]
-            self.currentlyAllowedMove = .pass
-            tutorialView.start()
-        }
-    }
+    }, preTutorialMoves: [2.mice, 2.hedgehogs, .pass], postTutorialAllowedMove: .pass),
     
     func helpPart7() {
         animateMoves([.pass]) {
