@@ -72,34 +72,24 @@ In other words, the next player can only deal one of the following:
             ]
     }, preTutorialMoves: [.pass], postTutorialAction: { $0.nextTutorialPart() }),
     
-    
-    func helpPart5() {
-        animateMoves([2.crocodiles]) {
-            [weak self] in
-            guard let `self` = self else { return }
-            let tutorialView = DVITutorialView()
-            tutorialView.add(to: self.view)
-            tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
-            tutorialView.tutorialStrings = [
-                "Now it's your turn again!",
-                "Only 2 elephants or 3 crocodiles can be used to defeat 2 crocodiles, but you have neither of those sets of cards!",
-                "Luckily, mosquito is a special card that can act as elephants.\nSo you can deal 1 elephant and 1 mosquito to defeat the previous move!",
-                "You can only use mosquitoes this way if the number of mosquitos is not greater than the number of elephants",
-                "In other words, you can't deal 1 elephant + 2 mosquitoes or 2 elephants + 3 mosquitoes.",
-                "Try dealing 1 elephant and 1 mosquito!"
+    // part 5
+    TutorialPart(texts:  [
+        "Now it's your turn again!",
+        "Only 2 elephants or 3 crocodiles can be used to defeat 2 crocodiles, but you have neither of those sets of cards!",
+        "Luckily, mosquito is a special card that can act as elephants.\nSo you can deal 1 elephant and 1 mosquito to defeat the previous move!",
+        "You can only use mosquitoes this way if the number of mosquitos is not greater than the number of elephants",
+        "In other words, you can't deal 1 elephant + 2 mosquitoes or 2 elephants + 3 mosquitoes.",
+        "Try dealing 1 elephant and 1 mosquito!"
+        ], views: {
+            [
+                UIView(),
+                $0.moveDisplayer,
+                UIView(),
+                UIView(),
+                UIView(),
+                $0.handCollectionView
             ]
-            tutorialView.tutorialViews = [
-                UIView(),
-                self.moveDisplayer,
-                UIView(),
-                UIView(),
-                UIView(),
-                self.handCollectionView
-            ]
-            self.currentlyAllowedMove = 1.elephant + 1.mosquito
-            tutorialView.start()
-        }
-    }
+    }, preTutorialMoves: [2.crocodiles], postTutorialAllowedMove: 1.elephant + 1.mosquito),
     
     func helpPart6() {
         animateMoves([2.mice, 2.hedgehogs, .pass]) {
