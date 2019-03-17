@@ -6,13 +6,13 @@ class TutorialPart {
     var views: (HelpGameViewController) -> [UIView]
     var preTutorialMoves: [Move]
     var postTutorialAllowedMove: Move?
-    var postTutorialAction: (() -> Void)?
+    var postTutorialAction: ((HelpGameViewController) -> Void)?
     
     init(texts: [String],
          views: @escaping (HelpGameViewController) -> [UIView],
          preTutorialMoves: [Move] = [],
          postTutorialAllowedMove: Move? = nil,
-         postTutorialAction: (() -> Void)? = nil) {
+         postTutorialAction: ((HelpGameViewController) -> Void)? = nil) {
         self.texts = texts
         self.views = views
         self.preTutorialMoves = preTutorialMoves
