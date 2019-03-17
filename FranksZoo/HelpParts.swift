@@ -57,33 +57,20 @@ In other words, the next player can only deal one of the following:
             ]
     }, preTutorialMoves: [2.perches], postTutorialAction: { $0.nextTutorialPart() }),
     
-    func helpPart4() {
-        animateMoves([.pass]) {
-            [weak self] in
-            guard let `self` = self else { return }
-            
-            let tutorialView = DVITutorialView()
-            tutorialView.add(to: self.view)
-            tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
-            tutorialView.tutorialStrings = [
-                "The third player passed!",
-                "He probably has no cards that can defeat 2 perches.",
-                "But it is also possible that he does have cards that can defeat 2 perches, but he just doesn't want to deal them yet.",
-                "You can always choose to pass even if you have cards that you can deal."
-            ]
-            tutorialView.tutorialViews = [
-                self.opponentHand2,
+    // part 4
+    TutorialPart(texts:  [
+        "The third player passed!",
+        "He probably has no cards that can defeat 2 perches.",
+        "But it is also possible that he does have cards that can defeat 2 perches, but he just doesn't want to deal them yet.",
+        "You can always choose to pass even if you have cards that you can deal."
+        ], views: {
+            [
+                $0.opponentHand2,
                 UIView(),
                 UIView(),
-                self.passButton
+                $0.passButton
             ]
-            tutorialView.start {
-                [weak self] in
-                self?.nextTutorialPart()
-            }
-        }
-        
-    }
+    }, preTutorialMoves: [.pass], postTutorialAction: { $0.nextTutorialPart() }),
     
     
     func helpPart5() {
