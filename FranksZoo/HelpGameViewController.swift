@@ -100,7 +100,11 @@ class HelpGameViewController : GameViewControllerBase {
             tutorialView.tutorialStrings = tutorialPart.texts
             tutorialView.tutorialViews = tutorialPart.views(self)
             self.currentlyAllowedMove = tutorialPart.postTutorialAllowedMove
-            tutorialView.start(completion: tutorialPart.postTutorialAction ?? {})
+            tutorialView.start {
+                [weak self] in
+                guard let `self` = self else { return }
+                tutorialPart.postTutorialAction?(self)
+            }
         }
     }
     
