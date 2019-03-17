@@ -46,27 +46,16 @@ In other words, the next player can only deal one of the following:
                 ]
     }, postTutorialAction: { $0.nextTutorialPart() }),
     
-    func helpPart3() {
-        animateMoves([2.perches]) {
-            [weak self] in
-            guard let `self` = self else { return }
-            let tutorialView = DVITutorialView()
-            tutorialView.add(to: self.view)
-            tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
-            tutorialView.tutorialStrings = [
-                "The second player dealt 2 perches!",
-                "Now it's the third player's turn."
+    // part 3
+    TutorialPart(texts:  [
+        "The second player dealt 2 perches!",
+        "Now it's the third player's turn."
+        ], views: {
+            [
+                $0.moveDisplayer,
+                $0.opponentHand2
             ]
-            tutorialView.tutorialViews = [
-                self.moveDisplayer,
-                self.opponentHand2
-            ]
-            tutorialView.start {
-                [weak self] in
-                self?.nextTutorialPart()
-            }
-        }
-    }
+    }, preTutorialMoves: [2.perches], postTutorialAction: { $0.nextTutorialPart() }),
     
     func helpPart4() {
         animateMoves([.pass]) {
