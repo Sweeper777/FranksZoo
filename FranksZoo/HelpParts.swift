@@ -109,33 +109,21 @@ In other words, the next player can only deal one of the following:
             ]
     }, preTutorialMoves: [.pass], postTutorialAction: { $0.nextTutorialPart() }),
     
-    func helpPart8() {
-        animateMoves([3.mosquitoes, 2.fish + 1.joker]) {
-            [weak self] in
-            guard let `self` = self else { return }
-            let tutorialView = DVITutorialView()
-            tutorialView.add(to: self.view)
-            tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
-            let jokerCardView = self.moveDisplayer.subviews.filter { $0 is UIImageView }.last!
-            tutorialView.tutorialStrings = [
-                "The player on your right has dealt a joker!",
-                "The joker card can act as any animal, but it cannot be dealt on its own.",
-                "In other words, if you only have 1 joker left in your hand, you will definitely lose.",
-                "Last but not least, there are 5 of each animal, 4 mosquitoes, and 1 joker in each game, a total of 60 cards.",
-                "That's the end of the tutorial. You will now be sent back to the main menu, where you can press PLAY to start a new game!"
-            ]
-            tutorialView.tutorialViews = [
+    // part 8
+    TutorialPart(texts:  [
+        "The player on your right has dealt a joker!",
+        "The joker card can act as any animal, but it cannot be dealt on its own.",
+        "In other words, if you only have 1 joker left in your hand, you will definitely lose.",
+        "Last but not least, there are 5 of each animal, 4 mosquitoes, and 1 joker in each game, a total of 60 cards.",
+        "That's the end of the tutorial. You will now be sent back to the main menu, where you can press PLAY to start a new game!"
+        ], views: {
+            let jokerCardView = $0.moveDisplayer.subviews.filter { $0 is UIImageView }.last!
+            return [
                 jokerCardView,
-                jokerCardView,
-                jokerCardView,
+                UIView(),
+                UIView(),
                 UIView(),
                 UIView()
             ]
-            tutorialView.start {
-                [weak self] in
-                self?.dismiss(animated: true, completion: nil)
-            }
-        }
-    }
-}
+    }, preTutorialMoves: [3.mosquitoes, 2.fish + 1.joker], postTutorialAction: { $0.dismiss(animated: true, completion: nil) }),
 ]
