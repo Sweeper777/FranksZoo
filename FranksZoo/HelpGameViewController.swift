@@ -84,9 +84,7 @@ class HelpGameViewController : GameViewControllerBase {
     }
     
     func nextTutorialPart() {
-        let helpParts = [helpPart1, helpPart2, helpPart3, helpPart4,
-                         helpPart5, helpPart6, helpPart7, helpPart8]
-        helpParts[currentTutorialPart]()
+        runTutorialPart(tutorialParts[currentTutorialPart])
         currentTutorialPart += 1
     }
     
