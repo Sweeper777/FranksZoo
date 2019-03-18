@@ -100,25 +100,14 @@ In other words, the next player can only deal one of the following:
             ]
     }, preTutorialMoves: [2.mice, 2.hedgehogs, .pass], postTutorialAllowedMove: .pass),
     
-    func helpPart7() {
-        animateMoves([.pass]) {
-            [weak self] in
-            guard let `self` = self else { return }
-            let tutorialView = DVITutorialView()
-            tutorialView.add(to: self.view)
-            tutorialView.maskColor = UIColor.black.withAlphaComponent(0.5)
-            tutorialView.tutorialStrings = [
-                "Every other player has passed since the player opposite you has dealt 2 hedgehogs. The player opposite you can now deal whatever he likes."
+    // part 7
+    TutorialPart(texts:  [
+        "Every other player has passed since the player opposite you has dealt 2 hedgehogs. The player opposite you can now deal whatever he likes."
+        ], views: {
+            [
+                $0.opponentHand2
             ]
-            tutorialView.tutorialViews = [
-                self.opponentHand2
-            ]
-            tutorialView.start {
-                [weak self] in
-                self?.nextTutorialPart()
-            }
-        }
-    }
+    }, preTutorialMoves: [.pass], postTutorialAction: { $0.nextTutorialPart() }),
     
     func helpPart8() {
         animateMoves([3.mosquitoes, 2.fish + 1.joker]) {
