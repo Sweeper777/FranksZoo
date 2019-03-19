@@ -65,7 +65,7 @@ class MainMenuViewController: UIViewController {
         joinButton.addTarget(self, action: #selector(joinButtonPress), for: .touchUpInside)
     }
     
-    override func overrideTraitCollection(forChildViewController childViewController: UIViewController) -> UITraitCollection? {
+    override func overrideTraitCollection(forChild childViewController: UIViewController) -> UITraitCollection? {
         if view.bounds.width < view.bounds.height {
             return UITraitCollection(traitsFrom: [UITraitCollection(horizontalSizeClass: .compact), UITraitCollection(verticalSizeClass: .regular)])
         } else {
