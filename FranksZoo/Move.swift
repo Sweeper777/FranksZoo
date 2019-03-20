@@ -55,25 +55,32 @@ struct Move : Cards, Equatable, Codable {
     var mainCardType: Card? {
         if !isLegal { return nil }
         
-        
+        // elephant and mosquito mechanic
         if cards.keys.contains(.elephant) &&
             cards.keys.contains(.mosquito) {
             return .elephant
         }
         var cardsCopy = cards
+        
+        // remove the joker (if any)
         cardsCopy[.joker] = nil
+        
+        // then the only type of card left (if any) is the main card type
         return cardsCopy.keys.first
     }
     
     /// A set of moves that can defeat this move
     var defeatableMoves: [Move] {
-        
-        
+        // this does not apply to passing
         guard self != .pass else { return [] }
         guard let mainCardType = mainCardType else { return [] }
         let cardCount = cards.values.reduce(0, +)
         var moves: [Move] = []
+        
+        // one more of the same animal
         moves.append(contentsOf: Move.allVariants(cardType: mainCardType, count: cardCount + 1))
+        
+        // same number of predators
         for predatorType in mainCardType.predators {
             moves.append(contentsOf: Move.allVariants(cardType: predatorType, count: cardCount))
         }
@@ -82,14 +89,17 @@ struct Move : Cards, Equatable, Codable {
     
     /// Returns whether this move can defeat another move
     func canDefeat(_ move: Move) -> Bool{
+        // both moves must be legal
         guard self.isLegal && move.isLegal else {
             return false
         }
         
+        // passing can't defeat anything
         guard self != .pass else {
             return true
         }
         
+        // passing can't be defeated
         guard move != .pass else {
             return false
         }
@@ -106,8 +116,8 @@ struct Move : Cards, Equatable, Codable {
         
         let moveCardCount = move.cards.values.reduce(0, +)
         
-        return (selfMainCardType == moveMainCardType && selfCardCount - moveCardCount == 1) ||
-            (moveMainCardType.predators.contains(selfMainCardType) && selfCardCount == moveCardCount)
+        return (selfMainCardType == moveMainCardType && selfCardCount - moveCardCount == 1) || // one more of the same type
+            (moveMainCardType.predators.contains(selfMainCardType) && selfCardCount == moveCardCount) // same number of predators
     }
     
     /// Returns all the different sets of cards that can be used to represent a
