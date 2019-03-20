@@ -1,5 +1,6 @@
 import SwiftyUtils
 
+/// An object that represents the state of a game of Frank's Zoo
 class Game : Codable {
     enum CodingKeys : CodingKey {
         case playerHands
@@ -10,8 +11,13 @@ class Game : Codable {
         case totalPlayedCardCount
     }
     
+    /// The number of players in the game iniitally
     let playerCount = 4
+    
+    /// The hands of each of the player
     var playerHands: [Hand]
+    
+    /// The player index of the current player
     var currentTurn = 0 {
         didSet {
             if currentTurn > playerCount - 1 {
@@ -20,16 +26,23 @@ class Game : Codable {
         }
     }
     
+    /// Whether the game has ended i.e. only one player left
     var ended = false
     
+    /// Returns the hand of current player
     var currentPlayerHand: Hand {
         get { return playerHands[currentTurn] }
         set { playerHands[currentTurn] = newValue }
     }
     
+    /// The last non-pass move made by a player. This property is nil when the
+    /// current player is eligible for an opening move
     var lastMove: Move?
+    
+    /// The player index of the player who made the move stored in `lastMove`
     var lastMoveMadeBy: Int?
     
+    /// The total number of cards dealt in this game
     var totalPlayedCardCount = 0
     
     weak var delegate: GameDelegate?
@@ -42,6 +55,7 @@ class Game : Codable {
         }
     }
     
+    /// Creates a shallow copy of a Game object. The `delegate` is not copied
     init(copyOf game: Game) {
         playerHands = game.playerHands
         currentTurn = game.currentTurn
@@ -62,6 +76,9 @@ class Game : Codable {
         delegate?.playerTurnDidChange(to: currentTurn, game: self)
     }
     
+    /// Cause the current player to make a move if possible.
+    /// Otherwise this has no effect.
+    /// - Returns: Whether the move was successfully made
     @discardableResult
     func makeMove(_ move: Move) -> Bool {
         if ended {
@@ -101,6 +118,7 @@ class Game : Codable {
         }
     }
     
+    /// Returns whether a move can be made by the current player.
     func canMakeMove(_ move: Move) -> Bool {
         if ended {
             return false
