@@ -50,6 +50,7 @@ class Game : Codable {
     init() {
         let cardsForEachHand = AllCards.shared.toArray().shuffled().split(intoChunksOf: 60 / playerCount)
         playerHands = cardsForEachHand.map {
+            // creating a dictionary for each hand
             let dict = Dictionary(grouping: $0, by: { $0 }).mapValues { $0.count }
             return Hand(cards: dict)
         }
@@ -70,6 +71,7 @@ class Game : Codable {
             currentTurn += 1
             
             if currentTurn == lastMoveMadeBy {
+                // an opening move is available
                 lastMove = nil
             }
         } while currentPlayerHand.isEmpty
@@ -81,12 +83,14 @@ class Game : Codable {
     /// - Returns: Whether the move was successfully made
     @discardableResult
     func makeMove(_ move: Move) -> Bool {
-        if ended {
+        if ended { // no move can be made if the game has ended
             return false
         }
         
+        // illegal moves are not allowed
         guard move.isLegal else { return false }
         
+        // a pass always succeeds
         if move == .pass {
             nextPlayer()
             return true
@@ -97,18 +101,20 @@ class Game : Codable {
             isDefeating = move.canDefeat(lastMove)
         }
         
+        // must be defeating the last move
         guard isDefeating else { return false }
         
         let success = currentPlayerHand.makeMove(move)
+        // the hand must be able to make this move
         if success {
             lastMove = move
             lastMoveMadeBy = currentTurn
             totalPlayedCardCount += move.cardCount
-            if (playerHands.filter { !$0.isEmpty }).count <= 1 {
+            if (playerHands.filter { !$0.isEmpty }).count <= 1 { // only 1 player left
                 ended = true
                 delegate?.playerDidWin(game: self, player: currentTurn, place: playerCount - 1)
                 return true
-            } else if currentPlayerHand.isEmpty {
+            } else if currentPlayerHand.isEmpty { // this player won
                 delegate?.playerDidWin(game: self, player: currentTurn, place: playerHands.filter { $0.isEmpty }.count)
             }
             nextPlayer()
