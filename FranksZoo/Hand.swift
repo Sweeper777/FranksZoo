@@ -29,9 +29,11 @@ struct Hand: Cards, Codable {
     /// Returns whether a move can be made by this hand
     func canMakeMove(_ move: Move) -> Bool {
         for (key, value) in move.cards {
+            // if the hand does not have this card
             if cards[key] == nil {
                 return false
             }
+            // if the hand does not have enough of this type of card
             if cards[key]! < value {
                 return false
             }
