@@ -1,10 +1,17 @@
+/// A protocol that all implementations of GameAI conform to
 protocol GameAI {
+    /// Returns the next move that should be made in the `game`
     func getNextMove() -> Move
+    
+    /// The game statte that the AI is given
     var game: Game { get }
+    
+    /// The index of the player that the AI is acting as
     var playerIndex: Int { get }
 }
 
 extension GameAI {
+    /// Returns all the opening moves that a hand can make.
     func allPossibleOpeningMoves(for hand: Hand) -> [Move] {
         var retVal = [Move]()
         for kvp in hand.cards {
@@ -15,6 +22,7 @@ extension GameAI {
         return retVal.filter { $0.isLegal }
     }
     
+    /// Returns all the moves that a hand can make in the current `game` state.
     func allPossibleMoves(for hand: Hand) -> [Move] {
         if let lastMove = game.lastMove {
             return lastMove.defeatableMoves.filter(hand.canMakeMove(_:))
@@ -29,15 +37,18 @@ extension GameAI {
         }
     }
     
+    /// The hand of the player that the AI is representing
     var myHand: Hand {
         return game.playerHands[playerIndex]
     }
 }
 
+/// An implementation of AI that uses heuristics to determine the next move
 class HeuristicAI : GameAI {
     let game: Game
     let playerIndex: Int
     
+    /// The weight for each card type
     let weightDict: [Card: Int] = [
         .joker: 0,
         .elephant: 2,
@@ -59,22 +70,30 @@ class HeuristicAI : GameAI {
         self.playerIndex = playerIndex
     }
     
+    /// Returns whether after making a given move, the player represented by this
+    /// AI uses up all his cards.
     func isWinningMove(_ move: Move) -> Bool {
         return isWinningMove(move, forHand: myHand)
     }
     
+    /// Returns whether after making a given, the player with the given hand uses
+    /// up all his cards.
     func isWinningMove(_ move: Move, forHand hand: Hand) -> Bool {
         var handCopy = hand
         handCopy.makeMove(move)
         return handCopy.isEmpty
     }
     
+    /// Returns whether after making a given move, the player represented by this
+    /// AI will lose certainly
     func isLosingMove(_ move: Move) -> Bool {
         var hand = myHand
         hand.makeMove(move)
         return hand.cards == [.joker: 1]
     }
     
+    /// Returns the sum of the hands of all players, except the player
+    /// represented by this AI, as a single `Hand`.
     func opponentHandSum() -> Hand {
         let opponents = (0..<game.playerHands.count).filter { $0 != playerIndex }
                         .map { game.playerHands[$0] }
@@ -84,11 +103,18 @@ class HeuristicAI : GameAI {
         return Hand(cards: opponentHandSum)
     }
     
+    /// Returns whether a given move is undefeatable given a set of all
+    /// available cards.
     func isUndefeatableMove(_ move: Move, allAvailableCards: Hand) -> Bool {
         let defeatableMoves = move.defeatableMoves
         return !defeatableMoves.contains(where: allAvailableCards.canMakeMove(_:))
     }
     
+    /// Returns whether a move is the start of a winning sequence.
+    ///
+    /// A winning sequence is defined recursively as follows :
+    /// - a winning sequence is a winning move, or
+    /// - a winning sequence is an undefeatable move followed by a winning sequence
     func isStartOfWinningSequence(_ move: Move) -> Bool {
         let allAvailableCards = opponentHandSum()
         if isUndefeatableMove(move, allAvailableCards: allAvailableCards) {
@@ -124,11 +150,14 @@ class HeuristicAI : GameAI {
         return false
     }
     
+    /// Returns the weight of a move, taking into account of whether the moves
+    /// uses up all the cards of the same type
     func weight(ofMove move: Move) -> Double {
         let divider = move.numberOf(move.mainCardType!) == myHand.numberOf(move.mainCardType!) ? 1.0 : 4.0
         return Double(weightDict[move.mainCardType!]!) / divider
     }
     
+    /// Returns the best move for the current `game` state based on weights
     func findMoveByWeights(moves: [Move]) -> Move {
         let lowerBound = 15 - Double(game.totalPlayedCardCount * game.playerCount) / 10.0
         let upperBound = max(lowerBound, 30 - Double(game.totalPlayedCardCount * game.playerCount) / 5)
@@ -139,6 +168,7 @@ class HeuristicAI : GameAI {
         return preferred.first?.0 ?? candidates.randomElement()?.0 ?? .pass
     }
     
+    /// Returns the next move that the AI will make in the current `game` state
     func getNextMove() -> Move {
         var possibleMoves = allPossibleMoves(for: myHand)
         //        if possibleMoves.count == 1 {
@@ -159,6 +189,7 @@ class HeuristicAI : GameAI {
     }
 }
 
+/// A implementation of an AI that makes random moves.
 class RandomAI : GameAI {
     let game: Game
     let playerIndex: Int
