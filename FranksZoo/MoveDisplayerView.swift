@@ -1,12 +1,16 @@
 import UIKit
 
+/// A view responsible for displaying and animating moves, as well as showing
+/// "It's your turn!"
 class MoveDisplayerView: UIView {
+    /// The currently displayed move
     var displayedMove: Move? {
         didSet {
             setNeedsDisplay()
         }
     }
     
+    /// The size of the cards displayed
     var cardSize: CGSize = .zero {
         didSet {
             setNeedsDisplay()
@@ -149,6 +153,7 @@ class MoveDisplayerView: UIView {
         }
     }
     
+    /// Shows an animation of the given player making the given move
     func animateMove(_ move: Move, forPlayer player: Int, completion: @escaping () -> Void) {
         guard move != .pass else {
             animatePass(forPlayer: player, completion: completion)
@@ -169,6 +174,7 @@ class MoveDisplayerView: UIView {
         }
     }
     
+    /// Shows the "It's your turn" message
     func animateItsYourTurn() {
         let height = UIScreen.height / 2
         let width = UIScreen.width / 2
