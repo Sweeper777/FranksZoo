@@ -75,7 +75,7 @@ class MainMenuViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         playButton.titleLabel?.updateFontSizeToFit(size: playButton.bounds.size)
-        tutorialButton.titleLabel?.updateFontSizeToFit(size: tutorialButton.bounds.size)
+        tutorialButton.titleLabel?.updateFontSizeToFit(size: tutorialButton.bounds.size, multiplier: 0.7)
         hostButton.titleLabel?.updateFontSizeToFit(size: hostButton.bounds.size)
         joinButton.titleLabel?.updateFontSizeToFit(size: joinButton.bounds.size)
         
@@ -83,6 +83,16 @@ class MainMenuViewController: UIViewController {
         tutorialButton.updateTitleOffsets()
         hostButton.updateTitleOffsets()
         joinButton.updateTitleOffsets()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        DispatchQueue.main.async { [weak self] in
+            guard let `self` = self else { return }
+            self.playButton.titleLabel?.updateFontSizeToFit(size: self.playButton.bounds.size)
+            self.tutorialButton.titleLabel?.updateFontSizeToFit(size: self.tutorialButton.bounds.size, multiplier: 0.7)
+            self.hostButton.titleLabel?.updateFontSizeToFit(size: self.hostButton.bounds.size)
+            self.joinButton.titleLabel?.updateFontSizeToFit(size: self.joinButton.bounds.size)
+        }
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
