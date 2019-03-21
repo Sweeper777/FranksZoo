@@ -25,11 +25,14 @@ extension GameAI {
     /// Returns all the moves that a hand can make in the current `game` state.
     func allPossibleMoves(for hand: Hand) -> [Move] {
         if let lastMove = game.lastMove {
+            // if there is a last move, return its defeatable moves that the hand
+            // can make
             return lastMove.defeatableMoves.filter(hand.canMakeMove(_:))
                 .sorted(by: { (x, y) -> Bool in
                     return x.cardCount > y.cardCount
                 })
         } else {
+            // otherwise, return the opening moves a hand can make
             return allPossibleOpeningMoves(for: hand)
                 .sorted(by: { (x, y) -> Bool in
                     return x.cardCount > y.cardCount
@@ -120,30 +123,28 @@ class HeuristicAI : GameAI {
         if isUndefeatableMove(move, allAvailableCards: allAvailableCards) {
             var handCopy = myHand
             handCopy.makeMove(move)
-            return isStartOfWinningSequenceImpl(handCopy, allAvailableCards: allAvailableCards, depth: 3)
+            return isStartOfWinningSequenceImpl(handCopy, allAvailableCards: allAvailableCards)
         }
         return false
         
     }
     
-    private func isStartOfWinningSequenceImpl(_ hand: Hand, allAvailableCards: Hand, depth: Int) -> Bool {
-        //        if depth == 0 {
-        //            return false
-        //        }
-        
+    private func isStartOfWinningSequenceImpl(_ hand: Hand, allAvailableCards: Hand) -> Bool {
         let possibleOpeningMoves = allPossibleOpeningMoves(for: hand).sorted(by: { $0.cardCount > $1.cardCount })
-        for move in possibleOpeningMoves {
-            if isWinningMove(move, forHand: hand) {
+        for move in possibleOpeningMoves { // for each move that this hand can make
+            if isWinningMove(move, forHand: hand) { // if it is a winning move, it is a winning sequence
                 return true
             }
             
             if !isUndefeatableMove(move, allAvailableCards: allAvailableCards) {
-                continue
+                continue // if it is not undefeatable, we check the next move
             }
             
+            // if it is undefeatable, we simulate making the move
             var handCopy = hand
             handCopy.makeMove(move)
-            if isStartOfWinningSequenceImpl(handCopy, allAvailableCards: allAvailableCards, depth: depth - 1) {
+            // return whether the rest is a winning sequence
+            if isStartOfWinningSequenceImpl(handCopy, allAvailableCards: allAvailableCards) {
                 return true
             }
         }
@@ -159,10 +160,19 @@ class HeuristicAI : GameAI {
     
     /// Returns the best move for the current `game` state based on weights
     func findMoveByWeights(moves: [Move]) -> Move {
+        // these bounds are empirically tuned
         let lowerBound = 15 - Double(game.totalPlayedCardCount * game.playerCount) / 10.0
         let upperBound = max(lowerBound, 30 - Double(game.totalPlayedCardCount * game.playerCount) / 5)
         
+        // Remove those moves that have weights less than the lower bound.
+        // We want to deal these cards late in the game.
         let capped = moves.map { ($0, weight(ofMove: $0)) }.filter { $0.1 > lowerBound }.sorted { $0.1 > $1.1 }
+        
+        // The moves which have weights greater than the upper bound are preferred
+        // and we should make the preferred move that has the hightest weight.
+        // If there are no preferred moves, we choose a random move with a weight
+        // between the bounds and make it.
+        // If there are no moves between the bounds, we pass.
         let preferred = capped.filter { $0.1 > upperBound }
         let candidates = capped.filter { $0.1 <= upperBound }
         return preferred.first?.0 ?? candidates.randomElement()?.0 ?? .pass
@@ -171,10 +181,6 @@ class HeuristicAI : GameAI {
     /// Returns the next move that the AI will make in the current `game` state
     func getNextMove() -> Move {
         var possibleMoves = allPossibleMoves(for: myHand)
-        //        if possibleMoves.count == 1 {
-        //            return possibleMoves.first!
-        //        }
-        
         if let winningMove = possibleMoves.first(where: isWinningMove) {
             return winningMove
         }
