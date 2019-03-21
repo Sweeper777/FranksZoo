@@ -17,12 +17,13 @@ class MoveDisplayerView: UIView {
         }
     }
     
-    func calculateCardXs(cards: [Card]) -> [CGFloat] {
-        
+    private func calculateCardXs(cards: [Card]) -> [CGFloat] {
+        // calculates the separation between cards
         var separator = cardSize.width / 4
         if cards.count.f * (separator + cardSize.width) > self.width {
             separator = (self.width - cards.count.f * cardSize.width) / (cards.count.f + 1)
         }
+        // calculates the x coordinate of the leftmost card
         let leftmostCardX = (self.width - (cards.count.f * cardSize.width + separator * (cards.count.f - 1))) / 2
         return (0..<cards.count).map {
             leftmostCardX + $0.f * (cardSize.width + separator)
