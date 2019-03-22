@@ -1,6 +1,8 @@
 import UIKit
 
+/// A view that shows only the backsides of a certain number of cards
 class OpponentsHandView : UIView {
+    /// The possible orientations of the opponent's hand shown
     @objc enum Orientation: Int {
         case right
         case down
@@ -9,6 +11,7 @@ class OpponentsHandView : UIView {
     
     private var imageViews: [UIImageView] = []
     
+    /// The number of cards the opponent's hand contains
     @IBInspectable
     var numberOfCards: Int = 0 {
         didSet {
@@ -16,6 +19,7 @@ class OpponentsHandView : UIView {
         }
     }
     
+    /// The orientaton of the opponent's hand
     @IBInspectable
     var orientation: Orientation = .right {
         didSet {
@@ -23,6 +27,7 @@ class OpponentsHandView : UIView {
         }
     }
     
+    /// The text shown next to the cards to indicate the name of the opponent.
     @IBInspectable
     var labelText: String = "" {
         didSet {
