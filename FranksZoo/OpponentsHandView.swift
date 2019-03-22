@@ -53,6 +53,7 @@ class OpponentsHandView : UIView {
         }
         
         var imageCenters = [CGPoint]()
+        // calculate the centers of each image view for each orientation
         switch orientation {
         case .left, .right:
             let x = width / 2
@@ -74,9 +75,10 @@ class OpponentsHandView : UIView {
             for i in 0..<numberOfCards {
                 imageCenters.append(CGPoint(x: rightCardCenter + i.f * offset, y: y))
             }
-            break
         }
         
+        // calculate the angle about which the image views should be rotated
+        // for each orientation
         var rotationAngle: CGFloat
         switch orientation {
         case .right:
@@ -102,6 +104,7 @@ class OpponentsHandView : UIView {
         let centerX: CGFloat
         let centerY: CGFloat
         let rotationAngle: CGFloat
+        // calculate the frame of the label for each orientation
         switch orientation {
         case .right:
             height = self.width / 5
