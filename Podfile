@@ -5,7 +5,6 @@ target 'FranksZoo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'AnimationSugar'
-  pod 'SwiftRandom'
   pod 'SwiftyUtils'
   pod 'DynamicColor'
   pod 'SCLAlertView'

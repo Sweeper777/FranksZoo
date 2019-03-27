@@ -30,7 +30,7 @@ public class Animation {
     private let animations: () -> ()
     private let duration: TimeInterval
     private var delay: TimeInterval = 0
-    private var options: UIViewAnimationOptions?
+    private var options: UIView.AnimationOptions?
     private var completion: ((Bool) -> ())?
     private var springDampingRatio: CGFloat?
     private var springInitialVelocity: CGFloat?
@@ -62,7 +62,7 @@ public class Animation {
      - Parameter option: The option(s) to set. E.g. `.withOption(.AnimationCurveEaseOut)`
      - Returns An `Animation` object that can be modified or chained with further animations.
      */
-    public func withOption(option: UIViewAnimationOptions) -> Animation {
+    public func withOption(option: UIView.AnimationOptions) -> Animation {
         if let options = options {
             self.options = options.union(option)
         } else {

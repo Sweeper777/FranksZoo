@@ -150,7 +150,6 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftRandom/SwiftRandom.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyUtils-framework/SwiftyUtils.framework"
 fi
@@ -162,7 +161,6 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/SwiftRandom/SwiftRandom.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SwiftyUtils-framework/SwiftyUtils.framework"
 fi
