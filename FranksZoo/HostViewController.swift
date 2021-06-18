@@ -13,7 +13,7 @@ class HostViewController : UIViewController {
     let peerID = MCPeerID(displayName: UIDevice.current.name)
     var session: MCSession!
     var advertiser: MCNearbyServiceAdvertiser!
-    var connectedPeers: Variable<[MCPeerID]> = Variable([])
+    var connectedPeers: BehaviorRelay<[MCPeerID]> = BehaviorRelay(value: [])
     
     let disposeBag = DisposeBag()
     
@@ -93,11 +93,13 @@ class HostViewController : UIViewController {
 
 extension HostViewController : MCSessionDelegate, MCNearbyServiceAdvertiserDelegate {
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        if state == .connected {
-            connectedPeers.value.append(peerID)
-        } else if state == .notConnected {
-            _ = connectedPeers.value.remove(object: peerID)
-        }
+//        if state == .connected {
+//            connectedPeers.accept(connectedPeers.value + [peerID])
+//        } else if state == .notConnected {
+//            var removed = connectedPeers.value
+//            _ = removed.remove { $0 == peerID }
+//            connectedPeers.accept(removed)
+//        }
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {

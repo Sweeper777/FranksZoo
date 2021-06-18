@@ -30,7 +30,7 @@ class JoinViewController : UIViewController {
     let peerID = MCPeerID(displayName: UIDevice.current.name)
     var session: MCSession!
     var browser: MCNearbyServiceBrowser!
-    var foundPeers: Variable<[PeerIDStateTuple]> = Variable([])
+    var foundPeers: BehaviorRelay<[PeerIDStateTuple]> = BehaviorRelay(value: [])
     var connectionStateWithHost = ConnectionState.notConnected
     
     let disposeBag = DisposeBag()
@@ -103,22 +103,22 @@ class JoinViewController : UIViewController {
 
 extension JoinViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate {
     func session(_ session: MCSession, peer peerID: MCPeerID, didChange state: MCSessionState) {
-        if let index = foundPeers.value.index(where: { $0.peerID == peerID }) {
-            switch state {
-            case .connected:
-                foundPeers.value[index].state = .connected
-                connectionStateWithHost = .connected
-            case .connecting:
-                foundPeers.value[index].state = .connecting
-            case .notConnected:
-                connectionStateWithHost = .notConnected
-                if foundPeers.value[index].state == .connected {
-                    foundPeers.value[index].state = .notConnected
-                } else {
-                    foundPeers.value[index].state = .error
-                }
-            }
-        }
+//        if let index = foundPeers.value.index(where: { $0.peerID == peerID }) {
+//            switch state {
+//            case .connected:
+//                foundPeers.value[index].state = .connected
+//                connectionStateWithHost = .connected
+//            case .connecting:
+//                foundPeers.value[index].state = .connecting
+//            case .notConnected:
+//                connectionStateWithHost = .notConnected
+//                if foundPeers.value[index].state == .connected {
+//                    foundPeers.value[index].state = .notConnected
+//                } else {
+//                    foundPeers.value[index].state = .error
+//                }
+//            }
+//        }
     }
     
     func session(_ session: MCSession, didReceive data: Data, fromPeer peerID: MCPeerID) {
@@ -147,16 +147,16 @@ extension JoinViewController: MCSessionDelegate, MCNearbyServiceBrowserDelegate 
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, foundPeer peerID: MCPeerID, withDiscoveryInfo info: [String : String]?) {
-        let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
-        if foundPeers.value.contains(peerIDStateTuple) {
-            _ = foundPeers.value.remove(object: peerIDStateTuple)
-        }
-        foundPeers.value.append(peerIDStateTuple)
+//        let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
+//        if foundPeers.value.contains(peerIDStateTuple) {
+//            _ = foundPeers.value.remove(object: peerIDStateTuple)
+//        }
+//        foundPeers.value.append(peerIDStateTuple)
     }
     
     func browser(_ browser: MCNearbyServiceBrowser, lostPeer peerID: MCPeerID) {
-        let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
-        _ = foundPeers.value.remove(object: peerIDStateTuple)
+//        let peerIDStateTuple = PeerIDStateTuple(peerID: peerID)
+//        _ = foundPeers.value.remove(object: peerIDStateTuple)
     }
     
     
