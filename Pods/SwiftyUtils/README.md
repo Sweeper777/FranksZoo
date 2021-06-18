@@ -1,13 +1,13 @@
 # SwiftyUtils
 
 [![CI Status](https://travis-ci.org/tbaranes/SwiftyUtils.svg)](https://travis-ci.org/tbaranes/SwiftyUtils)
-![Language](https://img.shields.io/badge/language-Swift%204.0-orange.svg)
+![Language](https://img.shields.io/badge/language-Swift%205.0-orange.svg)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/SwiftyUtils.svg)](https://img.shields.io/cocoapods/v/SwiftyUtils.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftyUtils.svg?style=flat)](http://cocoadocs.org/docsets/SwiftyUtils)
 
 SwiftyUtils groups all the reusable code that we need to ship in each project. This framework contains:
-- extension
+- Extensions
 - Protocols
 - Structs
 - Subclasses
@@ -18,58 +18,80 @@ Working on iOS, macOS, tvOS, and watchOS, everything has been made to be easy to
 
 Check out the repository to find examples / tests for each feature.
 
-**Available for iOS, macOS, tvOS and watchOS:**
+**Swift, Foundation and CoreGraphics extensions:**
 
-- [Array](#array-extension)
-- [Bundle](#bundle-extension)
-- [CGFloat](#cgfloat-extension)
-- [CGPoint](#cgpoint-extension)
-- [CGRect](#cgrect-extension)
-- [CGSize](#cgsize-extension)
-- [Color](#color-extension)
-- [Date](#date-extension)
-- [Dictionary](#dictionary-extension)
-- [Double](#double-extension)
-- [FileManager](#filemanager-extension)
-- [Int](#int-extension)
-- [NotificationCenter](#notificationcenter-extension)
-- [NSLayoutConstraint](#nslayoutconstraint-extension)
-- [NSMutableAttributedString](#nsmutableattributedstring-extension)
-- [NSObject](#nsobject-extension)
-- [NSRange](#nsrange-extension)
-- [ReusableFormatters](#reusableformatters)
-- [String](#string-extension)
-- [Timer](#timer-extension)
-- [URL](#url-extension)
-- [UnitTesting](#unittesting)
-- [UITesting](#uitesting)
-- [UserDefaults](#userdefaults-extension)
-- **Protocols:**
- - [Injectable](#injectable)
- - [Iteratable](#iteratable)
- - [Occupiable](#occupiable)
- - [Then](#then)
+ - [Array](#array-extension)
+ - [Bundle](#bundle-extension)
+ - [CGFloat](#cgfloat-extension)
+ - [CGPoint](#cgpoint-extension)
+ - [CGRect](#cgrect-extension)
+ - [CGSize](#cgsize-extension)
+ - [Color](#color-extension)
+ - [Date](#date-extension)
+ - [Dictionary](#dictionary-extension)
+ - [Double](#double-extension)
+ - [FileManager](#filemanager-extension)
+ - [Int](#int-extension)
+ - [NotificationCenter](#notificationcenter-extension)
+ - [NSAttributedString](#nsattributedstring-extension)
+ - [NSLayoutConstraint](#nslayoutconstraint-extension)
+ - [NSMutableAttributedString](#nsmutableattributedstring-extension)
+ - [NSObject](#nsobject-extension)
+ - [NSRange](#nsrange-extension)
+ - [ReusableFormatters](#reusableformatters)
+ - [String](#string-extension)
+ - [Timer](#timer-extension)
+ - [URL](#url-extension)
+ - [UserDefaults](#userdefaults-extension)
 
-**Available for iOS, tvOS, and watchOS (a few):**
+
+**SwiftUI:**
+
+- [UIElementPreview](#uielementpreview)
+
+
+**UIKit Extensions:**
 
 - [UIAlertController](#uialertcontroller-extension)
 - [UIApplication](#uiapplication-extension)
+- [UIButton](#uibutton-extension)
+- [UICollectionViewCell](#uicollectionviewcell-extension)
 - [UIDevice](#uidevice-extension)
+- [UIFont](#uifont-extension)
 - [UIImage](#uiimage-extension)
 - [UILabel](#uilabel-extension)
 - [UIScreen](#uiscreen-extension)
 - [UIStoryboard](#uistoryboard-extension)
 - [UISwitch](#uiswitch-extension)
 - [UITextFied](#uitextfield-extension)
+- [UITextView](#uitextview-extension)
 - [UIView](#uiview-extension)
 - [UIViewController](#uiviewcontroller-extension)
-- [Simulator](#simulator)
 
-**Available for macOS:**
+
+**AppKit Extensions:**
 
 - [NSView](#nsview-extension)
 
-## Available for iOS, macOS, tvOS and watchOS
+
+**Protocols:**
+
+- [Injectable](#injectable)
+- [Occupiable](#occupiable)
+- [Then](#then)
+
+
+**PropertyWrappers:**
+
+ - [UserDefaultsBacked](#userdefaultsbacked)
+
+**Others:**
+
+- [UnitTesting](#unittesting)
+- [UITesting](#uitesting)
+- [SystemUtility - Shell](#shell-utility)
+
+## Swift, Foundation and CoreGraphics Extensions
 
 ### Array extension
 
@@ -81,16 +103,9 @@ print(array[safe: 0]) // Optional(1)
 print(array[safe: 10]) // nil
 ```
 
-Access to a random element:
-
-``` swift
-var array = [1, 2, 3]
-print(array.random()) // 1, 2 or 3
-```
-
 Find all the index of an object:
 
-``` swift
+```swift
 var array = [1, 2, 3, 1]
 print(array.indexes(of: 1)) // [0,3]
 ```
@@ -175,27 +190,6 @@ var array = [1, 2, 3, 4]
 print(array.split(intoChunksOf: 2)) // [[1, 2], [3, 4]]
 ```
 
-Shuffle array's elements:
-
-``` swift
-var array = [1, 2, 3, 5, 6]
-array.shuffle()
-print(array) // [3, 6, 1, 2, 5]
-
-let arrayShuffled = array.shuffled()
-print(arrayShuffled) // [2, 1, 6, 3, 5]
-```
-
-Test all elements of an array against a closure:
-
-``` swift
-var array = [1, 2, 3]
-let result = array.testAll {
-	$0 == 1
-}
-print(result) // false
-```
-
 ### Bundle extension
 
 Get bundle information:
@@ -203,6 +197,9 @@ Get bundle information:
 ```swift
 Bundle.main.appName
 Bundle(url: url)?.appName
+
+Bundle.main.displayName
+Bundle(url: url)?.displayName
 
 Bundle.main.appVersion
 Bundle(url: url)?.appVersion
@@ -323,7 +320,7 @@ print(size1) // CGSize(width: 20, height: 20)
 
 Create colors with HEX values:
 
-``` swift
+```swift
 let myUIColor = UIColor(hex: "233C64") // Equals 35,60,100,1
 let myNSColor = NSColor(hex: "233C64") // Equals 35,60,100,1
 ```
@@ -356,11 +353,41 @@ let darker = color.darker(amount: 0.5)
 let darker = color.darker()
 ```
 
-## Date extension
+### Data Extension
+
+Initialize from hex string:
+
+```swift
+let hexString = "6261736520313020697320736F2062617369632E206261736520313620697320776865726520697427732061742C20796F2E"
+let data = Data(hexString: hexString)
+```
+
+Get hex string from data:
+
+```swift
+let data = Data(...)
+let string = data.toHexString()
+// string = "6261736520313020697320736F2062617369632E206261736520313620697320776865726520697427732061742C20796F2E" if using previous example value
+```
+
+Get UInt8 Array from data:
+
+```swift
+let data = Data(...)
+let array = data.bytesArray
+```
+
+Map Data to Dictionary:
+
+```swift
+let dictionary = try data.toDictionary()
+```
+
+### Date extension
 
 Initialize from string:
 
-``` swift
+```swift
 let format = "yyyy/MM/dd"
 let string = "2015/03/11"
 print(Date(fromString: string, format: format)) // Optional("2015/03/11 00:00:00 +0000")
@@ -368,7 +395,7 @@ print(Date(fromString: string, format: format)) // Optional("2015/03/11 00:00:00
 
 Convert date to string:
 
-``` swift
+```swift
 let now = Date()
 print(now.string())
 print(now.string(dateStyle: .medium, timeStyle: .medium))
@@ -377,7 +404,7 @@ print(now.string(format: "yyyy/MM/dd HH:mm:ss"))
 
 See how much time passed:
 
-``` swift
+```swift
 let now = Date()
 let later = Date(timeIntervalSinceNow: -100000)
 print(later.days(since: now)) // 1.15740740782409
@@ -398,22 +425,21 @@ print(now.isInPast) // false
 
 Check if a key exists in the dictionary:
 
-``` swift
+```swift
 let dic = ["one": 1, "two": 2]
 print(dic.has(key: "one")) // True
 print(dic.has(key: "1")) // False
 ```
 
-Access a random element:
+Map Dictionary to Data:
 
-``` swift
-let dic= ["one": 1, "two": 2]
-print(dic.random()) // 1 or something else
+```swift
+let data = try dictionary.toData()
 ```
 
 Easily get union of two dictionaries:
 
-``` swift
+```swift
 let dic1 = ["one": 1, "two": 2]
 let dic2 = ["one": 1, "four": 4]
 
@@ -446,7 +472,7 @@ print(dic) // ["A": "2, "C": "6"]
 
 Get difference of two dictionaries:
 
-``` swift
+```swift
 let dic1 = ["one": 1, "two": 2]
 let dic2 = ["one": 1, "four": 4]
 difference(with: dic1, dic2) // ["two": 2, "four": 4]
@@ -460,16 +486,6 @@ let dic2 = ["three": 3, "four": 4]
 var finalDic = [String: Int]()
 finalDic.merge(with: dic1, dic2)
 print(finalDic) // ["one": 1, "two": 2, "three": 3, "four": 4]
-```
-
-Test each element against a closure:
-
-``` swift
-var dic = ["abc": "abc, "ab": "a", "b": "b"]
-let result = dic.testAll { key, _ in 
-    key.length < 3 
-}
-print(result) // false
 ```
 
 ### Double extension
@@ -491,7 +507,7 @@ print(2.day) // 172800
 
 Formatted value with the locale currency:
 
-```
+```swift
 print(Double(3.24).formattedPrice) // "$3.24"
 print(Double(10).formattedPrice) // "$10.00"
 ```
@@ -501,7 +517,7 @@ print(Double(10).formattedPrice) // "$10.00"
 
 Get documents directory url following the os:
 
-```
+```swift
 FileManager.document
 // OR
 FileManager.default.document
@@ -509,7 +525,7 @@ FileManager.default.document
 
 Create a new directory:
 
-```
+```swift
 FileManager.createDirectory(at: directoryUrl)
 // OR
 FileManager.default.createDirectory(at: directoryUrl)
@@ -517,7 +533,7 @@ FileManager.default.createDirectory(at: directoryUrl)
 
 Delete contents of temporary directory
 
-```
+```swift
 FileManager.removeTemporaryFiles()
 // OR
 FileManager.default.removeTemporaryFiles()
@@ -525,7 +541,7 @@ FileManager.default.removeTemporaryFiles()
 
 Delete contents of documents directory
 
-```
+```swift
 FileManager.removeDocumentFiles()
 // OR
 FileManager.default.removeDocumentFiles()
@@ -574,10 +590,21 @@ print(10.formattedPrice) // "$10.00"
 
 Post a notification from a specific queue:
 
-```
+```swift
 NotificationCenter.default.postNotification("aNotification", queue: DispatchQueue.main) 
 NotificationCenter.default.postNotification("aNotification", object: aObject queue: DispatchQueue.main)
 NotificationCenter.default.postNotification("aNotification", object: aObject userInfo: userInfo queue: DispatchQueue.main)
+```
+
+### NSAttributedString extension
+
+Check if an attribute is applied on the desired substring:
+
+```swift
+let text = "Hello"
+let attrString = NSMutableAttributedString(text: "Hello world")
+attrString = attrString.underlined(occurences: text)
+attrString.isAttributeActivated(.underlineStyle, appliedOn: text, value: 1) // true
 ```
 
 ### NSLayoutConstraint extension
@@ -776,6 +803,26 @@ var string = "test@"
 print(string.isEmail) // false
 ```
 
+Check if it's a valid IP address:
+
+```swift
+let ip4 = "1.2.3.4"
+let ip6 = "fc00::"
+let notIPAtAll = "i'll bribe you to say i'm an ip address!"
+
+ip4.isIP4Address //true
+ip4.isIP6Address //false
+ip4.isIPAddress //true
+
+ip6.isIP4Address //false
+ip6.isIP6Address //true
+ip6.isIPAddress //true
+
+notIPAtAll.isIP4Address //false
+notIPAtAll.isIP6Address //false
+notIPAtAll.isIPAddress //false
+```
+
 Uncamelize a string:
 
 ```swift
@@ -812,11 +859,11 @@ let string = "abcd"
 print(string.split(intoChunksOf: 2)) // ["ab", "cd"]
 ```
 
-## Timer extension
+### Timer extension
 
 Schedule timer every seconds:
 
-``` swift
+```swift
 var count = 0
 Timer.every(1.second, fireImmediately: true) { timer in // fireImmediately is an optional parameter, defaults to false
     print("Will print every second")
@@ -829,7 +876,7 @@ Timer.every(1.second, fireImmediately: true) { timer in // fireImmediately is an
 
 Schedule timer after a certain delay:
 
-``` swift
+```swift
 Timer.after(2.seconds) { _ in
     print("Prints this 2 seconds later in main queue")
 }
@@ -837,7 +884,7 @@ Timer.after(2.seconds) { _ in
 
 Manual scheduling a timer:
 
-``` swift
+```swift
 let timer = Timer.new(every: 2.seconds) { _ in
     print("Prints this 2 seconds later in main queue")
 }
@@ -846,7 +893,7 @@ timer.start(onRunLoop: RunLoop.current, modes: RunLoopMode.defaultRunLoopMode)
 
 Manual scheduling a timer with a delay:
 
-``` swift
+```swift
 let timer = Timer.new(after: 2.seconds) { _ in
     print("Prints this 2 seconds later in main queue")
 }
@@ -857,7 +904,7 @@ timer.start(onRunLoop: RunLoop.current, modes: RunLoopMode.defaultRunLoopMode)
 
 Get query parameters from URL:
 
-``` swift
+```swift
 let url = URL(string: "http://example.com/api?v=1.1&q=google")
 let queryParameters = url?.queryParameters
 print(queryParameters?["v"]) // 1.1
@@ -867,45 +914,9 @@ print(queryParameters?["other"]) // nil
 
 Add skip backup attributes to you URL:
 
-``` swift
+```swift
 let url = URL(string: "/path/to/your/file")        
 url?.addSkipBackupAttribute() // File at url won't be backupped!
-```
-
-### UnitTesting
-
-Grand Central Dispatch sugar syntax:
-
-Detect if UITests are running:
-
-```swift
-if UnitTesting.isRunning {
-  // tests are running
-} else {
-  // everything is fine, move along
-}
-```
-
-Measure tests performance:
-
-```
-func testPerformance() {
-  let measurement = measure {
-    // run operation
-  }
-}
-```
-
-### UITesting
-
-Detect if UITests are running:
-
-```swift
-if UITesting.isRunning {
-  // tests are running
-} else {
-  // everything is fine, move along
-}
 ```
 
 ### UserDefaults extension
@@ -932,11 +943,453 @@ Remove all values in `UserDefaults`:
 UserDefaults.standard.removeAll()
 ```
 
+
+## SwiftUI
+
+### UIElementPreview
+
+Generate automatically multiple previews including: 
+
+- Default sized preview or dedicated preview device
+- A preview with Dark Mode enabled
+- Each localization of our project applied to a preview
+- Different dynamic type sizes applied
+
+
+```swift
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        UIElementPreview(ContentView(),
+                         previewLayout: .sizeThatFits, // default is `.device`
+                         previewDevices: ["iPhone SE"], // default is iPhone SE and iPhone XS Max. Note: it won't be used if `previewLayout` is `.sizeThatFits`
+                         dynamicTypeSizes:[.extraSmall] // default is: .extraSmall, .large, .extraExtraExtraLarge
+                        )
+    }
+}
+```
+
+## UIKit Extensions
+
+### UIAlertController extension
+
+Create a custom `UIAlertController`:
+
+```swift
+let alertController1 = UIAlertController(title: "Title",
+                                        message: "Message")
+                          
+let alertController2 = UIAlertController(title: "Title",
+                                        message: "Message",
+                                        defaultActionButtonTitle: "Cancel")
+                                                      
+let alertController3 = UIAlertController(title: "Title",
+                                        message: "Message",
+                                        defaultActionButtonTitle: "Cancel",
+                                        defaultActionButtonStyle: .cancel) 
+                                        
+let alertController1 = UIAlertController(title: "Title",
+                                        message: "Message",
+                                        defaultActionButtonTitle: "Cancel",
+                                        defaultActionButtonStyle: .cancel,
+                                        tintColor: .blue)
+```
+
+Show an `UIAlertController`:
+
+```swift
+alertController.show()
+alertController.show(animated: false)
+alertController.show(animated: true, completion: {
+    print("Presented")
+})
+```
+
+Add an action to the `UIAlertController`:
+
+```swift
+alertController.addAction(title: "ActionTitle")
+
+alertController.addAction(title: "ActionTitle",
+                          style: .destructive)
+                          
+alertController.addAction(title: "ActionTitle",
+                          style: .destructive,
+                          isEnabled: false)
+                          
+alertController.addAction(title: "ActionTitle",
+                          style: .destructive,
+                          isEnabled: false,
+                          handler: nil)
+```
+
+### UIApplication extension
+
+Get the current view controller display:
+
+```swift
+UIApplication.shared.topViewController() // Using UIWindow's rootViewController as baseVC
+UIApplication.shared.topViewController(from: baseVC) // topVC from the base view controller
+```
+
+Get the app delegate:
+
+```swift
+UIApplication.delegate(AppDelegate.self)
+```
+
+Open app settings:
+
+```swift
+UIApplication.shared.openAppSettings()
+```
+
+Open app review page:
+
+```swift
+let url = URL(string: "https://itunes.apple.com/app/{APP_ID}?action=write-review")
+UIApplication.shared.openAppStoreReviewPage(url)
+```
+
+### UIButton extension
+
+Add right image with custom offset to button:
+
+```swift
+let button = UIButton(frame: .zero)
+button.addRightImage(image, offset: 16)
+```
+
+### UICollectionViewCell extension
+
+Apply a corner radius to the cell:
+
+```swift
+let cell = UICollectionViewCell()
+cell.applyCornerRadius(10)
+```
+
+Animate when cell is highlighted:
+
+```swift
+class MyCollectionViewCell: UICollectionViewCell {
+    // ...
+    override var isHighlighted: Bool {
+        willSet {
+            self.animate(scale: newValue, options: .curveEaseInOut) // Note that the animation is customisable, but all parameters as default value
+        }
+    }
+    // ...
+}
+```
+
+### UIFont extension
+
+Obtains a font that scale to support Dynamic Type:
+
+```swift
+let font = UIFont.dynamicStyle(.body, traits: .traitsBold)
+```
+
+### UIDevice extension
+
+Access to your device information:
+
+```swift
+print(UIDevice.idForVendor) // 104C9F7F-7403-4B3E-B6A2-C222C82074FF
+print(UIDevice.systemName()) // iPhone OS
+print(UIDevice.systemVersion()) // 9.0
+print(UIDevice.deviceName) // iPhone Simulator / iPhone 6 Wifi
+print(UIDevice.deviceLanguage) // en
+print(UIDevice.isPhone) // true or false
+print(UIDevice.isPad) // true or false
+```
+
+Check your system version:
+
+```swift
+print(UIDevice.isVersion(8.1)) // false
+print(UIDevice.isVersionOrLater(8.1)) // true
+print(UIDevice.isVersionOrEarlier(8.1)) // false
+```
+
+Force device orientation:
+
+```swift
+UIDevice.forceRotation(.portrait)
+UIDevice.current.forceRotation(.portrait)
+```
+
+### UIImage extension
+
+Create an image from a color:
+
+```swift
+let image = UIImage(color: .green)
+```
+
+Fill an image with a color:
+
+```swift
+let image = UIImage(named: "image")
+let greenImage = image.filled(with: .green)
+```
+
+Combined an image with another:
+
+```swift
+let image = UIImage(named: "image")
+let image2 = UIImage(named: "image2")
+let combinedImage = image.combined(with: image2)
+```
+
+Change the rendering mode:
+
+```swift
+var image = UIImage(named: "image")
+image = image.template // imageWithRenderingMode(.alwaysTemplate)
+image = image.original // imageWithRenderingMode(.alwaysOriginal)
+```
+
+### UILabel extension
+
+Configure a dynamic text style to the label:
+
+```swift
+label.configureDynamicStyle(.body, traits: .traitBold)
+```
+
+Detect if a label text is truncated:
+
+```swift
+let label = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 40))
+label.text = "I will be truncated :("
+print(label.isTruncated()) // true
+
+let label = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 40))
+label.text = ":)"
+print(label.isTruncated()) // false
+```
+
+Customize label line height:
+
+```swift
+let label = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 40))
+label.setText("A long multiline text")
+label.setLineHeight(0.9)
+```
+
+Customize the label truncated text (replace the default `...`):
+
+```swift
+let label = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 40))
+label.setText("I will be truncated :(", truncatedText: ".")
+print(label.text) // I wi.
+```
+
+### UIScreen extension
+
+Get the screen orientation:
+
+```swift
+if UIInterfaceOrientationIsPortrait(UIScreen.currentOrientation) {
+    // Portrait
+} else {
+    // Landscape
+}
+```
+
+Get the screen size:
+
+```swift
+print(UIScreen.size) // CGSize(375.0, 667.0) on iPhone6
+print(UIScreen.width) // 375.0 on iPhone6
+print(UIScreen.height) // 667.0 on iPhone6
+print(UIScreen.heightWithoutStatusBar) // 647.0 on iPhone6
+```
+
+Get the status bar height:
+
+```swift
+print(UIScreen.statusBarHeight) // 20.0 on iPhone6
+```
+
+### UIStoryboard extension
+
+Get the application's main storyboard:
+
+```swift
+let storyboard = UIStoryboard.main
+```
+
+### UISwitch extension
+
+Toggle `UISwitch`:
+
+```swift
+let aSwitch = UISwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
+aSwitch.toggle()
+print(aSwitch.isOn) // true
+
+aSwitch.toggle(animated: false)
+```
+
+### UITextField extension
+
+Configure a dynamic text style to the textfield:
+
+```swift
+textField.configureDynamicStyle(.body, traits: .traitBold)
+```
+
+Modify clear button image:
+
+```swift
+let clearButtonImage = UIImage(named: "clear_button")
+let textField = UITextField()
+textField.setClearButton(with: clearButtonImage)
+```
+
+Modify placeholder's color:
+
+```swift
+let textField = UITextField()
+// set `placeholder` or `attributedPlaceholder`
+textField.setPlaceHolderTextColor(.blue)
+```
+
+### UITextView extension
+
+Configure a dynamic text style to the textfield:
+
+```swift
+textView.configureDynamicStyle(.body, traits: .traitBold)
+```
+
+### UIView extension
+
+Change the frame of the view easily:
+
+```swift
+let aView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+aView.x += 100 // move  to right
+aView.y += 100 // move downwards
+aView.width -= 10 // make the view narrower
+aView.height -= 10 // make the view shorter 
+```
+
+Apply a corner radius to the view:
+
+```swift
+let view = UIView()
+view.applyCornerRadius(10)
+view.applyCornerRadius(20, maskedCorners: [.layerMaxXMaxYCorner])
+```
+
+Find a subview using its `accessibilityIdentifier, useful to tests private outlets:
+
+```swift
+aView.findView(forIdentifier: "accessibilityIdentifier")
+```
+
+Automates your localizables:
+
+```swift
+aView.translateSubviews()
+```
+
+It will iterate on all the subviews of the view, and use the text / placeholder as key in `NSLocalizedString`.
+By settings your localizable key in your xib / storyboard, all yours string will be automatically translated just by calling the above method.
+
+Add constraints between a view and its superview:
+
+```swift
+aView.addConstraints() // Add constraints to all edges with zero insets
+aView.addConstraints(to: [.top, .bottom]) // Add constraints to top and bottom edges with zero insets
+aView.addConstraints(to: [.top, .left], insets: UIEdgeInsets(top: 10, left: 20, bottom: 0, right: 0)) // Add constraints to top and left edges with custom insets
+```
+
+### UIViewController extension
+
+Reset the navigation stack by deleting previous view controllers:
+
+```swift
+let navController = UINavigationController()
+navController.pushViewController(vc1, animated: true)
+navController.pushViewController(vc2, animated: true)
+navController.pushViewController(vc3, animated: true)
+vc3.removePreviousControllers(animated: true)
+print(navController.viewControllers) // [vc3]
+```
+
+Check if ViewController is onscreen and not hidden:
+
+```swift
+let viewController = UIViewController()
+print(viewController.isVisible) // false
+```
+
+Check if ViewController is presented modally:
+
+```swift
+let viewController = UIViewController()
+print(viewController.isModal)
+```
+
+Open Safari modally:
+
+```
+let url = URL(string: "https://www.apple.com")
+vc.openSafariVC(url: url, delegate: self)
+```
+
+Add a child view controller to another controller:
+
+```swift
+vc.addChildController(childVC, subview: vc.view, animated: true, duration: 0.35, options: [.curveEaseInOut, .transitionCrossDissolve])
+```
+
+Add a child view controller to a container view:
+
+```swift
+vc.addChildController(childVC, in: containerView)
+```
+
+Remove a child view controller:
+
+```swift
+vc.removeChildController(childVC)
+```
+
+## AppKit, Cocoa Extensions
+
+### NSView extension
+
+Change the frame of the view easily
+
+```swift
+let aView = NSView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+aView.x += 100 // move  to right
+aView.y += 100 // move downwards
+aView.width -= 10 // make the view narrower
+aView.height -= 10 // make the view shorter 
+```
+
+**Automates your localizables**
+
+```swift
+aView.convertLocalizables()
+```
+
+It will iterate on all the subviews of the view, and use the text / placeholder as key in `NSLocalizedString`.
+By settings your localizable key in your xib / storyboard, all yours string will be automatically translated just by calling the above method.
+
+## Protocols
+
 ### Injectable
 
 Protocol to do `ViewController` Data Injection with Storyboards and Segues in Swift. Inspired from [Nastasha's blog](https://www.natashatherobot.com/update-view-controller-data-injection-with-storyboards-and-segues-in-swift/):
 
-```
+```swift
 class RedPillViewController: UIViewController, Injectable {
 
     @IBOutlet weak private var mainLabel: UILabel!
@@ -983,19 +1436,6 @@ override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 }
 ```
 
-### Iteratable
-
-Make your enums iteratable:
-
-```swift
-enum Alphabet: Iteratable {
-    case a, b, c, d
-}
-
-let values = iterateEnum(Alphabet.self).map { $0 }
-print(values) // [Alphabet.a, Alphabet.b, Alphabet.c, Alphabet.d]
-```
-
 ### Occupiable
 
 The following use cases works for String Array, Dictionary, and Set
@@ -1031,302 +1471,83 @@ let label = UILabel().then {
 }
 ```
 
-## Available on iOS, tvOS, and watchOS (a few)
+## PropertyWrappers
 
-### UIAlertController extension
+### UserDefaultsBacked
 
-Create a custom `UIAlertController`:
-
-```swift
-let alertController1 = UIAlertController(title: "Title",
-                                        message: "Message")
-                          
-let alertController2 = UIAlertController(title: "Title",
-                                        message: "Message",
-                                        defaultActionButtonTitle: "Cancel")
-                                                      
-let alertController3 = UIAlertController(title: "Title",
-                                        message: "Message",
-                                        defaultActionButtonTitle: "Cancel",
-                                        defaultActionButtonStyle: .cancel) 
-                                        
-let alertController1 = UIAlertController(title: "Title",
-                                        message: "Message",
-                                        defaultActionButtonTitle: "Cancel",
-                                        defaultActionButtonStyle: .cancel,
-                                        tintColor: .blue)
-```
-
-Show an `UIAlertController`:
+Type safe access to UserDefaults with support for default values.
 
 ```swift
-alertController.show()
-alertController.show(animated: false)
-alertController.show(animated: true, completion: {
-	print("Presented")
-})
+struct SettingsViewModel {
+    @UserDefaultsBacked(key: "search-page-size", defaultValue: 20)
+    var numberOfSearchResultsPerPage: Int
+
+    @UserDefaultsBacked(key: "signature")
+    var messageSignature: String?
+}
 ```
 
-Add an action to the `UIAlertController`:
+## Others
+
+### UnitTesting
+
+Grand Central Dispatch sugar syntax:
+
+Detect if UITests are running:
 
 ```swift
-alertController.addAction(title: "ActionTitle")
-
-alertController.addAction(title: "ActionTitle",
-                          style: .destructive)
-                          
-alertController.addAction(title: "ActionTitle",
-                          style: .destructive,
-                          isEnabled: false)
-                          
-alertController.addAction(title: "ActionTitle",
-                          style: .destructive,
-                          isEnabled: false,
-                          handler: nil)
-```
-
-### UIApplication extension
-
-Get the current view controller display:
-
-```swift
-UIApplication.shared.topViewController() // Using UIWindow's rootViewController as baseVC
-UIApplication.shared.topViewController(from: baseVC) // topVC from the base view controller
-```
-
-Get the app delegate:
-
-```swift
-UIApplication.delegate(AppDelegate.self)
-```
-
-### UIDevice extension
-
-Access to your device information:
-
-``` swift
-print(UIDevice.idForVendor) // 104C9F7F-7403-4B3E-B6A2-C222C82074FF
-print(UIDevice.systemName()) // iPhone OS
-print(UIDevice.systemVersion()) // 9.0
-print(UIDevice.deviceName) // iPhone Simulator / iPhone 6 Wifi
-print(UIDevice.deviceLanguage) // en
-print(UIDevice.isPhone) // true or false
-print(UIDevice.isPad) // true or false
-```
-
-Check your system version:
-
-``` swift
-print(UIDevice.isVersion(8.1)) // false
-print(UIDevice.isVersionOrLater(8.1)) // true
-print(UIDevice.isVersionOrEarlier(8.1)) // false
-```
-
-Force device orientation:
-
-```swift
-UIDevice.forceRotation(.portrait)
-UIDevice.current.forceRotation(.portrait)
-```
-
-### UIImage extension
-
-Create an image from a color:
-
-```swift
-let image = UIImage(color: .green)
-```
-
-Fill an image with a color:
-
-```swift
-let image = UIImage(named: "image")
-let greenImage = image.filled(with: .green)
-```
-
-Combined an image with another:
-
-```swift
-let image = UIImage(named: "image")
-let image2 = UIImage(named: "image2")
-let combinedImage = image.combined(with: image2)
-```
-
-Change the rendering mode:
-
-```swift
-var image = UIImage(named: "image")
-image = image.template // imageWithRenderingMode(.alwaysTemplate)
-image = image.original // imageWithRenderingMode(.alwaysOriginal)
-```
-
-### UILabel extension
-
-Detect if a label text is truncated:
-
-```swift
-let label = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 40))
-label.text = "I will be truncated :("
-print(label.isTruncated()) // true
-
-let label = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 40))
-label.text = ":)"
-print(label.isTruncated()) // false
-```
-
-Customize label line height:
-
-```swift
-let label = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 40))
-label.setText("A long multiline text")
-label.setLineHeight(0.9)
-```
-
-Customize the label truncated text (replace the default `...`):
-
-```swift
-let label = UILabel(frame: CGRect(x: 0, y: 0, width: 30, height: 40))
-label.setText("I will be truncated :(", truncatedText: ".")
-print(label.text) // I wi.
-```
-
-### UIScreen extension
-
-Get the screen orientation:
-
-```swift
-if UIInterfaceOrientationIsPortrait(UIScreen.screenOrientation) {
-	// Portrait
+if UnitTesting.isRunning {
+  // tests are running
 } else {
-	// Landscape
+  // everything is fine, move along
 }
 ```
 
-Get the screen size:
+Measure tests performance:
 
 ```swift
-print(UIScreen.size) // CGSize(375.0, 667.0) on iPhone6
-print(UIScreen.width) // 375.0 on iPhone6
-print(UIScreen.height) // 667.0 on iPhone6
-print(UIScreen.heightWithoutStatusBar) // 647.0 on iPhone6
-```
-
-Get the status bar height:
-
-```swift
-print(UIScreen.statusBarHeight) // 20.0 on iPhone6
-```
-
-### UIStoryboard extension
-
-Get the application's main storyboard:
-
-```swift
-let storyboard = UIStoryboard.main
-```
-
-### UISwitch extension
-
-Toggle `UISwitch`:
-
-```swift
-let aSwitch = UISwitch(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
-aSwitch.toggle()
-print(aSwitch.isOn) // true
-
-aSwitch.toggle(animated: false)
-```
-
-### UITextField extension
-
-Modify clear button image:
-
-```swift
-let clearButtonImage = UIImage(named: "clear_button")
-let textField = UITextField()
-textField.setClearButton(with: clearButtonImage)
-```
-
-Modify placeholder's color:
-
-```swift
-let textField = UITextField()
-// set `placeholder` or `attributedPlaceholder`
-textField.setPlaceHolderTextColor(.blue)
-```
-
-### UIView extension
-
-**Change the frame of the view easily**
-
-```swift
-let aView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-aView.x += 100 // move  to right
-aView.y += 100 // move downwards
-aView.width -= 10 // make the view narrower
-aView.height -= 10 // make the view shorter 
-```
-
-**Automates your localizables**
-
-```swift
-aView.translateSubviews()
-```
-
-It will iterate on all the subviews of the view, and use the text / placeholder as key in `NSLocalizedString`.
-By settings your localizable key in your xib / storyboard, all yours string will be automatically translated just by calling the above method.
-
-### UIViewController extension
-
-Reset the navigation stack by deleting previous view controllers:
-
-```swift
-let navController = UINavigationController()
-navController.pushViewController(vc1, animated: true)
-navController.pushViewController(vc2, animated: true)
-navController.pushViewController(vc3, animated: true)
-vc3.removePreviousControllers(animated: true)
-print(navController.viewControllers) // [vc3]
-```
-
-Check if ViewController is onscreen and not hidden:
-
-```swift
-let viewController = UIViewController()
-print(viewController.isVisible) // false
-```
-
-### Simulator
-
-Check if you are running on a simulator:
-
-```swift
-if !Simulator.isRunning {
-  // add device specific operations here
+func testPerformance() {
+  let measurement = measure {
+    // run operation
+  }
 }
 ```
 
-## Available on macOS
+### UITesting
 
-### NSView extension
-
-**Change the frame of the view easily**
-```swift
-let aView = NSView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-aView.x += 100 // move  to right
-aView.y += 100 // move downwards
-aView.width -= 10 // make the view narrower
-aView.height -= 10 // make the view shorter 
-```
-
-**Automates your localizables**
+Detect if UITests are running:
 
 ```swift
-aView.convertLocalizables()
+if UITesting.isRunning {
+  // tests are running
+} else {
+  // everything is fine, move along
+}
 ```
 
-It will iterate on all the subviews of the view, and use the text / placeholder as key in `NSLocalizedString`.
-By settings your localizable key in your xib / storyboard, all yours string will be automatically translated just by calling the above method.
+### Shell Utility 
+(macOS only)
+
+Runs a command on a system shell and provides the return code for success, STDOUT, and STDERR.
+
+STDOUT as one continuous String:
+
+```swift
+let (rCode, stdOut, stdErr) = SystemUtility.shell(["ls", "-l", "/"])
+// rCode = 0 (which is "true" in shell)
+// stdOut = "total 13\ndrwxrwxr-x+ 91 root  admin  2912 Feb 11 01:24 Applications" ...  etc
+// stdErr = [""]
+```
+
+STDOUT as array of Strings separated by newlines:
+
+```swift
+let (rCode, stdOut, stdErr) = SystemUtility.shellArrayOut(["ls", "-l", "/"])
+// rCode = 0 (which is "true" in shell)
+// stdOut = ["total 13", "drwxrwxr-x+ 91 root  admin  2912 Feb 11 01:24 Applications" ...  etc]
+// stdErr = [""]
+```
+
 
 ## Installation
 

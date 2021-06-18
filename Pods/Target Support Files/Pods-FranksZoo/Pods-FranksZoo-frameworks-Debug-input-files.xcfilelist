@@ -1,0 +1,11 @@
+${PODS_ROOT}/Target Support Files/Pods-FranksZoo/Pods-FranksZoo-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AnimationSugar/AnimationSugar.framework
+${BUILT_PRODUCTS_DIR}/DVITutorialView/DVITutorialView.framework
+${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework
+${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
+${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework
+${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework
+${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework
+${BUILT_PRODUCTS_DIR}/SwiftyUtils-framework/SwiftyUtils.framework

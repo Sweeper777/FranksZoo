@@ -1,14 +1,17 @@
 PODS:
   - AnimationSugar (0.0.2)
   - DVITutorialView (0.2.2)
-  - DynamicColor (4.0.2)
-  - RxCocoa (4.2.0):
-    - RxSwift (~> 4.0)
-  - RxSwift (4.2.0)
+  - DynamicColor (4.2.0)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
   - SCLAlertView (0.8)
   - SnapKit (4.2.0)
   - SwiftyButton (0.8.2)
-  - SwiftyUtils (2.0.0)
+  - SwiftyUtils (5.2.0)
 
 DEPENDENCIES:
   - AnimationSugar
@@ -22,11 +25,12 @@ DEPENDENCIES:
   - SwiftyUtils
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - AnimationSugar
     - DVITutorialView
     - DynamicColor
     - RxCocoa
+    - RxRelay
     - RxSwift
     - SCLAlertView
     - SnapKit
@@ -36,14 +40,15 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AnimationSugar: 5dcf5c375a90df4b64d5bba27919252cfaf8fe79
   DVITutorialView: 7b933723d5ec27ecb4aed6f67f3706e362e9385c
-  DynamicColor: c7adcfe871781a2b39877a5774e452ba51b79eb3
-  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
-  RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
+  DynamicColor: c475f66bda1cabf602f2c54ac1171c0c07148a5a
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftyButton: 5b0ef314e9cf61cf8a83e456ddd1ea1f53f30598
-  SwiftyUtils: ae914aa96b5672e9282904771e5e5b44d2e307d6
+  SwiftyUtils: 4c99e810e769063dbd5d4e83b486961a5d470aeb
 
 PODFILE CHECKSUM: 3e74cea8365748804ef68eff055a2c32f81caaf0
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.10.1
