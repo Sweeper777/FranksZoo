@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ggG-xK-XGa">
-    <device id="retina4_0" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ggG-xK-XGa">
+    <device id="retina4_0" orientation="landscape" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -56,7 +54,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="cell" id="E9n-vV-Ojq" customClass="CardCell" customModule="FranksZoo" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="E9n-vV-Ojq" customClass="CardCell" customModule="FranksZoo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="-10" width="68" height="99"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -64,7 +62,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oyE-Tn-ZkO">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="133" height="99"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="99"/>
                                                                 </imageView>
                                                             </subviews>
                                                         </view>
@@ -148,6 +146,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.41729350032700518" green="0.45985751972211325" blue="0.67516588184931503" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VhG-R6-sqo" secondAttribute="trailing" id="AgF-Zc-e3e"/>
@@ -155,7 +154,6 @@
                             <constraint firstItem="VhG-R6-sqo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="str-m6-HDs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VhG-R6-sqo" secondAttribute="bottom" id="vQa-rP-4nG"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="bottomStackView" destination="wyK-vN-I13" id="fDD-97-mr1"/>
@@ -181,7 +179,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzU-XD-1ij">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GzU-XD-1ij">
                                 <rect key="frame" x="20" y="20" width="30" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="vin-3b-G2J"/>
@@ -211,21 +209,21 @@ Players who have joined the game:</string>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="ZEN-jS-zks" detailTextLabel="UML-xH-oYy" style="IBUITableViewCellStyleSubtitle" id="VFT-yy-KyC">
-                                                <rect key="frame" x="0.0" y="28" width="528" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="528" height="55.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VFT-yy-KyC" id="u5G-yX-df7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="528" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="528" height="55.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZEN-jS-zks">
-                                                            <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                            <rect key="frame" x="16" y="10" width="33" height="20.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UML-xH-oYy">
-                                                            <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
+                                                            <rect key="frame" x="16" y="31.5" width="44" height="14.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
@@ -239,6 +237,7 @@ Players who have joined the game:</string>
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="ydB-fm-BcJ"/>
                         <color key="backgroundColor" white="0.78609267979999997" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ydB-fm-BcJ" firstAttribute="bottom" secondItem="1VP-bw-oxU" secondAttribute="bottom" constant="20" id="579-1y-0ch"/>
@@ -248,7 +247,6 @@ Players who have joined the game:</string>
                             <constraint firstItem="GzU-XD-1ij" firstAttribute="top" secondItem="ydB-fm-BcJ" secondAttribute="top" constant="20" id="hRA-yr-im9"/>
                             <constraint firstItem="GzU-XD-1ij" firstAttribute="leading" secondItem="ydB-fm-BcJ" secondAttribute="leading" constant="20" id="spA-6Y-7YQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="ydB-fm-BcJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="mkB-N7-6Fh"/>
                     <connections>
@@ -280,11 +278,12 @@ Players who have joined the game:</string>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" white="0.78609267979999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <viewLayoutGuide key="safeArea" id="VOR-yA-zQr"/>
+                                <color key="backgroundColor" white="0.78609267979999997" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="heightClass=compact" axis="horizontal"/>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="KHG-0J-f2C"/>
                         <color key="backgroundColor" white="0.78609267979999997" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IAw-UV-ehO" firstAttribute="trailing" secondItem="KHG-0J-f2C" secondAttribute="trailing" constant="-8" id="BDX-fh-Imm"/>
@@ -292,15 +291,14 @@ Players who have joined the game:</string>
                             <constraint firstItem="IAw-UV-ehO" firstAttribute="leading" secondItem="KHG-0J-f2C" secondAttribute="leading" constant="8" id="FUI-52-8st"/>
                             <constraint firstItem="IAw-UV-ehO" firstAttribute="bottom" secondItem="KHG-0J-f2C" secondAttribute="bottom" constant="-8" id="xBJ-5P-azo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="KHG-0J-f2C"/>
                     </view>
                     <connections>
                         <outlet property="buttonContainer" destination="mrq-a6-UjY" id="RGm-aq-UV5"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showGame" id="Lnw-vD-Zgj"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="showGame" modalPresentationStyle="fullScreen" id="Lnw-vD-Zgj"/>
                         <segue destination="sgK-TF-kTF" kind="presentation" identifier="showHost" modalPresentationStyle="formSheet" id="Hrm-3J-kjg"/>
                         <segue destination="q9F-zD-hEg" kind="presentation" identifier="showJoin" modalPresentationStyle="formSheet" id="JVk-9C-YgN"/>
-                        <segue destination="nLQ-XB-3Po" kind="show" identifier="showMultipeerGame" id="Ya2-Uw-heU"/>
-                        <segue destination="C2P-ZR-3me" kind="show" identifier="showHelp" id="C3C-rq-9wH"/>
+                        <segue destination="nLQ-XB-3Po" kind="presentation" identifier="showMultipeerGame" modalPresentationStyle="fullScreen" id="Ya2-Uw-heU"/>
+                        <segue destination="C2P-ZR-3me" kind="presentation" identifier="showHelp" modalPresentationStyle="fullScreen" id="C3C-rq-9wH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wD5-Cw-oWm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -316,7 +314,7 @@ Players who have joined the game:</string>
                         <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6m-4G-XhC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y6m-4G-XhC">
                                 <rect key="frame" x="20" y="20" width="30" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Wax-ky-6D5"/>
@@ -344,21 +342,21 @@ Players who have joined the game:</string>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="aje-Q1-qTJ" detailTextLabel="kkX-EW-bz4" style="IBUITableViewCellStyleValue1" id="lZh-90-5Cc">
-                                                <rect key="frame" x="0.0" y="28" width="528" height="44"/>
+                                                <rect key="frame" x="0.0" y="28" width="528" height="43.5"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lZh-90-5Cc" id="RiQ-ex-EvA">
                                                     <rect key="frame" x="0.0" y="0.0" width="528" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aje-Q1-qTJ">
-                                                            <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
+                                                            <rect key="frame" x="16" y="12" width="33" height="20.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kkX-EW-bz4">
-                                                            <rect key="frame" x="469" y="12" width="44" height="20.5"/>
+                                                            <rect key="frame" x="468" y="12" width="44" height="20.5"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -372,6 +370,7 @@ Players who have joined the game:</string>
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="C1s-Z7-PTT"/>
                         <color key="backgroundColor" white="0.78609267979999997" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Y6m-4G-XhC" firstAttribute="leading" secondItem="C1s-Z7-PTT" secondAttribute="leading" constant="20" id="CvN-i4-GMK"/>
@@ -381,7 +380,6 @@ Players who have joined the game:</string>
                             <constraint firstItem="Af1-tp-fEr" firstAttribute="top" secondItem="Y6m-4G-XhC" secondAttribute="bottom" constant="8" id="dqJ-PE-6gn"/>
                             <constraint firstItem="C1s-Z7-PTT" firstAttribute="trailing" secondItem="Af1-tp-fEr" secondAttribute="trailing" constant="20" id="iJT-q4-o3k"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="C1s-Z7-PTT"/>
                     </view>
                     <navigationItem key="navigationItem" id="xQA-L0-rBD"/>
                     <connections>
@@ -439,7 +437,7 @@ Players who have joined the game:</string>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="cell" id="JEz-9r-KYG" customClass="CardCell" customModule="FranksZoo" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="JEz-9r-KYG" customClass="CardCell" customModule="FranksZoo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="-10" width="68" height="99"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -447,7 +445,7 @@ Players who have joined the game:</string>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Lji-6U-ljZ">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="133" height="99"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="99"/>
                                                                 </imageView>
                                                             </subviews>
                                                         </view>
@@ -531,6 +529,7 @@ Players who have joined the game:</string>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="gZp-FP-Cmt"/>
                         <color key="backgroundColor" red="0.41729350030000001" green="0.45985751969999999" blue="0.67516588180000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="gZp-FP-Cmt" firstAttribute="bottom" secondItem="5XP-IR-86H" secondAttribute="bottom" id="812-Du-4R5"/>
@@ -538,7 +537,6 @@ Players who have joined the game:</string>
                             <constraint firstItem="5XP-IR-86H" firstAttribute="leading" secondItem="gZp-FP-Cmt" secondAttribute="leading" id="kOQ-pz-gUm"/>
                             <constraint firstItem="gZp-FP-Cmt" firstAttribute="trailing" secondItem="5XP-IR-86H" secondAttribute="trailing" id="o8K-qF-JsM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="gZp-FP-Cmt"/>
                     </view>
                     <connections>
                         <outlet property="bottomStackView" destination="92X-0F-37U" id="M4n-2Z-dQm"/>
@@ -601,7 +599,7 @@ Players who have joined the game:</string>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="cell" id="t33-Yf-wnZ" customClass="CardCell" customModule="FranksZoo" customModuleProvider="target">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="t33-Yf-wnZ" customClass="CardCell" customModule="FranksZoo" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="-10" width="68" height="99"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -609,7 +607,7 @@ Players who have joined the game:</string>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zeo-d0-YOL">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="133" height="99"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="99"/>
                                                                 </imageView>
                                                             </subviews>
                                                         </view>
@@ -693,6 +691,7 @@ Players who have joined the game:</string>
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="dLa-8F-Hau"/>
                         <color key="backgroundColor" red="0.41729350030000001" green="0.45985751969999999" blue="0.67516588180000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EjV-vw-Pg8" firstAttribute="leading" secondItem="dLa-8F-Hau" secondAttribute="leading" id="SvY-T2-zoe"/>
@@ -700,7 +699,6 @@ Players who have joined the game:</string>
                             <constraint firstItem="dLa-8F-Hau" firstAttribute="trailing" secondItem="EjV-vw-Pg8" secondAttribute="trailing" id="lKl-GI-O5L"/>
                             <constraint firstItem="dLa-8F-Hau" firstAttribute="bottom" secondItem="EjV-vw-Pg8" secondAttribute="bottom" id="yPt-qX-vbn"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dLa-8F-Hau"/>
                     </view>
                     <connections>
                         <outlet property="bottomStackView" destination="xEJ-Eg-rrh" id="9ey-av-wTh"/>
@@ -718,6 +716,26 @@ Players who have joined the game:</string>
             <point key="canvasLocation" x="146" y="92"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4An-Cv-N6N">
+            <size key="intrinsicContentSize" width="44" height="34"/>
+        </designable>
+        <designable name="9cZ-Rs-9fv">
+            <size key="intrinsicContentSize" width="45" height="34"/>
+        </designable>
+        <designable name="ON7-pf-4zF">
+            <size key="intrinsicContentSize" width="45" height="34"/>
+        </designable>
+        <designable name="eOZ-aG-Rqb">
+            <size key="intrinsicContentSize" width="45" height="34"/>
+        </designable>
+        <designable name="jOL-le-Meo">
+            <size key="intrinsicContentSize" width="44" height="34"/>
+        </designable>
+        <designable name="n81-iz-sbx">
+            <size key="intrinsicContentSize" width="44" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="logo" width="1000" height="1000"/>
     </resources>

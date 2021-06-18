@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -96,6 +96,7 @@
 		5A4D5807213BE12300F9C64E /* FranksZooTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranksZooTests.swift; sourceTree = "<group>"; };
 		5A4D5809213BE12300F9C64E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A827FFB2143EDAA00E0BD41 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		5A92D44C267AF53A005CDFD6 /* FranksZoo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FranksZoo.entitlements; sourceTree = "<group>"; };
 		5AB45F43213D6E4300A45D3F /* OpponentsHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpponentsHandView.swift; sourceTree = "<group>"; };
 		6678C596C00963C6B145C5C5 /* Pods_FranksZoo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FranksZoo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A196DE59E7D8A3F79EA74FF /* Pods-FranksZoo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FranksZoo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FranksZoo/Pods-FranksZoo.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		5A43BD61213A8A1D001B918E /* FranksZoo */ = {
 			isa = PBXGroup;
 			children = (
+				5A92D44C267AF53A005CDFD6 /* FranksZoo.entitlements */,
 				5A364949221B35B40099F746 /* GillSans.ttc */,
 				5A43BD62213A8A1D001B918E /* AppDelegate.swift */,
 				5A36AD542222A030005FC649 /* GameViewControllerBase.swift */,
@@ -343,33 +345,16 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-FranksZoo/Pods-FranksZoo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AnimationSugar/AnimationSugar.framework",
-				"${BUILT_PRODUCTS_DIR}/DVITutorialView/DVITutorialView.framework",
-				"${BUILT_PRODUCTS_DIR}/DynamicColor/DynamicColor.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyButton/SwiftyButton.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyUtils-framework/SwiftyUtils.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FranksZoo/Pods-FranksZoo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AnimationSugar.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DVITutorialView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DynamicColor.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyUtils.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FranksZoo/Pods-FranksZoo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FranksZoo/Pods-FranksZoo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FranksZoo/Pods-FranksZoo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		22215EB15801D18491901F10 /* [CP] Check Pods Manifest.lock */ = {
@@ -581,18 +566,21 @@
 			baseConfigurationReference = 4CB7DC224673ED569E271A23 /* Pods-FranksZoo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FranksZoo/FranksZoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
 				INFOPLIST_FILE = FranksZoo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.sweeper777.FrankZoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Debug;
 		};
@@ -601,18 +589,21 @@
 			baseConfigurationReference = 7A196DE59E7D8A3F79EA74FF /* Pods-FranksZoo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FranksZoo/FranksZoo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = E9MW74DJ4Y;
 				INFOPLIST_FILE = FranksZoo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				"IPHONEOS_DEPLOYMENT_TARGET[sdk=macosx*]" = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.github.sweeper777.FrankZoo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,6";
 			};
 			name = Release;
 		};
